@@ -395,7 +395,7 @@ export default function Solutions() {
             },
             {
               q: "How quickly will we see results?",
-              a: "Some clients see efficiency gains within the first 30 days. The pace depends on what you're implementing and how ready your team is. The Sprint or Workshop gives you a roadmap with honest timelines built in."
+              a: "Some clients see efficiency gains within the first 30 days. The pace depends on what you're implementing and how ready you or your team is. The Sprint or Workshop gives you a roadmap with honest timelines built in."
             },
             {
               q: "We're already using AI tools. Can you still help?",
