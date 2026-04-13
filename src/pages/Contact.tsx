@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
-import { 
+import {
   Eye, 
   Languages, 
   ClipboardCheck, 
@@ -29,40 +28,21 @@ export default function Contact() {
     setStatus('submitting');
     setErrorMessage("");
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      console.warn("EmailJS credentials missing. Simulating submission...");
-      // Simulate API call for development if keys are missing
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log("Form submitted (simulated):", formData);
-      setStatus('success');
-      setFormData({ name: "", email: "", message: "" });
-      return;
-    }
-
     try {
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'info@ajyle.ai',
-        subject: 'Website Enquiry'
-      };
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      );
+      if (!response.ok) {
+        throw new Error('Failed to send');
+      }
 
       setStatus('success');
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Contact form error:", error);
       setStatus('error');
       setErrorMessage("Something went wrong. Please try again or email us directly at info@ajyle.ai");
     }
