@@ -129,7 +129,7 @@ export default function Contact() {
                   <CheckCircle2 size={32} />
                 </div>
                 <h2 className="font-headline text-3xl font-bold mb-4 text-on-surface">Message Sent!</h2>
-                <p className="text-on-surface-variant mb-8">Thank you for reaching out. We've received your inquiry and will get back to you at info@ajyle.ai shortly.</p>
+                <p className="text-on-surface-variant mb-8">Thanks for getting in touch. We've got your message and we'll be in touch shortly.</p>
                 <button 
                   onClick={() => setStatus('idle')}
                   className="text-primary font-bold hover:underline"
