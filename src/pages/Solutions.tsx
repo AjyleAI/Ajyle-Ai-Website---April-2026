@@ -276,6 +276,42 @@ export default function Solutions() {
         </div>
       </section>
 
+      {/* Solopreneur / Founder Section */}
+      <section className="py-24" style={{ backgroundColor: "#F4F8FC" }}>
+        <div className="max-w-4xl mx-auto px-6 md:px-8">
+          <motion.div {...fadeIn}>
+            <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-8 text-on-surface">
+              Running it yourself? We've worked with founders at every stage.
+            </h2>
+            <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+              <p>
+                A lot of the businesses we work with started as one person trying to figure out which AI tools were worth using, and whether they were using them well. No team to delegate to. No budget for a six-month project. Just a founder who needed to move faster without getting it wrong.
+              </p>
+              <p>
+                If that's where you are, we can still help. The work looks different — more focused, built around what you actually need right now — and the investment reflects that.
+              </p>
+              <p>
+                Every engagement starts with a conversation. You tell us what's going on. We tell you what would make the most difference. From there we agree a scope that makes sense for your stage, your time, and your budget.
+              </p>
+              <p>
+                No assumption made about what you can or can't spend. Just an honest conversation about whether it's the right fit.
+              </p>
+            </div>
+            <div className="mt-10">
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-4 rounded-lg font-bold text-white text-lg hover:brightness-110 transition-all"
+                style={{ backgroundColor: "#00A6FB" }}
+              >
+                Book a free 30-minute call
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Guarantee */}
       <section className="max-w-5xl mx-auto px-6 md:px-8 py-32">
         <motion.div 

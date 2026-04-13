@@ -39,7 +39,7 @@ export default function About() {
               We help companies adopt AI <span className="text-primary-container">they can trust.</span>
             </h1>
             <p className="text-xl text-on-surface-variant leading-relaxed mb-10">
-              The challenge is not just building AI. It is making sure the systems are safe, your teams know how to use them, and a human stays in the loop throughout.
+              Building AI is the easy part. Making sure it's safe, your team knows how to use it, and someone stays accountable — that's where most businesses need support.
             </p>
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg text-sm font-bold">
@@ -71,7 +71,7 @@ export default function About() {
           <motion.div {...fadeIn} className="max-w-3xl">
             <h2 className="font-headline text-3xl font-bold mb-8">Our Mission</h2>
             <p className="text-2xl text-on-surface-variant leading-relaxed italic">
-              The future of business is not automated. It is <span className="text-[#00d166] font-bold">augmented</span>. We exist to make responsible AI practical for founders, leaders, and the teams they rely on, across every sector where getting it wrong is not an option.
+              The future of business isn't automated. It's <span className="text-[#00d166] font-bold">augmented</span>. We make responsible AI practical for founders, leaders, and the teams they rely on — in every sector where getting it wrong has real consequences.
             </p>
           </motion.div>
         </div>
@@ -83,27 +83,27 @@ export default function About() {
           <motion.div {...fadeIn} className="mb-16">
             <h2 className="font-headline text-4xl font-bold mb-4">Protected Growth</h2>
             <p className="text-on-surface-variant max-w-2xl">
-              Practical AI advisory built around your business. These are the challenges we see most, across the sectors we work with.
+              These are the challenges we hear most from businesses like yours.
             </p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div {...fadeIn} className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
               <AlertCircle className="text-primary mb-6" size={32} />
-              <h4 className="font-headline text-2xl font-bold mb-4">AI IN THE BUSINESS. NO ONE IN CHARGE OF IT.</h4>
-              <p className="text-on-surface-variant mb-6">Tools in use, no policy, no clear owner. It works until it doesn't. We help you put the right structure in place so you're not firefighting later.</p>
+              <h4 className="font-headline text-2xl font-bold mb-4">AI is already in the business. Nobody owns it yet.</h4>
+              <p className="text-on-surface-variant mb-6">Tools in use, no policy, no clear owner. It holds together until it doesn't. We help you put the right structure in place before you're dealing with the fallout.</p>
             </motion.div>
 
             <motion.div {...fadeIn} className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
               <Users className="text-primary mb-6" size={32} />
-              <h4 className="font-headline text-2xl font-bold mb-4">TEAMS EXPECTED TO USE AI. NOBODY TRAINED TO.</h4>
-              <p className="text-on-surface-variant">Adoption without preparation is just risk with a new name. We build the capability your people need to use AI well, responsibly and not just quickly.</p>
+              <h4 className="font-headline text-2xl font-bold mb-4">AI adoption is happening. The training hasn't caught up.</h4>
+              <p className="text-on-surface-variant">Adoption without preparation is just risk with a new name. We build the capability your people need to use AI responsibly — not just quickly.</p>
             </motion.div>
 
             <motion.div {...fadeIn} className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
               <Zap className="text-primary mb-6" size={32} />
-              <h4 className="font-headline text-2xl font-bold mb-4">AI MOVING FASTER THAN THE BUSINESS CAN HANDLE</h4>
-              <p className="text-on-surface-variant">New tools, pressure to keep up, decisions moving faster than your oversight can. We help you find the right pace. Fast enough to stay competitive, structured enough to stay in control.</p>
+              <h4 className="font-headline text-2xl font-bold mb-4">The pace of AI is outrunning your ability to make decisions about it.</h4>
+              <p className="text-on-surface-variant">New tools, pressure to keep up, oversight that can't move as fast as the technology. We help you find the right pace. Fast enough to stay competitive, structured enough to stay in control.</p>
             </motion.div>
           </div>
           
@@ -111,7 +111,7 @@ export default function About() {
             <div className="max-w-2xl relative z-10">
               <h3 className="font-headline text-3xl font-bold mb-6">Not Every Project Is the Right Fit</h3>
               <p className="text-white/80 text-lg leading-relaxed">
-                Some work we choose not to take on. AI should serve people, not replace human judgement where the stakes are irreversible. Protected Growth means growth that does not come at a cost nobody can recover from.
+                Some work we choose not to take on. AI should serve people, not replace human judgement where the stakes are serious. Protected Growth means growth you can sustain — and stand behind.
               </p>
             </div>
             <div className="absolute right-0 bottom-0 opacity-10">
@@ -172,7 +172,7 @@ export default function About() {
           <motion.div {...fadeIn}>
             <h2 className="font-headline text-4xl font-bold mb-8">Ready to see what responsible AI looks like for your business?</h2>
             <p className="text-xl text-on-surface-variant mb-12">
-              Book a free 30-minute call. No deck, no agenda. Just a straight conversation about whether we are the right fit.
+              Book a free 30-minute call. No deck, no agenda. A straight conversation about whether we're the right fit.
             </p>
             <a 
               href={BOOKING_URL}
