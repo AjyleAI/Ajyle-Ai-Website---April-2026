@@ -6,7 +6,9 @@ export default function Footer() {
     <footer className="w-full py-16 border-t border-outline-variant/15 bg-surface-container-low">
       <div className="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="col-span-1">
-          <a href="/" className="text-xl font-bold text-on-surface mb-6 block font-headline">Ajyle AI</a>
+          <a href="/" className="block mb-6">
+            <img src="/logo.svg" alt="Ajyle AI" className="h-8 w-auto" />
+          </a>
           <p className="text-on-surface-variant leading-relaxed">
             Protecting growth through responsible AI.
           </p>
