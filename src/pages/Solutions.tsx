@@ -288,7 +288,7 @@ export default function Solutions() {
                 A lot of the businesses we work with started as one person trying to figure out which AI tools were worth using, and whether they were using them well. No team to delegate to. No budget for a six-month project. Just a founder who needed to move faster without getting it wrong.
               </p>
               <p>
-                If that's where you are, we can still help. The work looks different — more focused, built around what you actually need right now — and the investment reflects that.
+                If that's where you are, we can still help. The work looks different. More focused, built around what you actually need right now, and the investment reflects that.
               </p>
               <p>
                 Every engagement starts with a conversation. You tell us what's going on. We tell you what would make the most difference. From there we agree a scope that makes sense for your stage, your time, and your budget.

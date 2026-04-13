@@ -39,7 +39,7 @@ export default function About() {
               We help companies adopt AI <span className="text-primary-container">they can trust.</span>
             </h1>
             <p className="text-xl text-on-surface-variant leading-relaxed mb-10">
-              Building AI is the easy part. Making sure it's safe, your team knows how to use it, and someone stays accountable — that's where most businesses need support.
+              Building AI is the easy part. Making sure it's safe, your team knows how to use it, and someone stays accountable. That's where most businesses need support.
             </p>
             <div className="flex flex-wrap gap-6">
               <div className="flex items-center gap-2 px-4 py-2 bg-surface-container rounded-lg text-sm font-bold">
@@ -71,7 +71,7 @@ export default function About() {
           <motion.div {...fadeIn} className="max-w-3xl">
             <h2 className="font-headline text-3xl font-bold mb-8">Our Mission</h2>
             <p className="text-2xl text-on-surface-variant leading-relaxed italic">
-              The future of business isn't automated. It's <span className="text-[#00d166] font-bold">augmented</span>. We make responsible AI practical for founders, leaders, and the teams they rely on — in every sector where getting it wrong has real consequences.
+              The future of business isn't automated. It's <span className="text-[#00d166] font-bold">augmented</span>. We make responsible AI practical for founders, leaders, and the teams they rely on, in every sector where getting it wrong has real consequences.
             </p>
           </motion.div>
         </div>
@@ -97,7 +97,7 @@ export default function About() {
             <motion.div {...fadeIn} className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
               <Users className="text-primary mb-6" size={32} />
               <h4 className="font-headline text-2xl font-bold mb-4">AI adoption is happening. The training hasn't caught up.</h4>
-              <p className="text-on-surface-variant">Adoption without preparation is just risk with a new name. We build the capability your people need to use AI responsibly — not just quickly.</p>
+              <p className="text-on-surface-variant">Adoption without preparation is just risk with a new name. We build the capability your people need to use AI responsibly. Not just quickly.</p>
             </motion.div>
 
             <motion.div {...fadeIn} className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
@@ -111,7 +111,7 @@ export default function About() {
             <div className="max-w-2xl relative z-10">
               <h3 className="font-headline text-3xl font-bold mb-6">Not Every Project Is the Right Fit</h3>
               <p className="text-white/80 text-lg leading-relaxed">
-                Some work we choose not to take on. AI should serve people, not replace human judgement where the stakes are serious. Protected Growth means growth you can sustain — and stand behind.
+                Some work we choose not to take on. AI should serve people, not replace human judgement where the stakes are serious. Protected Growth means growth you can sustain and stand behind.
               </p>
             </div>
             <div className="absolute right-0 bottom-0 opacity-10">
@@ -152,7 +152,7 @@ export default function About() {
               },
               { 
                 text: "The half-day session has given me confidence to begin applying AI tools in our business. I'm genuinely excited to see how we can grow with these learnings.", 
-                author: "Lanre O", 
+                author: "Lanre G",
                 role: "Regenerative Architect & Business Leader" 
               }
             ].map((t) => (
