@@ -9,7 +9,8 @@ import {
   MonitorCheck,
   CheckCircle2,
   BadgeCheck,
-  Award
+  Award,
+  Users
 } from "lucide-react";
 
 const HERO_IMAGE = "https://lh3.googleusercontent.com/d/1pUZaPzclA_FOPUx_d0xty-ikWWuz6-Xj";
@@ -277,36 +278,58 @@ export default function Solutions() {
       </section>
 
       {/* Solopreneur / Founder Section */}
-      <section className="py-24" style={{ backgroundColor: "#F4F8FC" }}>
-        <div className="max-w-4xl mx-auto px-6 md:px-8">
-          <motion.div {...fadeIn}>
-            <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-8 text-on-surface">
-              Running it yourself? We've worked with founders at every stage.
-            </h2>
-            <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
-              <p>
-                A lot of the businesses we work with started as one person trying to figure out which AI tools were worth using, and whether they were using them well. No team to delegate to. No budget for a six-month project. Just a founder who needed to move faster without getting it wrong.
-              </p>
-              <p>
-                If that's where you are, we can still help. The work looks different. More focused, built around what you actually need right now, and the investment reflects that.
-              </p>
-              <p>
-                Every engagement starts with a conversation. You tell us what's going on. We tell you what would make the most difference. From there we agree a scope that makes sense for your stage, your time, and your budget.
-              </p>
-              <p>
-                No assumption made about what you can or can't spend. Just an honest conversation about whether it's the right fit.
-              </p>
+      <section className="py-24 bg-surface-container-low border-y border-outline-variant/10">
+        <div className="max-w-5xl mx-auto px-6 md:px-8">
+          <motion.div 
+            {...fadeIn}
+            className="bg-surface p-8 md:p-16 rounded-3xl border border-outline-variant/10 shadow-sm relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
+              <Users size={320} />
             </div>
-            <div className="mt-10">
-              <a
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-4 rounded-lg font-bold text-white text-lg hover:brightness-110 transition-all"
-                style={{ backgroundColor: "#00A6FB" }}
-              >
-                Book a free 30-minute call
-              </a>
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
+                  <Users size={20} />
+                </div>
+                <span className="text-sm font-bold text-primary uppercase tracking-widest">For Solopreneurs & Small Teams</span>
+              </div>
+
+              <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8 text-on-surface leading-tight">
+                Running it yourself? <br className="hidden md:block" />
+                <span className="text-on-surface-variant">We've worked with founders at every stage.</span>
+              </h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+                  <p>
+                    A lot of the businesses we work with started as one person trying to figure out which AI tools were worth using, and whether they were using them well. No team to delegate to. No budget for a six-month project. Just a founder who needed to move faster without getting it wrong.
+                  </p>
+                  <p>
+                    If that's where you are, we can still help. The work looks different. More focused, built around what you actually need right now, and the investment reflects that.
+                  </p>
+                </div>
+                <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+                  <p>
+                    Every engagement starts with a conversation. You tell us what's going on. We tell you what would make the most difference. From there we agree a scope that makes sense for your stage, your time, and your budget.
+                  </p>
+                  <p>
+                    No assumption made about what you can or can't spend. Just an honest conversation about whether it's the right fit.
+                  </p>
+                  
+                  <div className="pt-4">
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg bg-gradient-to-r from-primary to-primary-container hover:shadow-xl hover:shadow-primary/20 transition-all group"
+                    >
+                      Book a free 30-minute call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -316,12 +339,15 @@ export default function Solutions() {
       <section className="max-w-5xl mx-auto px-6 md:px-8 py-32">
         <motion.div 
           {...fadeIn}
-          className="bg-[#00d166] text-white p-12 rounded-2xl text-center relative overflow-hidden shadow-2xl shadow-[#00d166]/20"
+          className="bg-[#057a44] text-white p-12 rounded-3xl text-center relative overflow-hidden shadow-2xl shadow-[#057a44]/20"
         >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
+          
           <div className="relative z-10">
             <Award className="w-16 h-16 mx-auto mb-6 text-white" />
             <h2 className="font-headline text-4xl font-extrabold mb-6">Our "Results-First" Guarantee</h2>
-            <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+            <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white/90">
               For all workshops and advisory sprints, you only pay once you're 100% satisfied with the deliverables. If we don't deliver what we promised, you don't pay.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -329,7 +355,7 @@ export default function Solutions() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-[#00d166] px-8 py-4 rounded-lg font-extrabold text-lg shadow-xl hover:bg-surface-container-lowest transition-colors"
+                className="bg-white text-[#057a44] px-8 py-4 rounded-lg font-extrabold text-lg shadow-xl hover:bg-surface-container-lowest transition-all active:scale-95"
               >
                 Book Discovery Workshop
               </a>
@@ -337,7 +363,7 @@ export default function Solutions() {
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-transparent border-2 border-white/40 hover:border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
+                className="bg-transparent border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
               >
                 Speak to an Advisor
               </a>
