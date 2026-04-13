@@ -2,7 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const LOGO_URL = "https://lh3.googleusercontent.com/d/1-hF-A0_5FFtNy_8GjZx_7G0wTAxwRnEB";
+const LOGO_URL = "/favicon.svg";
 
 import { BOOKING_URL } from "../constants";
 
@@ -23,11 +23,10 @@ export default function Navbar() {
     <nav className="fixed w-full top-0 z-50 bg-white border-b border-outline-variant/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-0 flex justify-between items-center h-16">
         <Link to="/" className="flex items-center h-full overflow-hidden">
-          <img 
-            src={LOGO_URL} 
-            alt="Ajyle AI Logo" 
-            className="h-32 md:h-40 w-auto object-contain -my-8 md:-my-12" 
-            referrerPolicy="no-referrer"
+          <img
+            src={LOGO_URL}
+            alt="Ajyle AI Logo"
+            className="h-10 w-auto object-contain"
           />
         </Link>
         
