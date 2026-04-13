@@ -2,7 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-const LOGO_URL = "/favicon.svg";
+const LOGO_URL = "/logo.svg";
 
 import { BOOKING_URL } from "../constants";
 
