@@ -293,10 +293,10 @@ export default function Solutions() {
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                   <Users size={20} />
                 </div>
-                <span className="text-sm font-bold text-primary uppercase tracking-widest">For Solopreneurs & Small Teams</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-widest">For Solopreneurs & Small Teams</span>
               </div>
 
-              <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8 text-on-surface leading-tight">
+              <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-8 text-on-surface leading-tight">
                 Running it yourself? <br className="hidden md:block" />
                 <span className="text-on-surface-variant">We've worked with founders at every stage.</span>
               </h2>
