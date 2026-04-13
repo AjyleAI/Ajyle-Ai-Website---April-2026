@@ -15,7 +15,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: 'Ajyle AI Website <noreply@ajyle.ai>',
       to: 'info@ajyle.ai',
       subject: 'Website Enquiry',
@@ -34,9 +34,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
 
-    return res.status(200).json({ success: true });
-  } catch (error) {
-    console.error('Resend error:', error);
-    return res.status(500).json({ error: 'Failed to send email' });
+    if (error) {
+      console.error('Resend API error:', JSON.stringify(error));
+      return res.status(500).json({ error: error.message, detail: error });
+    }
+
+    console.log('Email sent successfully:', data?.id);
+    return res.status(200).json({ success: true, id: data?.id });
+  } catch (error: any) {
+    console.error('Resend exception:', error?.message ?? error);
+    return res.status(500).json({ error: error?.message ?? 'Failed to send email' });
   }
 }
