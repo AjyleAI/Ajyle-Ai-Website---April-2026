@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+
 import { 
   ArrowRight, 
   Bolt, 
@@ -42,10 +42,10 @@ export default function Solutions() {
               FOR SME FOUNDERS & LEADERS
             </span>
             <h1 className="font-headline text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
-              AI that delivers <span className="text-primary">measurable ROI</span>, not just hype.
+              Your team is already using AI. The question is whether it's working for you — or quietly creating risk.
             </h1>
             <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10">
-              AI adoption without a clear plan is expensive guesswork. We work with founders and business leaders to deploy AI that fits your workflows, protects your operations, and builds a measurable competitive edge.
+              We work with SME founders and business leaders who want to move fast on AI without the legal, reputational, or operational exposure that comes with getting it wrong. No tools pushed. No jargon. Just a clear plan and someone to build it with you.
             </p>
             <div className="flex flex-wrap gap-4">
               <a 
@@ -54,7 +54,7 @@ export default function Solutions() {
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-primary to-primary-container text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2 group hover:shadow-xl hover:shadow-primary/20 transition-all"
               >
-                Start with a Discovery Sprint <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Book a Free 30-Minute Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <div className="flex items-center gap-3 px-6 py-4 rounded-lg bg-[#e2f6ed] border border-[#065f46]/10">
                 <BadgeCheck className="text-[#00d166]" size={20} />
@@ -77,23 +77,18 @@ export default function Solutions() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-surface-container-highest p-8 rounded-xl shadow-xl max-w-[240px]">
-              <p className="font-headline font-bold text-primary text-3xl mb-1">25%</p>
-              <p className="text-sm font-medium text-on-surface-variant mb-2">Average efficiency gain for our micro-SME clients in the first 90 days.</p>
-              <p className="text-[10px] uppercase tracking-wider text-on-surface-variant/50 font-bold">Based on internal client data, 2024–2025.</p>
-            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Entry Points */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24">
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 pb-12">
         <motion.div {...fadeIn} className="mb-12">
-          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4 text-on-surface">Immediate Entry Points</h2>
+          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4 text-on-surface">Not sure where to start? Pick the right first step.</h2>
           <p className="text-on-surface-variant">Low-risk, high-impact ways to find out where AI fits in your business.</p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Mini Sprint */}
           <motion.div {...fadeIn} className="bg-surface-container-low p-8 rounded-xl border border-outline-variant/15 flex flex-col justify-between hover:bg-surface-container transition-colors group">
             <div>
@@ -101,18 +96,16 @@ export default function Solutions() {
                 <Bolt size={24} />
               </div>
               <h3 className="font-headline text-2xl font-bold mb-3">Mini Discovery Sprint</h3>
-              <p className="text-on-surface-variant mb-6">Identify your top 3 highest-leverage AI opportunities in a fast-paced, 90-minute strategic session. Stop wondering where to start and get a clear roadmap.</p>
+              <p className="text-on-surface-variant mb-6">A focused half-day to map your biggest AI opportunity, cut through the noise, and leave with a clear next step.</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-on-surface mb-6">£500</p>
-              <p className="text-sm text-on-surface-variant mb-4 font-medium">Book a free 15-min intro call. If it's a fit, we lock in your session.</p>
               <a 
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full bg-primary text-white py-4 rounded-lg font-bold flex items-center justify-center gap-2 group transition-all"
               >
-                Claim Your Sprint <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                Book a Free 30-Minute Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </motion.div>
@@ -124,18 +117,16 @@ export default function Solutions() {
                 <Clock size={24} />
               </div>
               <h3 className="font-headline text-2xl font-bold mb-3">Half-Day Deep Dive</h3>
-              <p className="text-on-surface-variant mb-6">We go deep into a specific department’s workflow to build a custom automation roadmap. You leave with a blueprint for immediate implementation.</p>
+              <p className="text-on-surface-variant mb-6">We go deeper into a specific problem, build a realistic roadmap, and scope what implementation looks like.</p>
             </div>
             <div>
-              <p className="text-3xl font-extrabold text-on-surface mb-6">£750</p>
-              <p className="text-sm text-on-surface-variant mb-4 font-medium">Quick call first. We scope it together, then confirm your place.</p>
               <a 
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 font-bold text-primary border-b-2 border-primary/20 hover:border-primary transition-all flex justify-between items-center"
+                className="w-full py-4 bg-surface-container text-primary rounded-lg font-bold flex items-center justify-center gap-2 group hover:bg-primary hover:text-white transition-all"
               >
-                Book a Free Intro Call <ArrowRight size={20} />
+                Book a Free 30-Minute Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </motion.div>
@@ -149,130 +140,127 @@ export default function Solutions() {
               <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mb-6">
                 <Rocket size={24} />
               </div>
-              <h3 className="font-headline text-2xl font-bold mb-3">Full-Day Implementation Workshop</h3>
-              <p className="text-white/80 mb-6">Zero fluff. We spend a full day with your team to architect a fully-vetted AI implementation plan. We solve the technical hurdles so you can execute with confidence.</p>
+              <h3 className="font-headline text-2xl font-bold mb-3">Full-Day Workshop</h3>
+              <p className="text-white/80 mb-6">A full working day to map, plan, and begin. You leave with a scoped build and a clear month-one delivery.</p>
             </div>
             <div className="relative z-10">
-              <p className="text-3xl font-extrabold mb-6">£1,300 - £1,500</p>
-              <p className="text-sm text-white/80 mb-4 font-medium">Let's talk before you commit. 15 minutes to make sure this is the right fit.</p>
               <a 
                 href={BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-4 bg-white text-primary rounded-lg font-bold flex items-center justify-center hover:bg-surface-container-lowest transition-all"
               >
-                Book a Free Intro Call <ArrowRight size={20} className="ml-2" />
+                Book a Free 30-Minute Call <ArrowRight size={20} className="ml-2" />
               </a>
             </div>
           </motion.div>
         </div>
+        
+        <p className="text-sm text-on-surface-variant text-center font-medium opacity-70">
+          All workshops are pay on satisfaction. If we don't deliver what we agreed, you don't pay.
+        </p>
       </section>
 
       {/* How we help */}
       <section className="bg-surface-container-low py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <motion.div {...fadeIn} className="text-center mb-20">
-            <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4">How we help</h2>
-            <p className="text-on-surface-variant max-w-2xl mx-auto">Scalable solutions designed to grow with your business, from initial strategy to custom-built Agentic AI workflows.</p>
+            <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4">Three problems we solve every week</h2>
+            <p className="text-on-surface-variant max-w-2xl mx-auto">Responsible AI adoption built around how your business actually operates.</p>
           </motion.div>
           
-          <div className="space-y-12">
-            {/* Phase 01 */}
-            <motion.div {...fadeIn} className="bg-surface p-8 md:p-12 rounded-2xl border border-outline-variant/10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Problem 1 */}
+            <motion.div {...fadeIn} className="bg-surface p-8 rounded-2xl border border-outline-variant/10 flex flex-col">
+              <div className="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-6">
+                <Settings2 size={24} />
+              </div>
+              <h3 className="font-headline text-2xl font-extrabold mb-4 leading-tight">Your team is using AI tools nobody approved.</h3>
+              <p className="text-on-surface-variant leading-relaxed">
+                Staff are using free ChatGPT accounts, personal Copilot access, and browser plugins on client work. You find out when something goes wrong. We help you get ahead of it, with governance that fits how your business actually operates, not a policy document nobody reads.
+              </p>
+            </motion.div>
+
+            {/* Problem 2 */}
+            <motion.div {...fadeIn} className="bg-surface p-8 rounded-2xl border border-outline-variant/10 flex flex-col">
+              <div className="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-6">
+                <Bolt size={24} />
+              </div>
+              <h3 className="font-headline text-2xl font-extrabold mb-4 leading-tight">Manual work is eating your capacity and AI feels too risky to touch.</h3>
+              <p className="text-on-surface-variant leading-relaxed">
+                You know there are processes that could run faster. You're just not sure which ones to automate, what to trust, or how to avoid creating new problems while solving old ones. We scope it, build it, and hand it over working.
+              </p>
+            </motion.div>
+
+            {/* Problem 3 */}
+            <motion.div {...fadeIn} className="bg-surface p-8 rounded-2xl border border-outline-variant/10 flex flex-col">
+              <div className="w-12 h-12 bg-primary/5 text-primary rounded-xl flex items-center justify-center mb-6">
+                <MonitorCheck size={24} />
+              </div>
+              <h3 className="font-headline text-2xl font-extrabold mb-4 leading-tight">You want to move quickly on AI but you can't afford to get it wrong.</h3>
+              <p className="text-on-surface-variant leading-relaxed">
+                The risk isn't using AI. The risk is using it without oversight. We build the responsible adoption layer that lets you move fast without the exposure, so when a client, regulator, or board asks what your AI policy is, you have a real answer.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Ongoing AI Delivery & Training */}
+      <section className="py-24 bg-surface">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Ongoing AI Delivery */}
+            <motion.div {...fadeIn} className="bg-surface-container p-8 md:p-12 rounded-2xl border border-outline-variant/10 flex flex-col justify-between">
               <div>
-                <span className="inline-block px-3 py-1 rounded bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-4">Phase 01</span>
-                <h3 className="font-headline text-3xl font-extrabold mb-6">A Clear, Risk-Free Path to Implementation</h3>
-                <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-                  Businesses don't stall because of the wrong tools. They stall because there's no clear plan behind the deployment. We change that with our AIM Framework, a structured approach that gives every AI initiative the right guardrails.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    { icon: <BarChart3 size={20} />, title: "Analyse", text: "We audit your current workflows to pinpoint exactly where AI will save time." },
-                    { icon: <Settings2 size={20} />, title: "Implement", text: "We deploy high-leverage AI systems designed to drive immediate efficiency." },
-                    { icon: <MonitorCheck size={20} />, title: "Monitor", text: "Ongoing oversight to keep your systems secure and performing." }
-                  ].map((item) => (
-                    <li key={item.title} className="flex items-start gap-3">
-                      <div className="text-primary mt-1">{item.icon}</div>
-                      <div><span className="font-bold">{item.title}:</span> {item.text}</div>
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="font-headline text-3xl font-extrabold mb-6 text-on-surface">Need someone to build it with you, month on month?</h3>
+                <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed mb-8">
+                  <p>
+                    Some problems need more than a workshop. They need someone embedded, researching, building, testing, and iterating alongside your team. That's what our delivery retainer is for.
+                  </p>
+                  <p>
+                    Every month, something gets built. Not meetings. Not strategy decks. A working output. Could be an automated workflow, a lead qualification system, a custom AI tool for your team, or a phase of something larger. The scope is agreed before we start.
+                  </p>
+                  <p className="font-bold text-on-surface text-base">
+                    We'll talk through the right tier on the call.
+                  </p>
+                </div>
               </div>
-              <div className="rounded-xl overflow-hidden aspect-video shadow-lg">
-                <img src={DASHBOARD_IMAGE} alt="Dashboard" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
+              <a 
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:shadow-lg transition-all text-center flex items-center justify-center gap-2"
+              >
+                Book a Free 30-Minute Call <ArrowRight size={20} />
+              </a>
             </motion.div>
 
-            {/* Phase 02 */}
-            <motion.div {...fadeIn} className="bg-surface p-8 md:p-12 rounded-2xl border border-outline-variant/10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="order-2 lg:order-1 rounded-xl overflow-hidden aspect-video shadow-lg">
-                <img src={TEAM_IMAGE} alt="Training" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
-              <div className="order-1 lg:order-2">
-                <span className="inline-block px-3 py-1 rounded bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-4">Phase 02</span>
-                <h3 className="font-headline text-3xl font-extrabold mb-6">Turn Your Team Into AI-Power Users</h3>
-                <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-                  AI is only an advantage if your people use it effectively. We build the internal capability your team needs to use AI with confidence, without creating business risk.
-                </p>
-                <div className="bg-surface-container p-6 rounded-lg mb-8 border-l-4 border-primary">
-                  <p className="text-sm font-semibold uppercase text-primary tracking-wider mb-2">Standard Day Rate</p>
-                  <p className="text-3xl font-extrabold">£1,850</p>
+            {/* Training */}
+            <motion.div {...fadeIn} className="bg-surface-container p-8 md:p-12 rounded-2xl border border-outline-variant/10 flex flex-col justify-between relative overflow-hidden">
+              <div>
+                <h3 className="font-headline text-3xl font-extrabold mb-6 text-on-surface">Training for teams of 10 or more</h3>
+                <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed mb-8">
+                  <p>
+                    If you're running a larger organisation and need your people to use AI confidently and responsibly, we run bespoke training built around your workflows, your risk profile, and your team's actual starting point.
+                  </p>
+                  <p>
+                    Not a generic course. Not a half-day of slides. We get into the actual work your people do.
+                  </p>
+                  <p className="font-bold text-on-surface text-base">
+                    Get in touch and we'll scope what makes sense.
+                  </p>
                 </div>
-                <p className="text-sm text-on-surface-variant italic font-medium">
-                  Day rate covers your full team. No per-head pricing. Modules are built around your specific operational needs.
-                </p>
               </div>
+              <a 
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all text-center"
+              >
+                Book a Free 30-Minute Call
+              </a>
             </motion.div>
-
-            {/* Phase 03 & 04 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div {...fadeIn} className="bg-surface p-8 md:p-12 rounded-2xl border border-outline-variant/10 flex flex-col justify-between">
-                <div>
-                  <span className="inline-block px-3 py-1 rounded bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-4">Continuous Value</span>
-                  <h3 className="font-headline text-3xl font-extrabold mb-6">Continuous AI Oversight & Strategic Direction</h3>
-                  <p className="text-on-surface-variant text-lg mb-8">
-                    New tools emerge daily. We stay on top of the market so you don’t have to, ensuring your AI strategy remains profitable and secure.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-center gap-2 text-on-surface-variant">
-                      <CheckCircle2 size={16} className="text-tertiary" /> Packages from £625/month
-                    </li>
-                    <li className="flex items-center gap-2 text-on-surface-variant">
-                      <CheckCircle2 size={16} className="text-tertiary" /> <span className="font-bold text-on-surface">25% Hour Rollover</span>
-                    </li>
-                  </ul>
-                </div>
-                <p className="text-sm text-on-surface-variant mb-4 font-medium">Let's find the right fit for your team.</p>
-                <a 
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all text-center flex items-center justify-center gap-2"
-                >
-                  Explore Monthly Options <ArrowRight size={20} />
-                </a>
-              </motion.div>
-
-              <motion.div {...fadeIn} className="bg-surface p-8 md:p-12 rounded-2xl border border-outline-variant/10 flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute -right-12 -top-12 w-48 h-48 bg-primary/5 rounded-full blur-3xl"></div>
-                <div className="relative z-10">
-                  <span className="inline-block px-3 py-1 rounded bg-primary/5 text-primary text-xs font-bold uppercase tracking-widest mb-4">BUILT FOR YOUR BUSINESS</span>
-                  <h3 className="font-headline text-3xl font-extrabold mb-6">Custom AI Systems Built to Your Exact Workflows</h3>
-                  <p className="text-on-surface-variant text-lg mb-8">
-                    We build AI systems that automate your team's most repetitive tasks, turning manual bottlenecks into instant output.
-                  </p>
-                  <p className="text-sm text-on-surface-variant mb-8 font-medium">Priced to your workflow. Every build is scoped before we quote.</p>
-                </div>
-                <a 
-                  href={BOOKING_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 bg-on-surface text-white font-bold rounded-lg hover:bg-primary transition-all relative z-10 text-center"
-                >
-                  Discuss Your Build
-                </a>
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
@@ -297,25 +285,21 @@ export default function Solutions() {
               </div>
 
               <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-8 text-on-surface leading-tight">
-                Running it yourself? <br className="hidden md:block" />
-                <span className="text-on-surface-variant">We've worked with founders at every stage.</span>
+                Most founders we speak to tried it alone first.
               </h2>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
                   <p>
-                    A lot of the businesses we work with started as one person trying to figure out which AI tools were worth using, and whether they were using them well. No team to delegate to. No budget for a six-month project. Just a founder who needed to move faster without getting it wrong.
+                    They picked a tool, ran a few experiments, got mixed results, and got stuck. Not because they weren't capable. Because AI adoption without a clear strategy is genuinely hard to get right on your own.
                   </p>
                   <p>
-                    If that's where you are, we can still help. The work looks different. More focused, built around what you actually need right now, and the investment reflects that.
+                    Every engagement starts the same way: a 30-minute call to understand where you're stuck and whether there's a real fit.
                   </p>
                 </div>
                 <div className="space-y-6 text-lg text-on-surface-variant leading-relaxed">
                   <p>
-                    Every engagement starts with a conversation. You tell us what's going on. We tell you what would make the most difference. From there we agree a scope that makes sense for your stage, your time, and your budget.
-                  </p>
-                  <p>
-                    No assumption made about what you can or can't spend. Just an honest conversation about whether it's the right fit.
+                    No pitch. Just a straight conversation about the reality of what you're trying to build and how to get there safely.
                   </p>
                   
                   <div className="pt-4">
@@ -325,7 +309,7 @@ export default function Solutions() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-lg bg-gradient-to-r from-primary to-primary-container hover:shadow-xl hover:shadow-primary/20 transition-all group"
                     >
-                      Book a free 30-minute call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                      Book a Free 30-Minute Call <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
@@ -335,8 +319,10 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* Guarantee */}
-      <section className="max-w-5xl mx-auto px-6 md:px-8 py-32">
+
+
+      {/* Guarantee Section Moved Higher */}
+      <section className="max-w-5xl mx-auto px-6 md:px-8 py-12">
         <motion.div 
           {...fadeIn}
           className="bg-[#057a44] text-white p-12 rounded-3xl text-center relative overflow-hidden shadow-2xl shadow-[#057a44]/20"
@@ -346,9 +332,9 @@ export default function Solutions() {
           
           <div className="relative z-10">
             <Award className="w-16 h-16 mx-auto mb-6 text-white" />
-            <h2 className="font-headline text-4xl font-extrabold mb-6">Our "Results-First" Guarantee</h2>
+            <h2 className="font-headline text-4xl font-extrabold mb-6">You only pay if it delivers.</h2>
             <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white/90">
-              For all workshops and advisory sprints, you only pay once you're 100% satisfied with the deliverables. If we don't deliver what we promised, you don't pay.
+              Every workshop comes with a simple commitment. If we don't deliver what we agreed, you don't pay. Full stop. We've worked this way since day one because it's the only arrangement that makes sense when you're asking someone to trust you with their business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -357,15 +343,7 @@ export default function Solutions() {
                 rel="noopener noreferrer"
                 className="bg-white text-[#057a44] px-8 py-4 rounded-lg font-extrabold text-lg shadow-xl hover:bg-surface-container-lowest transition-all active:scale-95"
               >
-                Book Discovery Workshop
-              </a>
-              <a 
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-transparent border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors"
-              >
-                Speak to an Advisor
+                Book a Free 30-Minute Call
               </a>
             </div>
           </div>
@@ -382,36 +360,24 @@ export default function Solutions() {
         <div className="space-y-8">
           {[
             {
-              q: "Do I need a technical team to work with you?",
-              a: "No. Most of our clients don't have one. We work directly with founders and their existing teams. You don't need to understand the technology."
+              q: "How long before I see something actually working?",
+              a: "It depends on what we're building. A contained automation can be live in three to four weeks. A more complex workflow might phase across two to three months. We're honest about timelines from the start. You'll know what month one delivers before you commit to anything."
             },
             {
-              q: "How is the Mini Discovery Sprint different from a full workshop?",
-              a: "The Sprint is a focused 90-minute session. You leave with your top AI opportunities identified and a clear starting point. The Full-Day Workshop builds the full implementation plan so your team can move forward with confidence."
+              q: "What if my team pushes back on using it?",
+              a: "It happens. We build adoption into the process, not as an afterthought. That means involving the right people early, keeping solutions close to existing workflows, and making it easy to use from day one. We don't hand over a tool and disappear."
             },
             {
-              q: "What does \"pay on satisfaction\" actually mean?",
-              a: "If you're not satisfied with the deliverables, you don't pay. No small print. We scope every engagement carefully before we start, and we only take on work we know we can deliver."
+              q: "How is this different from hiring a freelancer or using an agency?",
+              a: "A freelancer builds something and hands it over. You're left owning a system you may not fully understand. An agency charges a project fee and moves on. We stay. Every month we're building, reviewing, and refining alongside you. The knowledge stays in your business, not ours."
             },
             {
-              q: "How quickly will we see results?",
-              a: "Some clients see efficiency gains within the first 30 days. The pace depends on what you're implementing and how ready you or your team is. The Sprint or Workshop gives you a roadmap with honest timelines built in."
+              q: "What happens after the Discovery Workshop? Am I committed to anything?",
+              a: "No. The workshop is a standalone engagement. At the end, you'll have a clear picture of your AI opportunity and a scoped next step. Whether you work with us after that is entirely your call. Most people do. But there's no contract attached to a workshop."
             },
             {
-              q: "We're already using AI tools. Can you still help?",
-              a: "Yes, and this is usually where the real exposure sits. Tools in use with no governance, no clear ownership, and no oversight are a liability. We help you assess what you have, tighten the controls, and build on it properly."
-            },
-            {
-              q: "Do you work with businesses outside of regulated sectors?",
-              a: "Absolutely. Our clients span retail, hospitality, consulting, tech, media, and more. Responsible AI adoption matters in every sector."
-            },
-            {
-              q: "What happens after the workshop?",
-              a: "You get a clear implementation roadmap. Some clients move forward independently. Others bring us in for retained advisory or a custom build. There's no pressure to do either."
-            },
-            {
-              q: "Is this just training, or do you actually implement?",
-              a: "Both. We offer standalone training, but we also design and build AI systems around your workflows. You can start with a Sprint and scale from there, or come to us with a specific build already in mind."
+              q: "Do you work with businesses outside regulated industries?",
+              a: "Yes. We work across professional services, finance, recruitment, marketing, and more. The governance challenges we solve exist in most sectors. If your team is using AI on real work, the questions we answer are relevant."
             }
           ].map((item, idx) => (
             <motion.div 
