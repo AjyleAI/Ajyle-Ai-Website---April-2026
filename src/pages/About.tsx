@@ -12,7 +12,7 @@ import {
   Zap
 } from "lucide-react";
 
-const PORTRAIT_IMAGE = "https://lh3.googleusercontent.com/d/1fws9z-el2YHNk0CdD8opLEfsdrjAzX5F";
+const PORTRAIT_IMAGE = "/ade-shokoya.jpg";
 
 import { BOOKING_URL } from "../constants";
 
@@ -68,9 +68,9 @@ export default function About() {
       {/* Mission */}
       <section className="py-24 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
-          <motion.div {...fadeIn} className="max-w-3xl">
+          <motion.div {...fadeIn} className="max-w-5xl">
             <h2 className="font-headline text-3xl font-bold mb-8">Our Mission</h2>
-            <p className="text-2xl text-on-surface-variant leading-relaxed italic">
+            <p className="text-2xl md:text-3xl text-on-surface-variant leading-relaxed italic">
               The future of business isn't automated. It's <span className="text-[#00d166] font-bold">augmented</span>. We make responsible AI practical for founders, leaders, and the teams they rely on, in every sector where getting it wrong has real consequences.
             </p>
           </motion.div>
@@ -82,7 +82,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <motion.div {...fadeIn} className="mb-16">
             <h2 className="font-headline text-4xl font-bold mb-4">Protected Growth</h2>
-            <p className="text-on-surface-variant max-w-2xl">
+            <p className="text-on-surface-variant max-w-4xl text-lg">
               These are the challenges we hear most from businesses like yours.
             </p>
           </motion.div>
