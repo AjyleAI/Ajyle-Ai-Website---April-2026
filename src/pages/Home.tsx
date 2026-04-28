@@ -12,7 +12,7 @@ import {
 
 const HERO_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuCwn0V3ip-mKLyqCDUE4mxwAVxcqNEVykw2yKO0nW04fZYEWYwApntZ0N7AHc-T5bVnClaH01sWS4B5LSB4b-W5UkY8tAJDCmBLuSW0dBDuSUc-F1EtQntnJYQsH2M0nNOwQ3ul9z3rTDwdbS_1d16W_o_LaaVCsffZD5CXB4ShMXV48Bva-71HazUZsxmahscjilWx5BDzu0aQ8x84aGmp9Dfla9vnNjX8qjKi5q4OlbOee6adjChqle0tOjLcJ2avyT5djfTz";
 const SOLUTION_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuA992aFR_1E9uGm-e7S-bWi05QNRkNnTUaJwNfYuYH1IfK9Zr3Us89Cdg-rbu4cd57AYyFg5SDVZVDbJq4QbTauVW8zIazLkt7Aoj0OklbCHgEWOJtMvJf7YVijgEEpYpgt0Axn-BgfHU82KwcW1WizKc2DfzvqcTkiBAR1zKwBp3KXCurw4W07FwEuM3iy9ue78AxIPf-Q4XH3JOzmBPslSGRoIhxPgNAmKFPBCfB3ocisT0wvy4BNGmGhAdJURWk7NDK6M9z5";
-const FOUNDER_IMAGE = "https://lh3.googleusercontent.com/d/1fws9z-el2YHNk0CdD8opLEfsdrjAzX5F";
+const FOUNDER_IMAGE = "/ade-shokoya.jpg";
 
 import { BOOKING_URL } from "../constants";
 
@@ -48,7 +48,7 @@ export default function Home() {
             <h1 className="font-headline text-5xl md:text-7xl font-extrabold text-white leading-[1.1] tracking-tighter mb-8">
               Protected Growth through <span className="text-primary-container">Responsible AI.</span>
             </h1>
-            <p className="text-xl text-white/70 max-w-lg mb-10 leading-relaxed">
+            <p className="text-xl text-white/70 max-w-4xl mb-10 leading-relaxed">
               For founders and business leaders who want the growth AI promises, without the risks that come with it. Book a free 30-minute call to talk through your next move. No deck. No agenda. Just a straight conversation.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -197,7 +197,7 @@ export default function Home() {
                 <span>The Ajyle Guarantee</span>
               </div>
               <h2 className="font-headline text-3xl font-bold">Risk-Free Collaboration</h2>
-              <p className="text-on-surface-variant mt-2 max-w-lg">
+              <p className="text-on-surface-variant mt-2 max-w-3xl">
                 Every engagement starts with a free consultation. No sales pressure. No commitment. Just a straight conversation to see if what we do matches what you need.
               </p>
             </motion.div>
