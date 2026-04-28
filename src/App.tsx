@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
+import Training from "./pages/Training";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function ScrollToTop() {
@@ -40,6 +41,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/training" element={<Training />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
