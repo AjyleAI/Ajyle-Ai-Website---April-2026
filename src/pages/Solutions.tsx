@@ -17,6 +17,7 @@ const HERO_IMAGE = "https://lh3.googleusercontent.com/d/1pUZaPzclA_FOPUx_d0xty-i
 const DASHBOARD_IMAGE = "https://lh3.googleusercontent.com/aida-public/AB6AXuCIyHijMxDBpjc4KOUWJT_V8lDM6mthmkghgmmsy4Js6ZhCIMcE4B82FUJ7whuKB-TksiQJdXT75iz5bjfIvWmbOZVMB2TbA5wcKatWp14BU45cXlepyst0ZEuaf6zkDgM1amqMj5W2ztG-LlNC0zDe63lnhen8E7hMsMo43Zq_cVzbQrRYZCSwBLxqvpuvEj1qi-40TDK_SyvKb_6u26QO5-jPA-J_9VHrHxxlSp72_4UcBD6TGYRRU7sn5u0YqJlbI8-e1awl";
 const TEAM_IMAGE = "https://lh3.googleusercontent.com/d/15duvFyw7Z7Y9hCJCxQojNzu776E52AfH";
 
+import { Link } from "react-router-dom";
 import { BOOKING_URL } from "../constants";
 
 export default function Solutions() {
@@ -42,9 +43,9 @@ export default function Solutions() {
               FOR SME FOUNDERS & LEADERS
             </span>
             <h1 className="font-headline text-5xl md:text-6xl font-extrabold tracking-tighter text-on-surface mb-6 leading-tight">
-              Your team is already using AI. The question is whether it's working for you — or quietly creating risk.
+              Your team is already using AI. The question is whether it's working for you — or <span className="text-primary-container">quietly creating risk.</span>
             </h1>
-            <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10">
+            <p className="text-xl text-on-surface-variant max-w-5xl leading-relaxed mb-10">
               We work with SME founders and business leaders who want to move fast on AI without the legal, reputational, or operational exposure that comes with getting it wrong. No tools pushed. No jargon. Just a clear plan and someone to build it with you.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -84,7 +85,7 @@ export default function Solutions() {
       {/* Entry Points */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 py-24 pb-12">
         <motion.div {...fadeIn} className="mb-12">
-          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4 text-on-surface">Not sure where to start? Pick the right first step.</h2>
+          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4 text-on-surface">Not sure where to start? <span className="text-primary-container">Pick the right first step.</span></h2>
           <p className="text-on-surface-variant">Low-risk, high-impact ways to find out where AI fits in your business.</p>
         </motion.div>
         
@@ -165,8 +166,8 @@ export default function Solutions() {
       <section className="bg-surface-container-low py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-8">
           <motion.div {...fadeIn} className="text-center mb-20">
-            <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4">Three problems we solve every week</h2>
-            <p className="text-on-surface-variant max-w-2xl mx-auto">Responsible AI adoption built around how your business actually operates.</p>
+            <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4">Three problems we <span className="text-primary-container">solve every week.</span></h2>
+            <p className="text-on-surface-variant max-w-5xl mx-auto">Responsible AI adoption built around how your business actually operates.</p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -213,7 +214,7 @@ export default function Solutions() {
             {/* Ongoing AI Delivery */}
             <motion.div {...fadeIn} className="bg-surface-container p-8 md:p-12 rounded-2xl border border-outline-variant/10 flex flex-col justify-between">
               <div>
-                <h3 className="font-headline text-3xl font-extrabold mb-6 text-on-surface">Need someone to build it with you, month on month?</h3>
+                <h3 className="font-headline text-3xl font-extrabold mb-6 text-on-surface">Need someone to build it with you, <span className="text-primary-container">month on month?</span></h3>
                 <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed mb-8">
                   <p>
                     Some problems need more than a workshop. They need someone embedded, researching, building, testing, and iterating alongside your team. That's what our delivery retainer is for.
@@ -239,7 +240,7 @@ export default function Solutions() {
             {/* Training */}
             <motion.div {...fadeIn} className="bg-surface-container p-8 md:p-12 rounded-2xl border border-outline-variant/10 flex flex-col justify-between relative overflow-hidden">
               <div>
-                <h3 className="font-headline text-3xl font-extrabold mb-6 text-on-surface">Training for teams of 10 or more</h3>
+                <h3 className="font-headline text-3xl font-extrabold mb-6 text-on-surface">Training for teams of <span className="text-primary-container">up to 15 or more.</span></h3>
                 <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed mb-8">
                   <p>
                     If you're running a larger organisation and need your people to use AI confidently and responsibly, we run bespoke training built around your workflows, your risk profile, and your team's actual starting point.
@@ -252,14 +253,12 @@ export default function Solutions() {
                   </p>
                 </div>
               </div>
-              <a 
-                href={BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link 
+                to="/training"
                 className="w-full py-4 border-2 border-primary text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all text-center"
               >
-                Book a Free 30-Minute Call
-              </a>
+                Learn More About Training
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -285,7 +284,7 @@ export default function Solutions() {
               </div>
 
               <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-8 text-on-surface leading-tight">
-                Most founders we speak to tried it alone first.
+                Most founders we speak to <span className="text-primary-container">tried it alone first.</span>
               </h2>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -322,19 +321,19 @@ export default function Solutions() {
 
 
       {/* Guarantee Section Moved Higher */}
-      <section className="max-w-5xl mx-auto px-6 md:px-8 py-12">
+      <section className="max-w-7xl mx-auto px-6 md:px-8 py-12">
         <motion.div 
           {...fadeIn}
-          className="bg-[#057a44] text-white p-12 rounded-3xl text-center relative overflow-hidden shadow-2xl shadow-[#057a44]/20"
+          className="bg-[#057a44] text-white p-12 md:p-16 rounded-3xl text-center relative overflow-hidden shadow-2xl shadow-[#057a44]/20"
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
           
           <div className="relative z-10">
             <Award className="w-16 h-16 mx-auto mb-6 text-white" />
-            <h2 className="font-headline text-4xl font-extrabold mb-6">You only pay if it delivers.</h2>
-            <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto text-white/90">
-              Every workshop comes with a simple commitment. If we don't deliver what we agreed, you don't pay. Full stop. We've worked this way since day one because it's the only arrangement that makes sense when you're asking someone to trust you with their business.
+            <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-6">You only pay if it delivers.</h2>
+            <p className="text-xl md:text-2xl mb-10 opacity-90 max-w-5xl mx-auto text-white/90 leading-relaxed">
+              Every Discovery Workshop comes with a simple commitment. If we don't deliver what we agreed, you don't pay. Full stop. We've worked this way since day one because it's the only arrangement that makes sense when you're asking someone to trust you with their business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -353,7 +352,7 @@ export default function Solutions() {
       {/* FAQ Section */}
       <section className="max-w-4xl mx-auto px-6 md:px-8 py-24 border-t border-outline-variant/10">
         <motion.div {...fadeIn} className="text-center mb-16">
-          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4">Questions your AI investment actually answers</h2>
+          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-4">Questions your AI investment <span className="text-primary-container">actually answers.</span></h2>
           <p className="text-on-surface-variant text-lg">The things business leaders ask us before they book a call. Answered honestly.</p>
         </motion.div>
 
