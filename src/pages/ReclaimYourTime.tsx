@@ -57,15 +57,6 @@ export default function ReclaimYourTime() {
   const currentTask = TASKS[taskIdx];
   const canProceed = currentTask ? taskHours[currentTask.id] !== undefined : true;
 
-  // Connecting copy between task screens. Conversational, no motivational fluff.
-  const taskTransitions = [
-    "Right. Next one.",
-    "Two down. Keep going.",
-    "Halfway. Four more.",
-    "Nearly there. Two left.",
-    "Last one. Then you'll see your number.",
-  ];
-
   // ── Mailchimp submission (DO NOT MODIFY) ───────────────────────────────────
   const handleSubmit = () => {
     if (!email || submitting) return;
@@ -232,9 +223,6 @@ export default function ReclaimYourTime() {
         {screen >= 2 && screen <= 7 && currentTask && (
           <div>
             <StepLabel num={screen} total={7} />
-            {taskIdx > 0 && (
-              <p style={{ fontSize: 13, color: "#2EC4B6", margin: "0 0 20px", fontWeight: 500 }}>{taskTransitions[taskIdx - 1]}</p>
-            )}
             <h2 style={{ fontSize: 22, fontWeight: 700, margin: "0 0 6px" }}>{currentTask.label}</h2>
             <p style={{ fontSize: 15, color: "rgba(255,255,255,0.45)", margin: "0 0 28px" }}>{currentTask.description}</p>
             <p style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", margin: "0 0 16px", fontWeight: 500 }}>
