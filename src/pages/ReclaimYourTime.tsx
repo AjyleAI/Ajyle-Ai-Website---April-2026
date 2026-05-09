@@ -20,9 +20,7 @@ const HOUR_OPTIONS = [
   { label: "10+ hrs",  value: 12 },
 ];
 
-const MC_URL = "https://neesee.us21.list-manage.com/subscribe/post?u=388d2c1b2280a11391c12d1a2&id=588e741926&f_id=00578de6f0";
-const MC_U   = "388d2c1b2280a11391c12d1a2";
-const MC_ID  = "588e741926";
+// Mailchimp subscription handled server-side via /api/subscribe
 
 // taskTransitions kept — not rendered (progress bar handles momentum)
 const taskTransitions = [
@@ -217,47 +215,32 @@ export default function ReclaimYourTime() {
   const currentTask = TASKS[taskIdx];
   const canProceed  = currentTask ? taskHours[currentTask.id] !== undefined : true;
 
-  // ── Mailchimp submission ───────────────────────────────────────────────────
-  const handleSubmit = () => {
+  // ── Mailchimp submission via API (tags supported) ─────────────────────────
+  const handleSubmit = async () => {
     if (!email || submitting) return;
     setSubmitting(true);
 
-    const iframeName = "mc_iframe_" + Date.now();
-    const iframe = document.createElement("iframe");
-    iframe.name = iframeName;
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          firstName,
+          tags: ["audit-lead-magnet"],
+        }),
+      });
 
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = MC_URL;
-    form.target = iframeName;
-    form.style.display = "none";
-
-    const fields: Record<string, string> = {
-      EMAIL: email,
-      tags: "audit-lead-magnet",
-      FNAME: firstName,
-      [`b_${MC_U}_${MC_ID}`]: "",
-    };
-
-    Object.entries(fields).forEach(([name, value]) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = name;
-      input.value = value;
-      form.appendChild(input);
-    });
-
-    document.body.appendChild(form);
-    form.submit();
-
-    setTimeout(() => {
-      try { document.body.removeChild(form); } catch (_) {}
-      try { document.body.removeChild(iframe); } catch (_) {}
+      if (!res.ok) {
+        const err = await res.json() as { error?: string };
+        console.error("Subscribe error:", err?.error);
+      }
+    } catch (err) {
+      console.error("Subscribe exception:", err);
+    } finally {
       setSubmitted(true);
       setSubmitting(false);
-    }, 1500);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
