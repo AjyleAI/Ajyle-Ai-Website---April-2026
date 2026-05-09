@@ -76,6 +76,7 @@ export default function ReclaimYourTime() {
 
     const fields: Record<string, string> = {
       EMAIL: email,
+      tags: "audit-lead-magnet",
       FNAME: firstName,
       [`b_${MC_U}_${MC_ID}`]: "",
     };
