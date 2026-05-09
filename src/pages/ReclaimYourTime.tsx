@@ -428,7 +428,7 @@ export default function ReclaimYourTime() {
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
               <ResultCard label="Hours / week"  value={totalWeekly.toFixed(1)}  suffix="hrs" tier={1} />
-              <ResultCard label="Hours / month" value={totalMonthly.toFixed(0)} suffix="hrs" tier={2} />
+              <ResultCard label="Hours / month" value={totalMonthly.toFixed(1)} suffix="hrs" tier={2} />
             </div>
             <ResultCard label="Annual cost to your business" value={`£${annualCost.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`} tier={3} />
 
@@ -453,7 +453,7 @@ export default function ReclaimYourTime() {
 
             <div style={{ background: "#F4F6FA", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "22px 22px 24px", marginBottom: 24 }}>
               <p style={{ fontSize: 15, color: T1, margin: "0 0 14px", lineHeight: 1.65 }}>
-                You've seen your number. {totalMonthly.toFixed(0)} hours a month on work that doesn't need you.
+                You've seen your number. {totalMonthly.toFixed(1)} hours a month on work that doesn't need you.
               </p>
               <p style={{ fontSize: 14, color: T2, margin: "0 0 14px", lineHeight: 1.65 }}>
                 On the 27th, I'm running a live demo of a real business workflow. Finding a prospect, turning research into content, closing a proposal. Every step handled by AI while the business owner focuses on the work that actually matters.
