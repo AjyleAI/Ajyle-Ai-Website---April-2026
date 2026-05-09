@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Training from "./pages/Training";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ReclaimYourTime from "./pages/ReclaimYourTime";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -35,21 +36,32 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
-        <div className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/solutions" element={<Solutions />} />
-            <Route path="/training" element={<Training />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/home" element={<Home />} /> {/* Placeholder */}
-          </Routes>
-        </div>
-        <Footer />
-      </div>
+      <Routes>
+        {/* Full-screen landing page — no navbar/footer */}
+        <Route path="/reclaimyourtime" element={<ReclaimYourTime />} />
+
+        {/* Main site with navbar and footer */}
+        <Route
+          path="*"
+          element={
+            <div className="min-h-screen flex flex-col">
+              <Navbar />
+              <div className="flex-grow">
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/solutions" element={<Solutions />} />
+                  <Route path="/training" element={<Training />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/home" element={<Home />} />
+                </Routes>
+              </div>
+              <Footer />
+            </div>
+          }
+        />
+      </Routes>
     </Router>
   );
 }
