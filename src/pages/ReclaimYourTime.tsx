@@ -282,7 +282,7 @@ export default function ReclaimYourTime() {
       )}
 
       {/* Back */}
-      {screen > 0 && screen < 9 && (
+      {screen > 0 && (screen < 9 || (screen === 9 && !submitted)) && (
         <button
           onClick={() => transition(screen - 1)}
           style={{ position: "fixed", top: 16, left: 18, background: "none", border: "none", color: T4, fontSize: 13, cursor: "pointer", zIndex: 200, fontFamily: "'Inter', sans-serif", padding: "4px 0", display: "flex", alignItems: "center", gap: 4, transition: "color 0.15s" }}
