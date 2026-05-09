@@ -281,18 +281,24 @@ export default function ReclaimYourTime() {
         </div>
       )}
 
-      {/* Back */}
-      {screen > 0 && (screen < 9 || (screen === 9 && !submitted)) && (
-        <button
-          onClick={() => transition(screen - 1)}
-          style={{ position: "fixed", top: 16, left: 18, background: "none", border: "none", color: T4, fontSize: 13, cursor: "pointer", zIndex: 200, fontFamily: "'Inter', sans-serif", padding: "4px 0", display: "flex", alignItems: "center", gap: 4, transition: "color 0.15s" }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = T2; }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = T4; }}
-        >← Back</button>
-      )}
+
 
       {/* Content */}
       <div style={{ maxWidth: 468, width: "100%", position: "relative", zIndex: 1, opacity: fade ? 1 : 0, transform: fade ? "translateY(0)" : "translateY(10px)", transition: "opacity 0.2s ease, transform 0.2s ease" }}>
+
+        {screen > 0 && screen < 9 && (
+          <button
+            onClick={() => transition(screen - 1)}
+            style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, color: "#555555", fontSize: 13, fontFamily: "'Inter', sans-serif", fontWeight: 500, cursor: "pointer", padding: "8px 14px", marginBottom: 28, transition: "border-color 0.15s, color 0.15s" }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#111111"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,0,0,0.22)"; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#555555"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,0,0,0.10)"; }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            Back
+          </button>
+        )}
 
         {/* ── HOOK ──────────────────────────────────────────────────────── */}
         {screen === 0 && (
@@ -445,13 +451,27 @@ export default function ReclaimYourTime() {
         {/* ── CAPTURE ───────────────────────────────────────────────────── */}
         {screen === 9 && !submitted && (
           <div>
-            <div style={{ textAlign: "center", marginBottom: 24 }}>
-              <h2 style={{ fontSize: 28, fontFamily: "'Manrope', sans-serif", fontWeight: 800, color: T1, margin: "0 0 8px", lineHeight: 1.2, letterSpacing: "-0.022em" }}>
-                Reclaim Your Time
-              </h2>
-              <p style={{ fontSize: 14, color: TEAL, fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
-                Free live session. Tuesday 27 May, 7:30pm BST.
-              </p>
+            <div style={{ display: "flex", alignItems: "center", marginBottom: 24, gap: 8 }}>
+              <button
+                onClick={() => transition(screen - 1)}
+                style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "none", border: "1px solid rgba(0,0,0,0.10)", borderRadius: 8, color: "#555555", fontSize: 13, fontFamily: "'Inter', sans-serif", fontWeight: 500, cursor: "pointer", padding: "8px 14px", flexShrink: 0, transition: "border-color 0.15s, color 0.15s" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#111111"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,0,0,0.22)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLButtonElement).style.color = "#555555"; (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,0,0,0.10)"; }}
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M19 12H5M12 5l-7 7 7 7"/>
+                </svg>
+                Back
+              </button>
+              <div style={{ flex: 1, textAlign: "center" }}>
+                <h2 style={{ fontSize: 22, fontFamily: "'Manrope', sans-serif", fontWeight: 800, color: "#111111", margin: 0, lineHeight: 1.2, letterSpacing: "-0.020em" }}>
+                  Reclaim Your Time
+                </h2>
+                <p style={{ fontSize: 13, color: "#006399", fontWeight: 500, fontFamily: "'Inter', sans-serif", margin: "3px 0 0" }}>
+                  Free live session. Tuesday 27 May, 7:30pm BST.
+                </p>
+              </div>
+              <div style={{ flexShrink: 0, width: 82 }}></div>
             </div>
 
             <div style={{ background: "#F4F6FA", border: "1px solid rgba(0,0,0,0.07)", borderRadius: 14, padding: "22px 22px 24px", marginBottom: 24 }}>
