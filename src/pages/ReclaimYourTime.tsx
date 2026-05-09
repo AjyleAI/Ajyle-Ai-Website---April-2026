@@ -426,10 +426,13 @@ export default function ReclaimYourTime() {
             <p style={{ fontSize: 15, color: T2, margin: "0 0 6px", lineHeight: 1.65 }}>You already knew some of this. Now you can see it.</p>
             <p style={{ fontSize: 15, color: T3, margin: "0 0 32px", lineHeight: 1.65 }}>This is what manual work costs your business every year.</p>
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 10 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 6 }}>
               <ResultCard label="Hours / week"  value={totalWeekly.toFixed(1)}  suffix="hrs" tier={1} />
               <ResultCard label="Hours / month" value={totalMonthly.toFixed(1)} suffix="hrs" tier={2} />
             </div>
+            <p style={{ fontSize: 11, fontFamily: "'Space Mono', monospace", color: T5, textAlign: "right", margin: "0 0 10px", letterSpacing: "0.04em" }}>
+              {totalWeekly.toFixed(1)} hrs/week × 52 ÷ 12
+            </p>
             <ResultCard label="Annual cost to your business" value={`£${annualCost.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`} tier={3} />
 
             <p style={{ fontSize: 14, color: T3, margin: "22px 0 40px", lineHeight: 1.65, fontStyle: "italic" }}>Most of this can be recovered in a weekend.</p>
