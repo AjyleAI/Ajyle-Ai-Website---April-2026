@@ -185,7 +185,7 @@ function BenefitLine({ text }: { text: string }) {
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
-export default function ReclaimYourTime() {
+export default function ReclaimYourTimeBootcamp() {
 
   // ── State (DO NOT MODIFY) ──────────────────────────────────────────────────
   const [screen, setScreen]                 = useState(0);
@@ -424,7 +424,7 @@ export default function ReclaimYourTime() {
             </p>
             <ResultCard label="Annual cost to your business" value={`£${annualCost.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`} tier={3} />
 
-            <p style={{ fontSize: 14, color: T3, margin: "22px 0 40px", lineHeight: 1.65, fontStyle: "italic" }}>You can reclaim most of this back. Here's how to start.</p>
+            <p style={{ fontSize: 14, color: T3, margin: "22px 0 40px", lineHeight: 1.65, fontStyle: "italic" }}>Most of this can be recovered in a weekend.</p>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Btn onClick={() => transition(9)} wide>Show me how →</Btn>
             </div>
@@ -451,7 +451,7 @@ export default function ReclaimYourTime() {
                   Reclaim Your Time
                 </h2>
                 <p style={{ fontSize: 13, color: "#006399", fontWeight: 500, fontFamily: "'Inter', sans-serif", margin: "3px 0 0" }}>
-                  A short email series on winning hours back with AI.
+                  Free live session. Tuesday 27 May, 7:30pm BST.
                 </p>
               </div>
               <div style={{ flexShrink: 0, width: 82 }}></div>
@@ -462,21 +462,21 @@ export default function ReclaimYourTime() {
                 You've seen your number. {totalMonthly.toFixed(1)} hours a month on work that doesn't need you.
               </p>
               <p style={{ fontSize: 14, color: T2, margin: "0 0 14px", lineHeight: 1.65 }}>
-                Over the next few days I'll send you five short emails. One area at a time. Inbox, meetings, proposals, research, and the small setup habits that make AI outputs actually usable.
+                On the 27th, I'm running a live demo of a real business workflow. Finding a prospect, turning research into content, closing a proposal. Every step handled by AI while the business owner focuses on the work that actually matters.
               </p>
               <p style={{ fontSize: 14, color: T2, margin: "0 0 20px", lineHeight: 1.65 }}>
-                No 3,000-word essays. No sales pitch dressed as a tip. Just what to try, and how to know it worked.
+                60 minutes. No slides about "the future of AI." Just a working system you can rebuild for your own business.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <BenefitLine text="Five short emails, one useful thing each" />
-                <BenefitLine text="Real prompts and workflows you can copy" />
-                <BenefitLine text="Reply anytime. I read every one." />
+                <BenefitLine text="A live demo showing 10+ hours of manual work done in under 5 minutes" />
+                <BenefitLine text="The exact tools and setup behind the workflow" />
+                <BenefitLine text="What it takes to set this up in your business" />
               </div>
             </div>
 
             <div style={{ textAlign: "center" }}>
               <p style={{ fontSize: 14, color: T3, margin: "0 0 18px", lineHeight: 1.6 }}>
-                Enter your details below. First email lands in your inbox within minutes.
+                Enter your details below. You'll get the session link and your personalised results by email.
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 16, maxWidth: 360, marginLeft: "auto", marginRight: "auto" }}>
                 <input type="text" placeholder="First name" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="ryt-input" style={inputStyle} />
@@ -484,10 +484,10 @@ export default function ReclaimYourTime() {
               </div>
               <div style={{ display: "flex", justifyContent: "center", marginBottom: 12 }}>
                 <Btn onClick={handleSubmit} disabled={!email || submitting}>
-                  {submitting ? "Sending..." : "Send me the series"}
+                  {submitting ? "Saving your spot..." : "Save my spot"}
                 </Btn>
               </div>
-              <p style={{ fontSize: 12, color: T5 }}>No spam. Unsubscribe in one click.</p>
+              <p style={{ fontSize: 12, color: T5 }}>No spam. Just the session link and your results.</p>
             </div>
           </div>
         )}
@@ -504,9 +504,9 @@ export default function ReclaimYourTime() {
             <h2 style={{ fontSize: 34, fontFamily: "'Manrope', sans-serif", fontWeight: 800, color: T1, margin: "0 0 14px", letterSpacing: "-0.026em" }}>You're in.</h2>
 
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(0,99,153,0.06)", border: "1px solid rgba(0,99,153,0.14)", borderRadius: 999, padding: "8px 18px", marginBottom: 28 }}>
-              <span style={{ fontSize: 12, fontFamily: "'Space Mono', monospace", color: TEAL, letterSpacing: "0.04em" }}>Email one</span>
+              <span style={{ fontSize: 12, fontFamily: "'Space Mono', monospace", color: TEAL, letterSpacing: "0.04em" }}>Tuesday 27 May</span>
               <span style={{ color: T5, fontSize: 10 }}>·</span>
-              <span style={{ fontSize: 12, fontFamily: "'Space Mono', monospace", color: T3, letterSpacing: "0.04em" }}>Landing in your inbox</span>
+              <span style={{ fontSize: 12, fontFamily: "'Space Mono', monospace", color: T3, letterSpacing: "0.04em" }}>7:30pm BST</span>
             </div>
 
             <div style={{ background: "rgba(232,72,85,0.05)", border: "1px solid rgba(232,72,85,0.20)", borderRadius: 14, padding: "28px 24px 24px", marginBottom: 24, boxShadow: "0 8px 36px rgba(232,72,85,0.10)" }}>
@@ -520,10 +520,10 @@ export default function ReclaimYourTime() {
             </div>
 
             <p style={{ fontSize: 14, color: T3, margin: "0 0 12px", lineHeight: 1.7, maxWidth: 340, marginLeft: "auto", marginRight: "auto" }}>
-              Hold that number. Email one starts with the easiest area to reclaim first.
+              Hold that number. On the 27th, you'll see exactly how to take those hours back.
             </p>
             <p style={{ fontSize: 11, fontFamily: "'Space Mono', monospace", color: T5, letterSpacing: "0.06em" }}>
-              Check your inbox. If it doesn't arrive, look in Promotions or spam.
+              Check your inbox for the session link.
             </p>
           </div>
         )}
@@ -532,7 +532,7 @@ export default function ReclaimYourTime() {
 
       {/* Footer */}
       <div style={{ position: "fixed", bottom: 14, left: 0, right: 0, textAlign: "center", fontSize: 11, color: T5, fontFamily: "'Space Mono', monospace", letterSpacing: "0.06em", zIndex: 1 }}>
-        ajyle.ai/reclaimyourtime
+        ajyle.ai/reclaim-your-time-workshop
       </div>
     </div>
   );

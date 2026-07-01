@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Training from "./pages/Training";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ReclaimYourTime from "./pages/ReclaimYourTime";
+import ReclaimYourTimeBootcamp from "./pages/ReclaimYourTimeBootcamp";
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -37,8 +38,9 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <Routes>
-        {/* Full-screen landing page — no navbar/footer */}
+        {/* Full-screen landing pages — no navbar/footer */}
         <Route path="/reclaimyourtime" element={<ReclaimYourTime />} />
+        <Route path="/reclaim-your-time-workshop" element={<ReclaimYourTimeBootcamp />} />
 
         {/* Main site with navbar and footer */}
         <Route
