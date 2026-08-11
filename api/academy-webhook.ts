@@ -4,14 +4,16 @@ import crypto from 'crypto';
 // ============================================================
 // Solopreneurs AI Academy — Stripe → Mailchimp webhook
 // ============================================================
-// Triggered by Stripe on checkout.session.completed.
-// Verifies signature, filters for Academy-priced purchases,
-// then adds subscriber to Mailchimp audience with tags.
+// Triggered by Stripe on invoice.payment_succeeded.
+// Only acts on the FIRST payment of a subscription
+// (billing_reason: 'subscription_create'), not renewals.
+// Filters by Academy price (£69 or £662), verifies Stripe
+// signature, then adds subscriber to Mailchimp with tag.
 //
-// Env vars required (set in Vercel dashboard):
+// Env vars required (set in Vercel):
 //   MAILCHIMP_API_KEY               (already set)
-//   MAILCHIMP_ACADEMY_LIST_ID       (audience ID for "AI Bootcamp 101")
-//   STRIPE_ACADEMY_WEBHOOK_SECRET   (from Stripe when creating webhook)
+//   MAILCHIMP_ACADEMY_LIST_ID       (AI Bootcamp 101 audience ID)
+//   STRIPE_ACADEMY_WEBHOOK_SECRET   (from Stripe webhook page)
 // ============================================================
 
 const MC_API_KEY = process.env.MAILCHIMP_API_KEY!;
@@ -142,29 +144,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: 'Invalid JSON body' });
   }
 
-  if (event.type !== 'checkout.session.completed') {
+  // We only handle invoice.payment_succeeded
+  if (event.type !== 'invoice.payment_succeeded') {
     return res.status(200).json({ received: true, ignored: event.type });
   }
 
-  const session = event.data?.object ?? {};
-  const amount: number = session.amount_total ?? 0;
-  const email: string | undefined =
-    session.customer_details?.email ?? session.customer_email;
-  const fullName: string = session.customer_details?.name ?? '';
+  const invoice = event.data?.object ?? {};
+  const amount: number = invoice.amount_paid ?? 0;
+  const email: string | undefined = invoice.customer_email;
+  const fullName: string = invoice.customer_name ?? '';
+  const billingReason: string = invoice.billing_reason ?? '';
 
+  // Only fire on first subscription payment, not renewals
+  if (billingReason !== 'subscription_create') {
+    console.log(`Ignoring invoice, billing_reason=${billingReason}`);
+    return res.status(200).json({ received: true, ignored: `billing_reason: ${billingReason}` });
+  }
+
+  // Only Academy prices (£69 or £662)
   if (amount !== ACADEMY_MONTHLY_PENCE && amount !== ACADEMY_ANNUAL_PENCE) {
-    console.log(`Ignoring non-Academy purchase, amount=${amount}`);
+    console.log(`Ignoring non-Academy invoice, amount=${amount}`);
     return res.status(200).json({ received: true, ignored: 'non-academy amount' });
   }
 
   if (!email) {
-    console.error('No email in checkout session');
-    return res.status(400).json({ error: 'No email in session' });
+    console.error('No customer_email on invoice');
+    return res.status(400).json({ error: 'No email on invoice' });
   }
 
   const firstName = fullName.split(' ')[0] ?? '';
-
-
 
   const upserted = await mailchimpUpsertMember(email, firstName);
   if (!upserted) {
@@ -176,7 +184,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Failed to tag subscriber in Mailchimp' });
   }
 
-  console.log(`Academy signup: ${email}`);
+  console.log(`Academy signup: ${email} (amount=${amount})`);
   return res.status(200).json({
     success: true,
     email,
