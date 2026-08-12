@@ -7,8 +7,10 @@ import crypto from 'crypto';
 // Triggered by Stripe on invoice.payment_succeeded.
 // Only acts on the FIRST payment of a subscription
 // (billing_reason: 'subscription_create'), not renewals.
-// Filters by Academy price (£69 or £662), verifies Stripe
-// signature, then adds subscriber to Mailchimp with tag.
+// Filters by Academy Price ID (not amount — referral discount
+// codes mean the same plan can be invoiced at more than one
+// amount), verifies Stripe signature, then adds subscriber to
+// Mailchimp with tag.
 //
 // Env vars required (set in Vercel):
 //   MAILCHIMP_API_KEY               (already set)
@@ -22,8 +24,21 @@ const MC_DC = 'us21';
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_ACADEMY_WEBHOOK_SECRET!;
 
 const ACADEMY_TAG = 'Solo Academy';
-const ACADEMY_MONTHLY_PENCE = 6900;
-const ACADEMY_ANNUAL_PENCE = 66200;
+
+// Price IDs, not amounts. Membership.io syncs its own Stripe
+// Price objects per plan; the legacy ones stay here so any
+// in-flight subscription created before the price change still
+// tags correctly. Referral discount codes change amount_paid but
+// never change price.id, which is why we match on this instead.
+const ACADEMY_MONTHLY_PRICE_IDS = [
+  'price_1TtbUYBsDetLDRwC2waL0kAi', // legacy £69/mo
+  'price_1U3XY3BsDetLDRwCsMzWvmiz', // current £79/mo
+];
+const ACADEMY_ANNUAL_PRICE_IDS = [
+  'price_1TtbUZBsDetLDRwCbvCtl6UO', // legacy £662/yr
+  'price_1U3XY3BsDetLDRwCh72SRkHG', // current £758/yr
+];
+const ACADEMY_PRICE_IDS = [...ACADEMY_MONTHLY_PRICE_IDS, ...ACADEMY_ANNUAL_PRICE_IDS];
 
 export const config = {
   api: { bodyParser: false },
@@ -151,6 +166,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const invoice = event.data?.object ?? {};
   const amount: number = invoice.amount_paid ?? 0;
+  const priceId: string | undefined = invoice.lines?.data?.[0]?.price?.id;
   const email: string | undefined = invoice.customer_email;
   const fullName: string = invoice.customer_name ?? '';
   const billingReason: string = invoice.billing_reason ?? '';
@@ -161,10 +177,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(200).json({ received: true, ignored: `billing_reason: ${billingReason}` });
   }
 
-  // Only Academy prices (£69 or £662)
-  if (amount !== ACADEMY_MONTHLY_PENCE && amount !== ACADEMY_ANNUAL_PENCE) {
-    console.log(`Ignoring non-Academy invoice, amount=${amount}`);
-    return res.status(200).json({ received: true, ignored: 'non-academy amount' });
+  // Only Academy prices, matched by Price ID (amount varies with
+  // referral discount codes, so we can't match on amount anymore)
+  if (!priceId || !ACADEMY_PRICE_IDS.includes(priceId)) {
+    console.log(`Ignoring non-Academy invoice, price=${priceId}, amount=${amount}`);
+    return res.status(200).json({ received: true, ignored: 'non-academy price' });
   }
 
   if (!email) {
@@ -184,7 +201,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(500).json({ error: 'Failed to tag subscriber in Mailchimp' });
   }
 
-  console.log(`Academy signup: ${email} (amount=${amount})`);
+  console.log(`Academy signup: ${email} (price=${priceId}, amount=${amount})`);
   return res.status(200).json({
     success: true,
     email,
