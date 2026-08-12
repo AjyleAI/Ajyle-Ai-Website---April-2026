@@ -591,6 +591,33 @@ footer a{color:var(--teal)}
 </footer>
 
 <script>
+// Capture the FirstPromoter referral param (?fpr=) on arrival and carry it
+// across to the registration page. Landing page and registration page live
+// on different domains (ajyle.ai vs solopreneur-ai.membership.io), so the
+// param won't survive the click-through on its own -- FirstPromoter's
+// tracking script on the registration page needs to see it in the URL
+// there. sessionStorage is a fallback in case the visitor browses around
+// (anchor nav, etc.) before clicking through.
+(function(){
+  var REF_PARAM = 'fpr';
+  var params = new URLSearchParams(window.location.search);
+  var ref = params.get(REF_PARAM);
+  if(ref){
+    try{ sessionStorage.setItem('academy_ref', ref); }catch(e){}
+  }else{
+    try{ ref = sessionStorage.getItem('academy_ref'); }catch(e){}
+  }
+  if(ref){
+    document.querySelectorAll('a[href*="solopreneur-ai.membership.io/register"]').forEach(function(a){
+      try{
+        var url = new URL(a.href);
+        url.searchParams.set(REF_PARAM, ref);
+        a.href = url.toString();
+      }catch(e){}
+    });
+  }
+})();
+
 document.querySelectorAll('.faq-item').forEach(item=>{
   item.querySelector('.faq-q').addEventListener('click',()=>{
     item.classList.toggle('open');
