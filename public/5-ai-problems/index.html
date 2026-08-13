@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 AI Problems Every Solopreneur Hits | Free Guide</title>
+<meta name="description" content="Free guide for solopreneurs: 5 AI problems every solopreneur hits, and the 10-minute fix for each one. No jargon. No course.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --navy:#1C2D5C;
+    --teal:#00A6FB;
+    --green:#00C853;
+    --cloud:#F4F8FC;
+    --grey:#8C9AB1;
+    --border:#DDE4EF;
+    --gradient: linear-gradient(90deg, #00A6FB, #00C853);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    font-family:'Open Sans', sans-serif;
+    color:var(--navy);
+    background:var(--cloud);
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.font-display{
+    font-family:'Montserrat', sans-serif;
+    color:var(--navy);
+    margin:0;
+  }
+  p{ margin:0 0 14px 0; }
+  a{ color:inherit; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  /* skip link for accessibility */
+  .skip-link{
+    position:absolute; left:-9999px; top:0; background:#fff; color:var(--navy);
+    padding:10px 16px; z-index:100; border-radius:0 0 8px 0;
+  }
+  .skip-link:focus{ left:0; }
+
+  /* ---------- top mark (no nav, deliberately, this is a single-goal page) ---------- */
+  .topmark{
+    padding:22px 24px 0 24px;
+    max-width:1080px; margin:0 auto;
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.5px;
+    color:var(--navy);
+    text-transform:uppercase;
+  }
+  .topmark span{ color:var(--teal); }
+
+  /* ---------- gradient accent ---------- */
+  .gradient-bar{ height:5px; background:var(--gradient); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    padding:56px 0 64px 0;
+  }
+  .hero .grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:48px;
+    align-items:flex-start;
+  }
+  .hero-copy{ flex:1 1 480px; min-width:280px; }
+  .hero-form-col{ flex:1 1 380px; min-width:280px; max-width:440px; }
+
+  .badge{
+    display:inline-block;
+    background:rgba(0,166,251,0.16);
+    border:1px solid var(--teal);
+    color:#fff;
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:30px;
+    margin-bottom:20px;
+  }
+
+  .hero h1{
+    font-size:clamp(32px, 4.6vw, 50px);
+    font-weight:800;
+    line-height:1.15;
+    letter-spacing:-0.5px;
+    margin-bottom:22px;
+    color:#fff;
+  }
+  .hero h1 .accent{ color:var(--teal); }
+
+  .hero .sub{
+    font-size:clamp(18px, 2.2vw, 21px);
+    font-weight:500;
+    line-height:1.5;
+    color:#EAF0FA;
+    max-width:520px;
+    margin-bottom:0;
+  }
+
+  .trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px 26px;
+    margin-top:34px;
+  }
+  .trust-item{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-family:'Montserrat', sans-serif;
+    font-size:15px;
+    font-weight:700;
+    color:#FFFFFF;
+  }
+  .trust-item svg{ flex-shrink:0; width:19px; height:19px; }
+
+  /* ---------- FORM CARD ---------- */
+  .form-card{
+    background:#fff;
+    border-radius:14px;
+    padding:28px 26px 26px 26px;
+    box-shadow:0 20px 40px rgba(10,20,50,0.28);
+  }
+  .form-card .kicker{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+    margin-bottom:4px;
+  }
+  .form-card .kicker-sub{
+    font-size:13.5px;
+    color:var(--grey);
+    margin-bottom:18px;
+  }
+  .field{ margin-bottom:16px; }
+  .field label{
+    display:block;
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .field input{
+    width:100%;
+    padding:13px 14px;
+    border:1.5px solid var(--border);
+    border-radius:8px;
+    font-family:'Open Sans', sans-serif;
+    font-size:15px;
+    color:var(--navy);
+    background:#F9FBFD;
+  }
+  .field input::placeholder{ color:#A9B4C6; }
+  .field input:focus{
+    outline:none;
+    border-color:var(--teal);
+    background:#fff;
+    box-shadow:0 0 0 3px rgba(0,166,251,0.18);
+  }
+
+  .cta-btn{
+    display:block;
+    width:100%;
+    border:none;
+    cursor:pointer;
+    background:var(--gradient);
+    color:var(--navy);
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:16px;
+    padding:15px 20px;
+    border-radius:9px;
+    margin-top:6px;
+    transition:transform .12s ease, box-shadow .12s ease;
+    min-height:48px;
+  }
+  .cta-btn:hover{ transform:translateY(-1px); box-shadow:0 10px 20px rgba(0,166,251,0.35); }
+  .cta-btn:focus-visible{ outline:3px solid var(--navy); outline-offset:2px; }
+
+  .microcopy{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--grey);
+    margin-top:12px;
+    margin-bottom:0;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:64px 0; }
+  .section-narrow{ max-width:760px; margin:0 auto; text-align:center; }
+
+  .eyebrow{
+    display:inline-block;
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    color:#fff;
+    background:var(--navy);
+    padding:5px 14px;
+    border-radius:20px;
+    margin-bottom:16px;
+  }
+  .eyebrow.on-navy{
+    background:rgba(0,166,251,0.22);
+    border:1px solid var(--teal);
+  }
+
+  h2{
+    font-size:clamp(24px, 3vw, 32px);
+    font-weight:700;
+    line-height:1.25;
+    margin-bottom:18px;
+  }
+
+  .lede{ font-size:17px; color:var(--navy); }
+
+  /* problem section */
+  .problem{ background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+
+  /* whats inside */
+  .benefits-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:32px;
+    text-align:left;
+  }
+  .benefit-card{
+    flex:1 1 460px;
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px 18px 18px 16px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .benefit-card .check{
+    flex-shrink:0;
+    width:26px; height:26px;
+    border-radius:50%;
+    background:var(--gradient);
+    display:flex; align-items:center; justify-content:center;
+    margin-top:2px;
+  }
+  .benefit-card p{ margin:0; font-size:15px; }
+
+  /* from ade */
+  .from-ade{ background:var(--cloud); }
+  .ade-row{
+    display:flex;
+    gap:28px;
+    align-items:center;
+    max-width:760px;
+    margin:0 auto;
+    text-align:left;
+  }
+  .ade-photo{
+    flex-shrink:0;
+    width:96px; height:96px;
+    border-radius:50%;
+    background:var(--gradient);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Montserrat', sans-serif;
+    font-weight:800;
+    font-size:34px;
+    color:var(--navy);
+  }
+  .ade-row p{ font-size:16px; margin-bottom:0; }
+  .ade-row .name{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    color:var(--navy);
+  }
+
+  /* proof */
+  .proof{ background:#fff; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .proof-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+    margin-top:32px;
+  }
+  .proof-card{
+    background:var(--cloud);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:22px 20px;
+    text-align:left;
+  }
+  .proof-card p{ font-size:14.5px; color:var(--navy); margin-bottom:14px; }
+  .proof-card .author{
+    font-family:'Montserrat', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    color:var(--navy);
+  }
+  .proof-card .role{
+    font-size:12.5px;
+    color:var(--grey);
+  }
+
+  /* final cta */
+  .final-cta{
+    background:var(--navy);
+    color:#fff;
+    text-align:center;
+  }
+  .final-cta h2{ color:#fff; }
+  .final-cta .sub{ color:#D3DCEC; max-width:520px; margin:0 auto 28px auto; }
+  .final-form{ max-width:440px; margin:0 auto; text-align:left; }
+
+  footer{
+    padding:32px 24px 40px 24px;
+    text-align:center;
+    font-size:12.5px;
+    color:var(--grey);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media screen and (max-width: 760px){
+    section{ padding:44px 0; }
+    .hero{ padding:36px 0 44px 0; }
+    .benefit-card{ flex-basis:100%; }
+    .proof-grid{ grid-template-columns:1fr; }
+    .ade-row{ flex-direction:column; text-align:center; }
+    .ade-row p{ text-align:center; }
+  }
+
+</style>
+</head>
+<body>
+
+<a href="#guide-form" class="skip-link">Skip to sign-up form</a>
+
+<div class="topmark">The Solopreneurs <span>AI</span> Academy</div>
+<div class="gradient-bar" style="margin-top:14px;"></div>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-label="Guide sign-up">
+    <div class="wrap">
+      <div class="grid">
+
+        <div class="hero-copy">
+          <span class="badge">Free Guide for Solopreneurs</span>
+          <h1>5 AI Problems Every Solopreneur Hits<span class="accent">.</span></h1>
+          <p class="sub">And the 10-minute fix for each one. No jargon. No course. Five fixes you can do today.</p>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#00C853" stroke-width="2"/><path d="M12 7v5l3 3" stroke="#00C853" stroke-width="2" stroke-linecap="round"/></svg>
+              5-minute read
+            </div>
+            <div class="trust-item">
+              <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#00C853" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              No jargon, no course
+            </div>
+            <div class="trust-item">
+              <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="10" rx="2" stroke="#00C853" stroke-width="2"/><path d="M8 10V7a4 4 0 018 0v3" stroke="#00C853" stroke-width="2"/></svg>
+              No spam, ever
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-form-col">
+          <div class="form-card" id="guide-form">
+            <div class="kicker">Get the free guide</div>
+            <div class="kicker-sub">Sent straight to your inbox. Takes 30 seconds.</div>
+
+            <form action="https://neesee.us21.list-manage.com/subscribe/post?u=388d2c1b2280a11391c12d1a2&amp;id=dff331fbfc&amp;f_id=00798de6f0" method="post" target="mc_hidden_iframe" class="mc-guide-form" novalidate>
+              <div class="field">
+                <label for="name">First name</label>
+                <input type="text" id="name" name="FNAME" placeholder="Your first name" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="EMAIL" placeholder="you@business.com" autocomplete="email" required>
+              </div>
+              <input type="hidden" name="tags" value="3019503">
+              <div aria-hidden="true" style="position:absolute; left:-5000px;">
+                <input type="text" name="b_388d2c1b2280a11391c12d1a2_dff331fbfc" tabindex="-1" value="">
+              </div>
+              <button type="submit" name="subscribe" class="cta-btn">Send Me The Guide</button>
+              <p class="microcopy">Free. Unsubscribe any time. No spam, ever.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE PROBLEM ============ -->
+  <section class="problem">
+    <div class="wrap section-narrow">
+      <span class="eyebrow">Sound Familiar?</span>
+      <h2>You open your laptop to get one thing done. Ten minutes later you're comparing AI tools instead of doing the task.</h2>
+      <p class="lede">You're not behind, and you're not doing it wrong. You've just never been shown the actual fixes, because most AI advice is written by people who've never run a one-person business.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S INSIDE ============ -->
+  <section class="inside">
+    <div class="wrap section-narrow">
+      <span class="eyebrow">What's Inside</span>
+      <h2>Five real problems, and the fix for each one.</h2>
+    </div>
+    <div class="wrap">
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <span class="check"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p>Why you keep opening tabs instead of working, and the 30-day fix that ends it.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="check"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p>The one question that replaces "what can AI even do for me".</p>
+        </div>
+        <div class="benefit-card">
+          <span class="check"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p>How to stop AI sounding like everyone else, and get it sounding like you.</p>
+        </div>
+        <div class="benefit-card">
+          <span class="check"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p>The single habit that stops an AI mistake going out under your name.</p>
+        </div>
+        <div class="benefit-card" style="flex:1 1 1100px;">
+          <span class="check"><svg aria-hidden="true" focusable="false" width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <p>How to actually know if AI is saving you time, instead of guessing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FROM ADE ============ -->
+  <section class="from-ade">
+    <div class="wrap">
+      <div class="ade-row">
+        <div class="ade-photo">AS</div>
+        <p><span class="name">I'm Ade, founder of The Solopreneurs AI Academy.</span> I've spent years helping solopreneurs use AI without the overwhelm, and this guide comes from the same five problems I hear every week, from real solopreneurs. Not theory. What's actually going on.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOCIAL PROOF ============ -->
+  <section class="proof">
+    <div class="wrap section-narrow">
+      <span class="eyebrow">Solopreneurs Who've Done This Before You</span>
+      <h2>Real people, real progress.</h2>
+    </div>
+    <div class="wrap">
+      <div class="proof-grid">
+        <div class="proof-card">
+          <p>"In just under 2 years, Ade has enabled me to go from AI novice to now actually teaching others how to utilise AI. I've built multiple websites, created bespoke coaching tools, a social impact platform, and use AI in my business to automate tasks and free up time."</p>
+          <div class="author">Kay</div>
+          <div class="role">Founder, Elevated Living</div>
+        </div>
+        <div class="proof-card">
+          <p>"I have learnt a lot about AI which has catapulted me in front of most of my contemporaries. His courses have definitely enhanced my confidence in using AI."</p>
+          <div class="author">Yve</div>
+          <div class="role">Business Owner, Yve Momentos</div>
+        </div>
+        <div class="proof-card">
+          <p>"In just under 1 year, my introduction to AI has been a life changer. I have built my website from scratch, which I am most proud of."</p>
+          <div class="author">Deborah</div>
+          <div class="role">Business Owner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta">
+    <div class="wrap">
+      <span class="eyebrow on-navy">Ready?</span>
+      <h2>Five problems. Five fixes. One download.</h2>
+      <p class="sub">Enter your details below and it lands straight in your inbox.</p>
+
+      <div class="final-form">
+        <div class="form-card">
+          <form action="https://neesee.us21.list-manage.com/subscribe/post?u=388d2c1b2280a11391c12d1a2&amp;id=dff331fbfc&amp;f_id=00798de6f0" method="post" target="mc_hidden_iframe" class="mc-guide-form" novalidate>
+            <div class="field">
+              <label for="name2">First name</label>
+              <input type="text" id="name2" name="FNAME" placeholder="Your first name" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="email2">Email address</label>
+              <input type="email" id="email2" name="EMAIL" placeholder="you@business.com" autocomplete="email" required>
+            </div>
+            <input type="hidden" name="tags" value="3019503">
+            <div aria-hidden="true" style="position:absolute; left:-5000px;">
+              <input type="text" name="b_388d2c1b2280a11391c12d1a2_dff331fbfc" tabindex="-1" value="">
+            </div>
+            <button type="submit" name="subscribe" class="cta-btn">Send Me The Guide</button>
+            <p class="microcopy">Free. Unsubscribe any time. No spam, ever.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Mailchimp submits into this hidden iframe so the visitor never leaves this
+     page or lands on a raw Mailchimp response. On successful submit we send
+     them on to our own success page instead. -->
+<iframe name="mc_hidden_iframe" id="mc_hidden_iframe" style="display:none;" title="form submission"></iframe>
+<script>
+  document.querySelectorAll('.mc-guide-form').forEach(function(form){
+    form.addEventListener('submit', function(){
+      // Let native HTML5 validation (required / type=email) block invalid
+      // submits first. If we get here, the fields are valid and the
+      // submit is proceeding into the hidden iframe, so move on to the
+      // success page. The short delay just gives the POST a moment to fire
+      // before we navigate away.
+      setTimeout(function(){
+        window.location.href = 'success.html';
+      }, 400);
+    });
+  });
+</script>
+
+<footer>
+  No spam, ever. Just the guide, straight to your inbox.<br>
+  &copy; 2026 The Solopreneurs AI Academy, built by Ajyle AI.
+</footer>
+
+</body>
+</html>

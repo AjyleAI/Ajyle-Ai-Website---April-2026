@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api/|academy).*)",
+      "source": "/((?!api/|academy|5-ai-problems).*)",
       "destination": "/index.html"
     }
   ]
