@@ -42,7 +42,7 @@ export default function App() {
         {/* Full-screen landing pages — no navbar/footer */}
         <Route path="/reclaimyourtime" element={<ReclaimYourTime />} />
         <Route path="/reclaim-your-time-workshop" element={<ReclaimYourTimeBootcamp />} />
-        <Route path="/reclaim-your-time-webinar" element={<ReclaimYourTimeWebinar />} />
+        <Route path="/hidden-cost" element={<ReclaimYourTimeWebinar />} />
 
         {/* Main site with navbar and footer */}
         <Route

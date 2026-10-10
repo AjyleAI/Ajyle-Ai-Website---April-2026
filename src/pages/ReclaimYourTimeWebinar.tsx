@@ -246,7 +246,7 @@ export default function ReclaimYourTimeWebinar() {
                   </linearGradient>
                 </defs>
               </svg>
-              <span style={{ fontSize: 10, fontFamily: "'Space Mono', monospace", textTransform: "uppercase", letterSpacing: "0.22em", color: TEAL }}>Ajyle AI</span>
+              <span style={{ fontSize: 10, fontFamily: "'Space Mono', monospace", textTransform: "uppercase", letterSpacing: "0.22em", color: TEAL }}>Ajyle AI · Hidden Cost Audit</span>
             </div>
 
             <h1 className="ryt-hook-2" style={{ fontSize: "clamp(28px, 7vw, 44px)", fontFamily: "'Manrope', sans-serif", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-0.025em", color: T1, margin: "0 0 20px", textWrap: "balance" as React.CSSProperties["textWrap"] }}>
@@ -449,7 +449,7 @@ export default function ReclaimYourTimeWebinar() {
 
       {/* Footer */}
       <div style={{ marginTop: 36, textAlign: "center", fontSize: 11, color: T5, fontFamily: "'Space Mono', monospace", letterSpacing: "0.06em" }}>
-        ajyle.ai/reclaim-your-time-webinar
+        ajyle.ai/hidden-cost
       </div>
     </div>
   );
