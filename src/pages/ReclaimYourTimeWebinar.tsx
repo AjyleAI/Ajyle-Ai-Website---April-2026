@@ -423,7 +423,7 @@ export default function ReclaimYourTimeWebinar() {
             <h1 tabIndex={-1} style={{ ...h1Base, fontSize: 20, fontWeight: 600, lineHeight: 1.5, color: T2, margin: "0 0 6px", fontFamily: "'Inter', sans-serif" }}>
               You already knew some of this. Now you can see it.
             </h1>
-            <p style={{ fontSize: 18, color: T3, margin: "0 0 28px", lineHeight: 1.55 }}>This is what manual work costs your business every year.</p>
+            <p style={{ fontSize: 18, color: T3, margin: "0 0 28px", lineHeight: 1.55 }}>This is what manual work is costing you personally every year.</p>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 10, marginBottom: 8 }}>
               <ResultCard label="Hours / week"  value={totalWeekly.toFixed(1)}  suffix="hrs" tier={1} />
@@ -432,7 +432,7 @@ export default function ReclaimYourTimeWebinar() {
             <p style={{ fontSize: 13, fontFamily: "'Space Mono', monospace", color: T4, textAlign: "right", margin: "0 0 12px", letterSpacing: "0.02em" }}>
               {totalWeekly.toFixed(1)} hrs/week × 52 ÷ 12
             </p>
-            <ResultCard label="Annual cost to your business" value={`£${annualCost.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`} tier={3} />
+            <ResultCard label="Annual cost to you" value={`£${annualCost.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`} tier={3} />
 
             <section aria-labelledby="ryt-webinar-h" style={{ background: "#F4F6FA", border: "1px solid rgba(0,0,0,0.10)", borderRadius: 14, padding: "24px 20px 24px", margin: "28px 0 0", textAlign: "left" }}>
               <p style={{ fontSize: 13, fontFamily: "'Space Mono', monospace", textTransform: "uppercase", letterSpacing: "0.1em", color: TEAL, marginBottom: 12, fontWeight: 700, lineHeight: 1.4 }}>
