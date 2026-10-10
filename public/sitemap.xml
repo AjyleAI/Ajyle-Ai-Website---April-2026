@@ -26,6 +26,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.ajyle.ai/hidden-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ajyle.ai/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
