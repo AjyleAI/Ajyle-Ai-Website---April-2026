@@ -424,7 +424,7 @@ export default function ReclaimYourTime() {
             </p>
             <ResultCard label="Annual cost to your business" value={`£${annualCost.toLocaleString("en-GB", { maximumFractionDigits: 0 })}`} tier={3} />
 
-            <p style={{ fontSize: 14, color: T3, margin: "22px 0 40px", lineHeight: 1.65, fontStyle: "italic" }}>You can reclaim most of this back. Here's how to start.</p>
+            <p style={{ fontSize: 14, color: T3, margin: "22px 0 40px", lineHeight: 1.65, fontStyle: "italic" }}>Here's where to start winning some of it back.</p>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <Btn onClick={() => transition(9)} wide>Show me how →</Btn>
             </div>
@@ -470,7 +470,6 @@ export default function ReclaimYourTime() {
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 <BenefitLine text="Five short emails, one useful thing each" />
                 <BenefitLine text="Real prompts and workflows you can copy" />
-                <BenefitLine text="Reply anytime. I read every one." />
               </div>
             </div>
 
