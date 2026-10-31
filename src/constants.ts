@@ -1,1 +1,1 @@
-export const BOOKING_URL = "https://scheduler.zoom.us/ajyleai/free-ai-consultation-call";
+export const BOOKING_URL = "/book";

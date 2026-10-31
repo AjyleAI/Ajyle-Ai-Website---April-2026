@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/book",
+      "destination": "https://scheduler.zoom.us/ajyleai/letstalk",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|academy|5-ai-problems|hidden-cost).*)",
