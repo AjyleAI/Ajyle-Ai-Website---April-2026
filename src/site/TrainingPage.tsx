@@ -20,7 +20,8 @@ const steps = [
   ["A check-in 30 days later", "We check in at the end of the session and again 30 days later, with attendees and with you. You see what's sticking and what's still getting in the way."],
 ];
 
-const formats = [
+// Items line up row by row with the matching line in the other card (null leaves a row empty).
+const formats: { name: string; length: string; fit: string; items: (string | null)[] }[] = [
   {
     name: "Half-day workshop",
     length: "3 to 4 hours",
@@ -40,9 +41,10 @@ const formats = [
     fit: "Right for mixed-experience teams, or when you need to cover more than one department.",
     items: [
       "Agreed skills plus an agreed outcome to work towards, for example an automated workflow or a rebuilt process",
-      "Everything in the half-day, with more time to practise and apply",
       "Deeper coverage of AI policy, data boundaries and responsible use by role",
+      "Everything in the half-day, with more time to practise and apply",
       "Breakout exercises across different roles",
+      null,
       "Measurement at the end of the session and 30 days later",
     ],
   },
@@ -163,22 +165,24 @@ export default function TrainingPage() {
         <div className={wrap}>
           <Eyebrow>Session formats</Eyebrow>
           <H2 id="fmt-h">Half-day or full-day.</H2>
-          <div className="mt-9 grid gap-6 md:grid-cols-2">
+          <div className="mt-9 grid gap-6 md:grid-cols-2 md:gap-y-0">
             {formats.map((f) => (
-              <article key={f.name} className="rounded border border-line-strong bg-white p-7">
-                <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <article key={f.name} className="grid rounded border border-line-strong bg-white px-7 py-4 md:row-span-8 md:grid-rows-subgrid">
+                <div className="flex flex-wrap items-baseline justify-between gap-3 pt-3">
                   <h3 className="font-display text-[22px] font-semibold">{f.name}</h3>
                   <span className="font-display text-sm font-semibold text-slate">{f.length}</span>
                 </div>
-                <p className="mt-2 text-slate">{f.fit}</p>
-                <ul className="mt-5 space-y-3">
-                  {f.items.map((it) => (
-                    <li key={it} className="flex gap-3 text-[15px] leading-[1.6]">
+                <p className="mt-2 pb-3 text-slate">{f.fit}</p>
+                {f.items.map((it, i) =>
+                  it ? (
+                    <p key={it} className="flex gap-3 border-t border-line py-3 text-[15px] leading-[1.6]">
                       <span className="mt-0.5"><Tick size="sm" /></span>
                       <span>{it}</span>
-                    </li>
-                  ))}
-                </ul>
+                    </p>
+                  ) : (
+                    <span key={`empty-${i}`} aria-hidden="true" className="hidden border-t border-line md:block" />
+                  )
+                )}
               </article>
             ))}
           </div>
@@ -194,12 +198,12 @@ export default function TrainingPage() {
           <Eyebrow>Pricing</Eyebrow>
           <H2 id="price-h">What it costs.</H2>
           <Lead>Every hands-on session includes tailoring before the day, delivery, and follow-up measurement.</Lead>
-          <div className="mt-9 grid gap-6 md:grid-cols-3">
+          <div className="mt-9 grid gap-6 md:grid-cols-3 md:gap-y-0">
             {prices.map((p) => (
-              <article key={p.name} className="flex flex-col border-t-2 border-navy pt-5">
+              <article key={p.name} className="flex flex-col border-t-2 border-navy pt-5 md:row-span-5 md:grid md:grid-rows-subgrid md:gap-0">
                 <h3 className="font-display text-lg font-semibold">{p.name}</h3>
                 <p className="mt-1 font-display text-[28px] font-semibold tracking-[-0.02em]">{p.price}{p.price.startsWith("From") && <span className="text-base font-medium text-slate"> + VAT</span>}</p>
-                {p.who && <p className="text-[15px] text-slate">{p.who}</p>}
+                {p.who ? <p className="text-[15px] text-slate">{p.who}</p> : <span aria-hidden="true" />}
                 <ul className="mt-4 space-y-2.5">
                   {p.items.map((it) => (
                     <li key={it} className="flex gap-3 text-[15px] leading-[1.6]">
@@ -208,9 +212,9 @@ export default function TrainingPage() {
                     </li>
                   ))}
                 </ul>
-                {p.price === "Priced to scope" && (
+                {p.price === "Priced to scope" ? (
                   <div className="mt-3"><TextLink to="/lets-talk">Talk to us about your team</TextLink></div>
-                )}
+                ) : <span aria-hidden="true" />}
               </article>
             ))}
           </div>

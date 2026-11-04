@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { BookButton, Eyebrow, H2, Lead, Page, TextLink, Tick, section, wrap } from "./ui";
 import { HeroRing, NotYet, Principles, Start } from "./sections";
 
-type Stage = { n: number; name: string; intro: string[]; happens: string[]; get: string[]; note?: string; extra?: boolean };
+type Stage = { n: number; name: string; intro: string[]; happens: string[]; get: (string | null)[]; note?: string; extra?: boolean };
 
 const STAGES: Stage[] = [
   {
@@ -23,6 +23,7 @@ const STAGES: Stage[] = [
       "Today's numbers for that process: time, cost, errors and rework",
       "A picture of the AI already in use, and a policy for it",
       "A named owner, plus a named owner for the people side",
+      null,
       "A decision on how to proceed: use a tool you already have, buy one, build one, or fix the process without AI",
     ],
     note: "Fixing it without AI is a real outcome. We'll say so when it's the right one.",
@@ -38,7 +39,7 @@ const STAGES: Stage[] = [
       "At least one person running it didn't volunteer. If it works for them, the evidence means something.",
       "The numbers that decide each step are agreed before the step starts.",
     ],
-    get: ["A working change, tested on your real work by your people", "A written record of every go or no-go decision, and the reason for it"],
+    get: [null, null, "A working change, tested on your real work by your people", null, "A written record of every go or no-go decision, and the reason for it"],
   },
   {
     n: 3,
@@ -53,7 +54,7 @@ const STAGES: Stage[] = [
       "Drift (performance slipping over time) and any new risk are reviewed as part of the evidence.",
       "The decision is made openly against the numbers, so nobody has to make it personal.",
     ],
-    get: ["An honest answer to “did this do what we wanted?”", "A clear decision, with the evidence behind it"],
+    get: ["An honest answer to “did this do what we wanted?”", null, null, "A clear decision, with the evidence behind it"],
   },
   {
     n: 4,
@@ -65,7 +66,7 @@ const STAGES: Stage[] = [
       "Your team learns to run PACE themselves for the next process.",
       "Ongoing monitoring for drift and new risk is set up, owned by named people in your team.",
     ],
-    get: ["The change working across the business, beyond the pilot", "People who are confident using it", "Monitoring of live use that your team owns", "The ability to run the next process yourselves"],
+    get: ["The change working across the business, beyond the pilot", "People who are confident using it", "The ability to run the next process yourselves", "Monitoring of live use that your team owns"],
     extra: true,
   },
 ];
@@ -135,32 +136,50 @@ export default function PacePage() {
                     {s.intro.map((p) => <p key={p}>{p}</p>)}
                   </div>
                 </div>
-                <div className="grid gap-8 md:grid-cols-2">
-                  <div>
-                    <h4 className="font-display text-sm font-semibold text-slate">What happens</h4>
-                    <ul className="mt-3 space-y-3">
-                      {s.happens.map((h) => (
-                        <li key={h} className="border-t border-line pt-3 text-[15px] leading-[1.6]">{h}</li>
-                      ))}
-                    </ul>
+                <div>
+                  {/* Desktop: one row per step, so each result sits level with the step that produces it */}
+                  <div className="hidden md:block">
+                    <div className="grid grid-cols-2 gap-8 pb-3">
+                      <h4 className="font-display text-sm font-semibold text-slate">What happens</h4>
+                      <h4 className="font-display text-sm font-semibold text-slate">What you get</h4>
+                    </div>
+                    {s.happens.map((h, i) => (
+                      <div key={h} className="grid grid-cols-2 gap-8 border-t border-line py-3 text-[15px] leading-[1.6]">
+                        <p>{h}</p>
+                        {s.get[i] ? (
+                          <p className="flex gap-3"><span className="mt-0.5"><Tick size="sm" /></span><span>{s.get[i]}</span></p>
+                        ) : <span aria-hidden="true" />}
+                      </div>
+                    ))}
                   </div>
-                  <div>
-                    <h4 className="font-display text-sm font-semibold text-slate">What you get</h4>
-                    <ul className="mt-3 space-y-3">
-                      {s.get.map((g) => (
-                        <li key={g} className="flex gap-3 border-t border-line pt-3 text-[15px] leading-[1.6]">
-                          <span className="mt-0.5"><Tick size="sm" /></span>
-                          <span>{g}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {s.note && <p className="mt-5 border-l-2 border-teal pl-4 text-[15px] font-semibold">{s.note}</p>}
-                    {s.extra && (
-                      <p className="mt-5 text-[15px] text-slate">
-                        Training your team is part of Embed. <TextLink to="/training">How we train teams</TextLink>
-                      </p>
-                    )}
+                  {/* Mobile: the two lists stacked */}
+                  <div className="space-y-8 md:hidden">
+                    <div>
+                      <h4 className="font-display text-sm font-semibold text-slate">What happens</h4>
+                      <ul className="mt-3 space-y-3">
+                        {s.happens.map((h) => (
+                          <li key={h} className="border-t border-line pt-3 text-[15px] leading-[1.6]">{h}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-display text-sm font-semibold text-slate">What you get</h4>
+                      <ul className="mt-3 space-y-3">
+                        {s.get.filter((g): g is string => !!g).map((g) => (
+                          <li key={g} className="flex gap-3 border-t border-line pt-3 text-[15px] leading-[1.6]">
+                            <span className="mt-0.5"><Tick size="sm" /></span>
+                            <span>{g}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
+                  {s.note && <p className="mt-5 border-l-2 border-teal pl-4 text-[15px] font-semibold md:ml-[calc(50%+16px)]">{s.note}</p>}
+                  {s.extra && (
+                    <p className="mt-5 text-[15px] text-slate md:ml-[calc(50%+16px)]">
+                      Training your team is part of Embed. <TextLink to="/training">How we train teams</TextLink>
+                    </p>
+                  )}
                 </div>
               </div>
             </article>
