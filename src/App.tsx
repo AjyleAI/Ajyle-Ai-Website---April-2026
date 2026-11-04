@@ -3,14 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Solutions from "./pages/Solutions";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { useEffect, type ReactNode } from "react";
+import { SiteNav, SiteFooter } from "./site/layout";
+import HomePage from "./site/HomePage";
+import PacePage from "./site/PacePage";
+import AboutPage from "./site/AboutPage";
+import LetsTalkPage from "./site/LetsTalkPage";
 import Training from "./pages/Training";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ReclaimYourTime from "./pages/ReclaimYourTime";
@@ -34,12 +33,19 @@ function ScrollToTop() {
   return null;
 }
 
+function Titled({ title, children }: { title: string; children: ReactNode }) {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+  return <>{children}</>;
+}
+
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
       <Routes>
-        {/* Full-screen landing pages — no navbar/footer */}
+        {/* Full-screen campaign pages: no navbar/footer */}
         <Route path="/reclaimyourtime" element={<ReclaimYourTime />} />
         <Route path="/reclaim-your-time-workshop" element={<ReclaimYourTimeBootcamp />} />
         <Route path="/hidden-cost" element={<ReclaimYourTimeWebinar />} />
@@ -48,20 +54,24 @@ export default function App() {
         <Route
           path="*"
           element={
-            <div className="min-h-screen flex flex-col">
-              <Navbar />
+            <div className="flex min-h-screen flex-col bg-white">
+              <SiteNav />
               <div className="flex-grow">
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/solutions" element={<Solutions />} />
-                  <Route path="/training" element={<Training />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/home" element={<Home />} />
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/pace" element={<PacePage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/lets-talk" element={<LetsTalkPage />} />
+                  <Route path="/training" element={<Titled title="AI training for teams | Ajyle AI"><div className="pt-6"><Training /></div></Titled>} />
+                  <Route path="/privacy-policy" element={<Titled title="Privacy policy | Ajyle AI"><PrivacyPolicy /></Titled>} />
+                  {/* Old addresses */}
+                  <Route path="/home" element={<Navigate to="/" replace />} />
+                  <Route path="/solutions" element={<Navigate to="/pace" replace />} />
+                  <Route path="/contact" element={<Navigate to="/lets-talk" replace />} />
+                  <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
               </div>
-              <Footer />
+              <SiteFooter />
             </div>
           }
         />

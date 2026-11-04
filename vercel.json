@@ -4,11 +4,26 @@
       "source": "/book",
       "destination": "https://scheduler.zoom.us/ajyleai/letstalk",
       "permanent": false
+    },
+    {
+      "source": "/solutions",
+      "destination": "/pace",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/lets-talk",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|academy|5-ai-problems|hidden-cost).*)",
+      "source": "/((?!api/|academy|5-ai-problems|hidden-cost|pace|about|lets-talk).*)",
       "destination": "/index.html"
     }
   ]

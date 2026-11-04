@@ -23,6 +23,39 @@ const PAGES = [
     noscript:
       "The Hidden Cost Audit needs JavaScript to calculate your number. Please turn it on, or visit ajyle.ai to get in touch.",
   },
+  {
+    route: "pace",
+    title: "How PACE works | Ajyle AI",
+    description:
+      "PACE brings AI into your business one process at a time: Prepare, Act, Check, Embed. Guardrails first, and numbers to show it worked.",
+    ogTitle: "How PACE works: one process at a time, with the guardrails set first",
+    image: `${ORIGIN}/og-image.png`,
+    imageAlt: "Ajyle AI. AI you can stand behind.",
+    noscript: "This page needs JavaScript. Please turn it on, or visit ajyle.ai/lets-talk to get in touch.",
+    siteFonts: true,
+  },
+  {
+    route: "about",
+    title: "About Ajyle AI | Ade Shokoya",
+    description:
+      "Ajyle AI is led by Ade Shokoya, who has spent over 20 years in change management. Since 2024, all of that work has been on AI.",
+    ogTitle: "About Ajyle AI: you know your business, we bring what's worked elsewhere",
+    image: `${ORIGIN}/og-image.png`,
+    imageAlt: "Ajyle AI. AI you can stand behind.",
+    noscript: "This page needs JavaScript. Please turn it on, or visit ajyle.ai/lets-talk to get in touch.",
+    siteFonts: true,
+  },
+  {
+    route: "lets-talk",
+    title: "Let's talk | Ajyle AI",
+    description:
+      "Book a free 30-minute call, or send a message. Tell us the problem in your own words and get a straight answer on whether we can help.",
+    ogTitle: "Let's talk: book a free 30-minute call with Ajyle AI",
+    image: `${ORIGIN}/og-image.png`,
+    imageAlt: "Ajyle AI. AI you can stand behind.",
+    noscript: "This page needs JavaScript. Please turn it on to book a call or send a message.",
+    siteFonts: true,
+  },
 ];
 
 const html = readFileSync(join("dist", "index.html"), "utf8");
@@ -64,16 +97,11 @@ for (const p of PAGES) {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="${esc(p.imageAlt)}" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="${url}" />
-    <meta name="twitter:title" content="${esc(p.ogTitle)}" />
-    <meta name="twitter:description" content="${esc(p.description)}" />
-    <meta name="twitter:image" content="${p.image}" />
-    <meta name="twitter:image:alt" content="${esc(p.imageAlt)}" />
+${p.siteFonts ? "" : `
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="${FONT_URL}" data-ryt-font="1" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="${FONT_URL}" /></noscript>
+    <noscript><link rel="stylesheet" href="${FONT_URL}" /></noscript>`}
     <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
   `;
   out = out.replace("</head>", `${head}</head>`);
