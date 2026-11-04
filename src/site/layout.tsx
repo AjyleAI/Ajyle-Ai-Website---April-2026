@@ -7,7 +7,9 @@ const LOGO_URL = "/logo.svg";
 
 const links = [
   { name: "How PACE works", to: "/pace" },
+  { name: "AI Training for Teams", to: "/training" },
   { name: "About", to: "/about" },
+  { name: "Let's talk", to: "/lets-talk" },
 ];
 
 export function SiteNav() {
@@ -27,7 +29,7 @@ export function SiteNav() {
           <img src={LOGO_URL} alt="Ajyle AI Logo" className="h-10 w-auto object-contain" />
         </Link>
 
-        <nav className="hidden items-center gap-9 md:flex" aria-label="Main">
+        <nav className="hidden items-center gap-7 lg:flex xl:gap-8" aria-label="Main">
           {links.map((l) => (
             <NavLink key={l.to} to={l.to} className={linkCls}>
               {l.name}
@@ -37,22 +39,24 @@ export function SiteNav() {
             href={TRUSTPILOT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center gap-2 font-sans-brand text-sm font-semibold text-slate no-underline hover:text-navy"
+            className="hidden min-h-[44px] items-center gap-2 font-sans-brand text-sm font-semibold text-slate no-underline hover:text-navy xl:inline-flex"
           >
             <span aria-hidden="true" className="inline-grid h-4 w-4 place-items-center bg-[#00B67A] text-[11px] text-white">★</span>
             Reviews on Trustpilot
           </a>
-          <Link
-            to="/lets-talk"
-            className="inline-flex min-h-[44px] items-center rounded border-[1.5px] border-navy px-[18px] font-display text-[15px] font-semibold text-navy no-underline transition-colors hover:bg-navy hover:text-white"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center rounded bg-green px-5 font-display text-[15px] font-semibold text-navy no-underline transition-colors hover:bg-green-dark"
           >
-            Let's talk
-          </Link>
+            Book a free call
+          </a>
         </nav>
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center text-navy md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center text-navy lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen(!open)}
@@ -64,7 +68,7 @@ export function SiteNav() {
       </div>
 
       {open && (
-        <div className="border-t border-line bg-white md:hidden">
+        <div className="border-t border-line bg-white lg:hidden">
           <div className={`${wrap} flex flex-col py-4`}>
             {links.map((l) => (
               <NavLink key={l.to} to={l.to} className={linkCls}>
@@ -74,12 +78,14 @@ export function SiteNav() {
             <a href={TRUSTPILOT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center font-display text-[15px] font-medium text-navy no-underline">
               Reviews on Trustpilot
             </a>
-            <Link
-              to="/lets-talk"
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-3 inline-flex min-h-[48px] items-center justify-center rounded bg-green font-display text-base font-semibold text-navy no-underline"
             >
-              Let's talk
-            </Link>
+              Book a free call
+            </a>
           </div>
         </div>
       )}
@@ -103,7 +109,7 @@ export function SiteFooter() {
           <ul className="space-y-0.5">
             <li><Link className={a} to="/pace">How PACE works</Link></li>
             <li><Link className={a} to="/about">About</Link></li>
-            <li><Link className={a} to="/training">Training for teams</Link></li>
+            <li><Link className={a} to="/training">AI Training for Teams</Link></li>
             <li><Link className={a} to="/lets-talk">Let's talk</Link></li>
           </ul>
         </div>
