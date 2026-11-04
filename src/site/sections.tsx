@@ -204,13 +204,13 @@ export function NotYet() {
   return (
     <section className={`relative bg-navy text-white ${section}`} aria-labelledby="ny-h">
       <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-teal to-green" aria-hidden="true" />
-      <div className={`${wrap} grid items-end gap-8 lg:grid-cols-2 lg:gap-16`}>
+      <div className={`${wrap} grid items-center gap-8 lg:grid-cols-2 lg:gap-16`}>
         <p className="font-display text-[clamp(72px,11vw,152px)] font-light leading-[.9] tracking-[-0.05em]" aria-hidden="true">
           Not yet.
         </p>
         <div>
           <h2 id="ny-h" className="font-display text-[clamp(26px,2.6vw,32px)] font-semibold leading-[1.2] tracking-[-0.02em]">
-            We'll tell you if it's too soon.
+            We'll tell you if it's too soon for AI.
           </h2>
           <p className="mt-4 max-w-[42ch] text-xl leading-[1.55] text-[#DCE3F0]">
             Sometimes the basics need sorting first, like clean data or a clear owner. If so, we'll say so before you spend money on AI, and show you what to fix.
