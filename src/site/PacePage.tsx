@@ -23,8 +23,8 @@ const STAGES: Stage[] = [
       "Today's numbers for that process: time, cost, errors and rework",
       "A picture of the AI already in use, and a policy for it",
       "A named owner, plus a named owner for the people side",
-      null,
       "A decision on how to proceed: use a tool you already have, buy one, build one, or fix the process without AI",
+      "The full running cost, and who'll look after it, before you commit",
     ],
     note: "Fixing it without AI is a real outcome. We'll say so when it's the right one.",
   },
@@ -39,7 +39,13 @@ const STAGES: Stage[] = [
       "At least one person running it didn't volunteer. If it works for them, the evidence means something.",
       "The numbers that decide each step are agreed before the step starts.",
     ],
-    get: [null, null, "A working change, tested on your real work by your people", null, "A written record of every go or no-go decision, and the reason for it"],
+    get: [
+      "A change tested safely before it touches real work",
+      "A side-by-side comparison of its output with your team's",
+      "A working change, tested on your real work by your people",
+      "Evidence it works for people who didn't choose it",
+      "A written record of every go or no-go decision, and the reason for it",
+    ],
   },
   {
     n: 3,
@@ -54,7 +60,12 @@ const STAGES: Stage[] = [
       "Drift (performance slipping over time) and any new risk are reviewed as part of the evidence.",
       "The decision is made openly against the numbers, so nobody has to make it personal.",
     ],
-    get: ["An honest answer to “did this do what we wanted?”", null, null, "A clear decision, with the evidence behind it"],
+    get: [
+      "An honest answer to “did this do what we wanted?”",
+      "Confirmation it's being used, and that decisions about people stay fair and safe",
+      "A clear view of any drift or new risk, before rollout",
+      "A clear decision, with the evidence behind it",
+    ],
   },
   {
     n: 4,

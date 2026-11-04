@@ -44,7 +44,7 @@ const formats: { name: string; length: string; fit: string; items: (string | nul
       "Deeper coverage of AI policy, data boundaries and responsible use by role",
       "Everything in the half-day, with more time to practise and apply",
       "Breakout exercises across different roles",
-      null,
+      "Responsible use and governance included as standard",
       "Measurement at the end of the session and 30 days later",
     ],
   },
