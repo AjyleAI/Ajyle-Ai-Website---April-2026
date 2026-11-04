@@ -49,9 +49,9 @@ const formats = [
 ];
 
 const prices = [
-  { name: "Small group", price: "From £1,400", who: "Up to 10 people, hands-on", items: ["Agreed outcomes before the day", "Tailored to your industry and tool stack", "Half-day, in person", "Before and after survey", "30-day follow-up with attendees and you"] },
-  { name: "Standard group", price: "From £2,000", who: "11 to 20 people, hands-on", items: ["Everything in the small group option", "Right for larger or mixed-experience teams"] },
-  { name: "Large groups and bespoke", price: "Priced to scope", who: "Up to several hundred people", items: ["Hands-on sessions run across several groups", "Information-led briefings and talks for large audiences", "Formats shaped around your programme and your people", "Tell us what you need and we'll scope it with you"] },
+  { name: "Half day", price: "From £1,200", who: "Up to 10 people, online or in person. About £120 a head for a team of 10.", items: ["Agreed outcomes before the day", "Tailored to your industry and tool stack", "Laptops open, working on real tasks", "Before and after survey", "30-day follow-up with attendees and you"] },
+  { name: "Full day", price: "From £2,000", who: "Up to 10 people, online or in person", items: ["Everything in the half day", "More time to practise and apply", "Deeper coverage of AI policy, data boundaries and responsible use by role"] },
+  { name: "Bigger teams and fully bespoke", price: "Priced to scope", who: "From 11 people to several hundred", items: ["Hands-on sessions run across several groups", "Information-led briefings and talks for large audiences", "Sessions built around your own use cases, with custom exercises and materials", "Tell us what you need and we'll scope it with you"] },
 ];
 
 // Existing approved testimonials, kept word for word.
@@ -66,11 +66,11 @@ const faqs = [
   ["How is this different from an off-the-shelf AI course?", "An off-the-shelf course is built to be delivered to anyone. Before your session, we learn your industry, your tools, your AI policy and the workflows your team uses. The session is shaped around that."],
   ["What do attendees do during the session?", "They use AI on real tasks, on the tools your team already has. By the end, each person knows how to use those tools, when to reach for them, and what data is safe to work with."],
   ["How does the 30-day check-in work?", "We send a short survey to attendees and to you. We ask what's changed: which tools people use, what's saving time and what still isn't clicking. You get a summary of the results."],
-  ["Is this right for a small team?", "Yes. Hands-on sessions run for up to 10 people from £1,400, and 11 to 20 from £2,000. A team of three gets the same tailoring as a team of ten, at the same price."],
+  ["Is this right for a small team?", "Yes. Half-day sessions for up to 10 people start from £1,200 + VAT, online or in person. A team of three gets the same tailoring as a team of ten, at the same price."],
   ["Can you train a much larger group?", "Yes. Some sessions are for several hundred people. Larger groups can have hands-on sessions run across several groups, or an information-led briefing. Get in touch and we'll scope it with you."],
   ["Can we book sessions for different departments?", "Yes. Some organisations run a session for one team first, then bring us back for others. The free call is the place to work out what makes sense."],
   ["How far ahead do I need to book?", "We usually need two to three weeks to shape your session properly. If you have a sooner date in mind, get in touch and we'll tell you what's possible."],
-  ["Do you work with businesses outside London?", "Yes. We run in-person sessions across the UK. Travel outside London may cost extra, and we'll tell you exactly what before you commit."],
+  ["Do you work with businesses outside London?", "Yes. We run sessions online wherever you are, and in person across the UK. For in-person sessions outside London, travel is billed at cost, and we'll tell you exactly what before you commit."],
   ["How do I make the case for this internally?", "After the session you'll have before and after survey data, plus the 30-day summary. That gives you something concrete to take to your leadership team. We can talk through how to frame it on the free call."],
 ];
 
@@ -78,7 +78,7 @@ export default function TrainingPage() {
   return (
     <Page
       title="AI training for teams | Ajyle AI"
-      description="Half-day or full-day AI workshops shaped around your team's tools, workflows and AI policy, with a check-in 30 days later. From £1,400."
+      description="Half-day or full-day AI workshops shaped around your team's tools, workflows and AI policy, with a check-in 30 days later. From £1,200 + VAT, online or in person."
     >
       {/* Hero */}
       <section className="py-14 lg:py-[72px]" aria-labelledby="h1">
@@ -93,7 +93,7 @@ export default function TrainingPage() {
             </p>
             <div className="mt-8 flex animate-rise flex-wrap items-center gap-6 [animation-delay:.36s]">
               <BookButton>Book a free call</BookButton>
-              <p className="max-w-[24ch] text-[15px] text-slate">The call is free. Half-day sessions from £1,400.</p>
+              <p className="max-w-[24ch] text-[15px] text-slate">The call is free. Half-day sessions from £1,200 + VAT, online or in person.</p>
             </div>
           </div>
           <figure className="animate-rise [animation-delay:.3s]">
@@ -183,7 +183,7 @@ export default function TrainingPage() {
             ))}
           </div>
           <p className="mt-6 max-w-[70ch] text-[15px] text-slate">
-            All sessions are in person. Attendees need laptops and access to the tools they use for work. We confirm the content with you before the day.
+            Sessions run online or in person, at the same price. Attendees need laptops and access to the tools they use for work. We confirm the content with you before the day.
           </p>
         </div>
       </section>
@@ -198,7 +198,7 @@ export default function TrainingPage() {
             {prices.map((p) => (
               <article key={p.name} className="flex flex-col border-t-2 border-navy pt-5">
                 <h3 className="font-display text-lg font-semibold">{p.name}</h3>
-                <p className="mt-1 font-display text-[28px] font-semibold tracking-[-0.02em]">{p.price}</p>
+                <p className="mt-1 font-display text-[28px] font-semibold tracking-[-0.02em]">{p.price}{p.price.startsWith("From") && <span className="text-base font-medium text-slate"> + VAT</span>}</p>
                 {p.who && <p className="text-[15px] text-slate">{p.who}</p>}
                 <ul className="mt-4 space-y-2.5">
                   {p.items.map((it) => (
@@ -209,13 +209,13 @@ export default function TrainingPage() {
                   ))}
                 </ul>
                 {p.price === "Priced to scope" && (
-                  <div className="mt-3"><TextLink to="/lets-talk">Talk to us about a larger group</TextLink></div>
+                  <div className="mt-3"><TextLink to="/lets-talk">Talk to us about your team</TextLink></div>
                 )}
               </article>
             ))}
           </div>
           <p className="mt-8 max-w-[70ch] text-[15px] text-slate">
-            <b className="font-semibold text-navy">Full-day upgrade:</b> extend any session to a full day for more depth and practice. All prices exclude VAT. Travel outside London may cost extra. Every booking starts with a free call, and you'll get a straight answer on cost before you commit.
+            Online and in person cost the same. For in-person sessions outside London, travel is billed at cost. All prices exclude VAT. Every booking starts with a free call, and you'll get a straight answer on cost before you commit.
           </p>
           <div className="mt-8"><BookButton>Book a free call</BookButton></div>
         </div>
