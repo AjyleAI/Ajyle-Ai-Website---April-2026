@@ -111,7 +111,7 @@ export default function PacePage() {
             <H2 id="for-h">For businesses where getting AI wrong has real consequences.</H2>
           </div>
           <div className="self-end text-xl leading-[1.55] text-slate">
-            <p>You hold customer records. You make decisions about applicants, clients or staff. And some of your work, a client or regulator might one day ask to see.</p>
+            <p>You hold customer records. You make decisions about applicants, clients or staff. And a client or regulator might one day ask to see how some of that work was done.</p>
             <p className="mt-4 font-semibold text-navy">Your sector matters less than what's at stake.</p>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function PacePage() {
       <section className={`bg-cloud ${section} scroll-mt-16`} id="full" aria-labelledby="full-h">
         <div className={wrap}>
           <div className="max-w-[760px]">
-            <Eyebrow>Two sizes</Eyebrow>
+            <Eyebrow>For larger organisations</Eyebrow>
             <H2 id="full-h">One framework, two sizes.</H2>
             <Lead>The stages, principles and checks are the same in both. Only the depth changes.</Lead>
           </div>

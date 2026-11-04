@@ -43,7 +43,7 @@ const Arrow = () => (
   </svg>
 );
 
-export function BookButton({ children = "Let's talk" }: { children?: ReactNode }) {
+export function BookButton({ children = "Book a free call" }: { children?: ReactNode }) {
   return (
     <a
       href={BOOKING_URL}

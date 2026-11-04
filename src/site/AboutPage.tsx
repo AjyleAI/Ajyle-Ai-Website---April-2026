@@ -2,17 +2,17 @@ import { Eyebrow, H2, Page, TextLink, section, wrap } from "./ui";
 import { NotYet, Reviews, Start } from "./sections";
 
 const promises = [
-  ["You see the reasoning.", "No black-box AI. You'll always know what a tool does, and why."],
+  ["You see the reasoning.", "No black-box AI. We'll always explain what a tool does, and why."],
   ["A person stays in charge.", "AI supports judgement. It never replaces it."],
-  ["Measures come first.", "We agree what good looks like before any work starts."],
-  ["It fits your business.", "There's no one-size-fits-all. What we build fits how you actually work."],
+  ["Measures come first.", "We agree what good looks like before anything is built."],
+  ["It fits your business.", "There's no one-size-fits-all. What we put in place fits how you actually work."],
 ];
 
 export default function AboutPage() {
   return (
     <Page
       title="About Ajyle AI | Ade Shokoya"
-      description="Ajyle AI is led by Ade Shokoya, who has spent over 20 years in change management. Since 2024, all of that work has been on AI."
+      description="Ajyle AI is led by Ade Shokoya, who has spent over 20 years in change management. Since 2024, all his work has been on AI."
     >
       <section className="py-14 lg:py-[72px]" aria-labelledby="h1">
         <div className={wrap}>
@@ -30,10 +30,10 @@ export default function AboutPage() {
         <div className={`${wrap} grid items-center gap-10 md:grid-cols-[4fr_8fr] md:gap-16`}>
           <img src="/ade-portrait.jpg" alt="Portrait of Ade Shokoya, founder of Ajyle AI" width={720} height={900} className="aspect-[4/5] w-full max-w-[300px] rounded object-cover object-[50%_25%] md:max-w-none" />
           <div>
-            <Eyebrow>Who you'll work with</Eyebrow>
+            <Eyebrow>Who leads the work</Eyebrow>
             <H2 id="ade-h">Ade Shokoya</H2>
             <div className="mt-4 max-w-[46ch] space-y-4 text-slate">
-              <p>Ade has spent over 20 years in change management and digital transformation. Since 2024, all of that work has been on AI.</p>
+              <p>Ade has spent over 20 years in change management and digital transformation. Since 2024, all his work has been on AI.</p>
               <p>Today he works with founder-led businesses getting ready for AI. He also works inside large transformation programmes, on data ownership and accountability.</p>
               <p>He's seen what makes change stick, and what makes it fade once the project ends. PACE is built on that.</p>
             </div>
@@ -47,9 +47,6 @@ export default function AboutPage() {
           <div>
             <Eyebrow>What you can count on</Eyebrow>
             <H2 id="count-h">How we work with you.</H2>
-            <p className="mt-7 max-w-[24ch] font-display text-2xl font-medium leading-[1.45] tracking-[-0.01em]">
-              We bring the experience. You know your business. We work it out together, inside your constraints.
-            </p>
           </div>
           <ul>
             {promises.map(([b, s]) => (

@@ -55,8 +55,8 @@ export function HeroRing() {
 
 /* ---------- Home: who it's for ---------- */
 const situations = [
-  ["Customer records are going into AI tools.", "Your team's already using them to save time. You'd like to know which tools, and what's been shared."],
-  ["AI could help with decisions about people.", "Applicants, clients, staff. Before it touches those decisions, you need to know it's fair."],
+  ["Your team may already be saving time with AI tools.", "You'd like to know which ones, and what customer information has gone into them."],
+  ["AI could help with decisions about people.", "Applicants, clients, staff. Before it touches those decisions, you want to be sure it's fair."],
   ["Someone may ask how a decision was made.", "A client or a regulator, one day. You want the answer written down already."],
 ];
 
@@ -85,7 +85,7 @@ export function WhoFor() {
 const stages = [
   { name: "Prepare", text: "Turn “we want AI” into one process. Measure what it costs you today, name an owner and agree the guardrails.", rp: "Guardrails agreed before anything is built." },
   { name: "Act", text: "Try the change on real work, with your people, in small steps. Nothing reaches a customer until it's earned it.", rp: "Every go or no-go decision is written down." },
-  { name: "Check", text: "Compare the results with the numbers from the start. Then decide on the evidence: roll it out, adjust, or stop.", rp: "The numbers make the call, so nobody has to make it personal." },
+  { name: "Check", text: "Compare the results with the numbers from the start. Then decide on the evidence: roll it out, adjust, or stop.", rp: "The decision is made against the numbers, so nobody has to make it personal." },
   { name: "Embed", text: "Roll it out team by team until it's how the work gets done. Then your team can run the next one without us.", rp: "" },
 ];
 
@@ -213,7 +213,7 @@ export function NotYet() {
             We'll tell you if it's too soon.
           </h2>
           <p className="mt-4 max-w-[42ch] text-xl leading-[1.55] text-[#DCE3F0]">
-            Sometimes the basics need sorting first, like clean data or a clear owner. If so, we'll say it before you spend money on AI, and show you what to fix.
+            Sometimes the basics need sorting first, like clean data or a clear owner. If so, we'll say so before you spend money on AI, and show you what to fix.
           </p>
           <p className="mt-3 max-w-[42ch] text-xl leading-[1.55] text-[#DCE3F0]">
             And if a process can be fixed without AI at all, we'll tell you that too.
@@ -267,9 +267,9 @@ export function Founder() {
         <div className="grid items-center gap-10 md:grid-cols-[4fr_8fr] md:gap-16">
           <img src="/ade-portrait.jpg" alt="Portrait of Ade Shokoya, founder of Ajyle AI" width={720} height={900} loading="lazy" className="aspect-[4/5] w-full max-w-[300px] rounded object-cover object-[50%_25%] md:max-w-none" />
           <div>
-            <Eyebrow>Who you'll work with</Eyebrow>
+            <Eyebrow>Who leads the work</Eyebrow>
             <H2 id="f-h">Ade Shokoya</H2>
-            <p className="mt-4 max-w-[44ch] text-slate">Ade has spent over 20 years helping organisations change how they work. Since 2024, all of that work has been on AI.</p>
+            <p className="mt-4 max-w-[44ch] text-slate">Ade has spent over 20 years helping organisations change how they work. Since 2024, all his work has been on AI.</p>
             <p className="mt-4 max-w-[44ch] text-slate">He works alongside your team, in plain English, on the processes you actually run.</p>
             <TextLink to="/about">More about Ade</TextLink>
           </div>
@@ -297,7 +297,7 @@ export function Start() {
           <span className="absolute top-3.5 bottom-3.5 left-[11px] w-0.5 bg-gradient-to-b from-teal to-green" aria-hidden="true" />
           {[
             { k: "First", h: "A free 30-minute call", p: "Free", t: "We listen, ask a few questions and give you an honest answer on whether we can help." },
-            { k: "Then, if it fits", h: "A Discovery Workshop", p: WORKSHOP_PRICE, t: "Together we pick the first process and agree what good looks like. You only pay if you're satisfied." },
+            { k: "Then, if it fits", h: "A Discovery Workshop", p: WORKSHOP_PRICE, t: "Together we pick the first process and agree what good looks like." },
           ].map((s, i) => (
             <li key={s.h} className={`relative ${i === 0 ? "pb-7" : ""}`}>
               <span className="absolute top-1 -left-11 h-6 w-6 rounded-full border-[2.5px] border-navy bg-white" aria-hidden="true" />
@@ -320,7 +320,7 @@ export function FullBand() {
     <section className="border-b border-line bg-white py-10" aria-label="For larger organisations">
       <div className={`${wrap} flex flex-wrap items-center justify-between gap-6`}>
         <p className="max-w-[70ch]">
-          <b className="font-display font-semibold">Larger organisation?</b> PACE Full uses the same stages, run through your existing risk and change committees.
+          <b className="font-display font-semibold">Larger organisation?</b> PACE Full uses the same stages, run through your existing risk or change committees.
         </p>
         <TextLink to="/pace#full">PACE for larger organisations</TextLink>
       </div>

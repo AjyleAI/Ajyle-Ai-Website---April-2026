@@ -77,7 +77,7 @@ export default function LetsTalkPage() {
               <h3 className="mt-1.5 mb-2 flex flex-wrap justify-between gap-4 font-display text-[22px] font-semibold">
                 A Discovery Workshop <span className="text-lg">{WORKSHOP_PRICE}</span>
               </h3>
-              <p className="text-slate">Together we pick the first process and agree what good looks like. You only pay if you're satisfied.</p>
+              <p className="text-slate">Together we pick the first process and agree what good looks like.</p>
             </div>
           </div>
         </div>

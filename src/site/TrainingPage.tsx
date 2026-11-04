@@ -2,15 +2,15 @@ import { Link } from "react-router-dom";
 import { BookButton, Eyebrow, H2, Lead, Page, TextLink, Tick, section, wrap } from "./ui";
 
 const wins = [
-  ["Lead generation that doesn't drain your team", "Outreach emails, LinkedIn messages and follow-ups, drafted and personalised in a fraction of the time."],
-  ["Client proposals, done faster", "Brief the AI properly and a first draft is ready before the meeting starts."],
+  ["Lead generation that doesn't drain your team", "Outreach emails, LinkedIn messages and follow-ups, drafted and personalised faster, with your team checking each one before it goes."],
+  ["Client proposals, done faster", "Brief the AI properly and a first draft can be ready before the meeting starts."],
   ["Admin off your plate", "Meeting notes, summaries, internal updates and routine emails. Tasks that ate afternoons get done faster."],
-  ["Your numbers, making sense", "Sales figures, spreadsheets and pipeline reports. Ask the question in plain English and get a clear read."],
+  ["Your numbers, making sense", "Sales figures, spreadsheets and pipeline reports. Ask the question in plain English and get a first read you can check."],
 ];
 
 const gaps = [
   ["No tailoring", "The same session goes to a law firm, a manufacturer and a marketing agency. Your team spends the day filtering out what doesn't apply."],
-  ["No measurement", "Nobody checks whether anything changed. No baseline, no follow-up, no data. You're left hoping it worked."],
+  ["No measurement", "If nobody measures where people started or follows up afterwards, there's no way to know whether anything changed."],
   ["No change in how people work", "Confidence goes up in the room. Back at the office, people go back to how they worked before."],
 ];
 
@@ -26,7 +26,7 @@ const formats = [
     length: "3 to 4 hours",
     fit: "Right if your team is new to structured AI use, or you want a focused starting point.",
     items: [
-      "Agreed AI skills, for example prompts that work, fewer hallucinations, and knowing when not to use AI",
+      "Agreed AI skills, for example writing prompts that work, spotting made-up answers, and knowing when not to use AI",
       "Shaped around your tool stack and AI policy",
       "Laptops open, working on real tasks throughout",
       "How to use AI, when to use it, and what data is safe",
@@ -39,7 +39,7 @@ const formats = [
     length: "6 to 7 hours",
     fit: "Right for mixed-experience teams, or when you need to cover more than one department.",
     items: [
-      "Agreed skills plus an agreed outcome, for example an automated workflow or a rebuilt process your team now runs",
+      "Agreed skills plus an agreed outcome to work towards, for example an automated workflow or a rebuilt process",
       "Everything in the half-day, with more time to practise and apply",
       "Deeper coverage of AI policy, data boundaries and responsible use by role",
       "Breakout exercises across different roles",
@@ -62,11 +62,11 @@ const quotes = [
 ];
 
 const faqs = [
-  ["What if my team has never used AI before?", "That's fine. We find out where your team is before we design the session. If experience is mixed, we design it to work for both ends. Nobody gets left behind and nobody gets bored."],
+  ["What if my team has never used AI before?", "That's fine. We find out where your team is before we design the session. If experience is mixed, we design it to work for both ends. The aim is that newcomers keep up and experienced users still learn something new."],
   ["How is this different from an off-the-shelf AI course?", "An off-the-shelf course is built to be delivered to anyone. Before your session, we learn your industry, your tools, your AI policy and the workflows your team uses. The session is shaped around that."],
   ["What do attendees do during the session?", "They use AI on real tasks, on the tools your team already has. By the end, each person knows how to use those tools, when to reach for them, and what data is safe to work with."],
   ["How does the 30-day check-in work?", "We send a short survey to attendees and to you. We ask what's changed: which tools people use, what's saving time and what still isn't clicking. You get a summary of the results."],
-  ["Is this right for a small team?", "Yes. Hands-on sessions run for up to 10 people from £1,400, and 11 to 20 from £2,000. A smaller team still gets a fully tailored session at the same price."],
+  ["Is this right for a small team?", "Yes. Hands-on sessions run for up to 10 people from £1,400, and 11 to 20 from £2,000. A team of three gets the same tailoring as a team of ten, at the same price."],
   ["Can you train a much larger group?", "Yes. Some sessions are for several hundred people. Larger groups can have hands-on sessions run across several groups, or an information-led briefing. Get in touch and we'll scope it with you."],
   ["Can we book sessions for different departments?", "Yes. Some organisations run a session for one team first, then bring us back for others. The free call is the place to work out what makes sense."],
   ["How far ahead do I need to book?", "We usually need two to three weeks to shape your session properly. If you have a sooner date in mind, get in touch and we'll tell you what's possible."],
@@ -124,7 +124,7 @@ export default function TrainingPage() {
         <div className={`${wrap} grid gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
           <div>
             <Eyebrow>Why courses don't stick</Eyebrow>
-            <H2 id="gap-h">You book it. People feel good. Two weeks later, nothing's changed.</H2>
+            <H2 id="gap-h">It felt like a great day. So why has nothing changed?</H2>
             <Lead>When training is generic and nobody follows up, people nod along and go back to how they worked before.</Lead>
           </div>
           <ol className="self-end">
@@ -245,9 +245,9 @@ export default function TrainingPage() {
             <Eyebrow>Who runs the workshop</Eyebrow>
             <H2 id="ade-h">Ade Shokoya</H2>
             <div className="mt-4 max-w-[46ch] space-y-4 text-slate">
-              <p>Ade has spent over 20 years in digital transformation, change management and Agile transformation. Since 2024, all of that work has been on AI.</p>
-              <p>He's seen AI put in front of people with no training and no guidance on what they should and shouldn't do with it. That's the gap these workshops close.</p>
-              <p>He doesn't arrive with a deck. He arrives with questions, and the session is designed from what he learns.</p>
+              <p>Ade has spent over 20 years in digital transformation, change management and Agile. Since 2024, all his work has been on AI.</p>
+              <p>He's seen AI put in front of people with no training and no guidance on what they should and shouldn't do with it. These workshops are built to close that gap.</p>
+              <p>He arrives with questions rather than a deck, and designs the session from what he learns.</p>
             </div>
             <dl className="mt-8 grid max-w-[520px] grid-cols-2 gap-6 border-t border-line pt-6">
               <div className="flex flex-col">
@@ -270,7 +270,7 @@ export default function TrainingPage() {
           <div>
             <Eyebrow light>Shaped around you</Eyebrow>
             <h2 id="fit-h" className="mt-3 font-display text-[clamp(30px,3.6vw,46px)] font-semibold leading-[1.12] tracking-[-0.025em]">
-              Training that fits what you need, when you need it.
+              Start with one team. Bring in others when they're ready.
             </h2>
           </div>
           <div>
