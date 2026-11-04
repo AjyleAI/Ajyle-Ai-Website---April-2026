@@ -56,6 +56,17 @@ const PAGES = [
     noscript: "This page needs JavaScript. Please turn it on to book a call or send a message.",
     siteFonts: true,
   },
+  {
+    route: "training",
+    title: "AI training for teams | Ajyle AI",
+    description:
+      "Half-day or full-day AI workshops shaped around your team's tools, workflows and AI policy, with a check-in 30 days later. From £1,400.",
+    ogTitle: "AI training for teams, shaped around your tools and AI policy",
+    image: `${ORIGIN}/og-image.png`,
+    imageAlt: "Ajyle AI. AI you can stand behind.",
+    noscript: "This page needs JavaScript. Please turn it on, or visit ajyle.ai/lets-talk to get in touch.",
+    siteFonts: true,
+  },
 ];
 
 const html = readFileSync(join("dist", "index.html"), "utf8");

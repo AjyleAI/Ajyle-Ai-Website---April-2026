@@ -10,7 +10,7 @@ import HomePage from "./site/HomePage";
 import PacePage from "./site/PacePage";
 import AboutPage from "./site/AboutPage";
 import LetsTalkPage from "./site/LetsTalkPage";
-import Training from "./pages/Training";
+import TrainingPage from "./site/TrainingPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ReclaimYourTime from "./pages/ReclaimYourTime";
 import ReclaimYourTimeBootcamp from "./pages/ReclaimYourTimeBootcamp";
@@ -62,7 +62,7 @@ export default function App() {
                   <Route path="/pace" element={<PacePage />} />
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/lets-talk" element={<LetsTalkPage />} />
-                  <Route path="/training" element={<Titled title="AI training for teams | Ajyle AI"><div className="pt-6"><Training /></div></Titled>} />
+                  <Route path="/training" element={<TrainingPage />} />
                   <Route path="/privacy-policy" element={<Titled title="Privacy policy | Ajyle AI"><PrivacyPolicy /></Titled>} />
                   {/* Old addresses */}
                   <Route path="/home" element={<Navigate to="/" replace />} />
