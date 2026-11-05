@@ -6,7 +6,6 @@ import { TRUSTPILOT_URL, wrap } from "./ui";
 const LOGO_URL = "/logo.svg";
 
 const links = [
-  { name: "Home", to: "/" },
   { name: "How PACE works", to: "/pace" },
   { name: "AI Training for Teams", to: "/training" },
   { name: "About", to: "/about" },
