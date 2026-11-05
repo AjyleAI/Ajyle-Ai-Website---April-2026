@@ -14,6 +14,8 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g
 const PAGES = [
   {
     route: "hidden-cost",
+    // Same calculator as /reclaimyourtime, which is the main version for search
+    canonical: `${ORIGIN}/reclaimyourtime`,
     title: "Hidden Cost Audit | What Is Manual Work Costing You?",
     description:
       "Answer six quick questions and get one number: what manual work costs your business each year. Free, private, and nothing is saved.",
@@ -131,7 +133,7 @@ for (const p of PAGES) {
     <meta name="title" content="${esc(p.title)}" />
     <meta name="description" content="${esc(p.description)}" />
     <meta name="robots" content="${p.robots || "index, follow, max-image-preview:large"}" />
-    <link rel="canonical" href="${url}" />
+    <link rel="canonical" href="${p.canonical || url}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${url}" />
     <meta property="og:site_name" content="Ajyle AI" />
