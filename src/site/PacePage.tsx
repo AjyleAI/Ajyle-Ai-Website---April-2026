@@ -207,7 +207,7 @@ export default function PacePage() {
             <H2 id="full-h">One framework, two sizes.</H2>
             <Lead>The stages, principles and checks are the same in both. Only the depth changes.</Lead>
           </div>
-          <div className="mt-9 overflow-x-auto">
+          <div className="mt-10 overflow-x-auto">
             <table className="w-full min-w-[560px] border-collapse text-left">
               <thead>
                 <tr className="border-b-2 border-navy font-display">

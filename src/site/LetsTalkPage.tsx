@@ -33,13 +33,13 @@ export default function LetsTalkPage() {
 
   return (
     <Page
-      title="Let's talk | Ajyle AI"
+      title="Contact us | Ajyle AI"
       description="Book a free 30-minute call, or send a message. Tell us the problem in your own words and get a straight answer on whether we can help."
     >
       <section className="py-14 lg:py-[72px]" aria-labelledby="h1">
         <div className={`${wrap} grid items-end gap-10 lg:grid-cols-[7fr_5fr] lg:gap-16`}>
           <div>
-            <div className="animate-rise"><Eyebrow>Let's talk</Eyebrow></div>
+            <div className="animate-rise"><Eyebrow>Contact us</Eyebrow></div>
             <h1 id="h1" className="mt-5 animate-rise font-display text-[clamp(40px,5.6vw,72px)] font-semibold leading-[1.04] tracking-[-0.035em] [animation-delay:.12s]">
               Tell us what's going on.
             </h1>
@@ -74,7 +74,7 @@ export default function LetsTalkPage() {
             </ol>
             <div className="mt-6 rounded border border-line-strong bg-white p-6">
               <span className="font-display text-sm font-semibold text-slate">Then, if it fits</span>
-              <h3 className="mt-1.5 mb-2 flex flex-wrap justify-between gap-4 font-display text-[22px] font-semibold">
+              <h3 className="mt-1.5 mb-2 flex flex-wrap justify-between gap-4 font-display text-[22px] font-semibold leading-[1.3]">
                 A Discovery Workshop <span className="text-lg">{WORKSHOP_PRICE}</span>
               </h3>
               <p className="text-slate">Together we pick the first process and agree what good looks like.</p>

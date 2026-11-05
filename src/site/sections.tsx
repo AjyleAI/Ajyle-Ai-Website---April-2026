@@ -67,7 +67,7 @@ export function WhoFor() {
         <Eyebrow>Who it's for</Eyebrow>
         <H2 id="who-h">You want the time back. You can't afford to get it wrong.</H2>
         <Lead>That's the bind when your work involves customer data or decisions about people.</Lead>
-        <div className="mt-9 border-t border-line-strong">
+        <div className="mt-10 border-t border-line-strong">
           {situations.map(([h, p], i) => (
             <div key={h} className="grid gap-2 border-b border-line-strong py-[22px] md:grid-cols-[80px_5fr_6fr] md:items-baseline md:gap-8">
               <span className="font-display text-sm font-semibold text-slate">0{i + 1}</span>
@@ -231,7 +231,7 @@ export const REVIEWS: Review[] = [];
 
 export function Reviews() {
   return (
-    <div className="mt-14 border-t border-line pt-9">
+    <div className="mt-14 border-t border-line pt-10">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <Eyebrow>Reviews</Eyebrow>
@@ -242,7 +242,7 @@ export function Reviews() {
         <TextLink to={TRUSTPILOT_URL} external>Read every review on Trustpilot</TextLink>
       </div>
       {REVIEWS.length > 0 && (
-        <div className="mt-9 grid gap-10 md:grid-cols-3">
+        <div className="mt-10 grid gap-10 md:grid-cols-3">
           {REVIEWS.map((r) => (
             <figure key={r.name}>
               <Stars />
@@ -302,7 +302,7 @@ export function Start({ workshopLead = "" }: { workshopLead?: string }) {
             <li key={s.h} className={`relative ${i === 0 ? "pb-7" : ""}`}>
               <span className="absolute top-1 -left-11 h-6 w-6 rounded-full border-[2.5px] border-navy bg-white" aria-hidden="true" />
               <span className="font-display text-sm font-semibold text-slate">{s.k}</span>
-              <h3 className="mt-1.5 mb-2 flex flex-wrap justify-between gap-4 font-display text-[22px] font-semibold">
+              <h3 className="mt-1.5 mb-2 flex flex-wrap justify-between gap-4 font-display text-[22px] font-semibold leading-[1.3]">
                 {s.h} <span className="text-lg">{s.p}</span>
               </h3>
               <p className="max-w-[46ch] text-slate">{s.t}</p>

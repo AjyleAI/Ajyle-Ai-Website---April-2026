@@ -6,10 +6,11 @@ import { TRUSTPILOT_URL, wrap } from "./ui";
 const LOGO_URL = "/logo.svg";
 
 const links = [
+  { name: "Home", to: "/" },
   { name: "How PACE works", to: "/pace" },
   { name: "AI Training for Teams", to: "/training" },
   { name: "About", to: "/about" },
-  { name: "Let's talk", to: "/lets-talk" },
+  { name: "Contact us", to: "/lets-talk" },
 ];
 
 export function SiteNav() {
@@ -31,7 +32,7 @@ export function SiteNav() {
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-8" aria-label="Main">
           {links.map((l) => (
-            <NavLink key={l.to} to={l.to} className={linkCls}>
+            <NavLink key={l.to} to={l.to} end={l.to === "/"} className={linkCls}>
               {l.name}
             </NavLink>
           ))}
@@ -71,7 +72,7 @@ export function SiteNav() {
         <div className="border-t border-line bg-white lg:hidden">
           <div className={`${wrap} flex flex-col py-4`}>
             {links.map((l) => (
-              <NavLink key={l.to} to={l.to} className={linkCls}>
+              <NavLink key={l.to} to={l.to} end={l.to === "/"} className={linkCls}>
                 {l.name}
               </NavLink>
             ))}
@@ -110,13 +111,13 @@ export function SiteFooter() {
             <li><Link className={a} to="/pace">How PACE works</Link></li>
             <li><Link className={a} to="/about">About</Link></li>
             <li><Link className={a} to="/training">AI Training for Teams</Link></li>
-            <li><Link className={a} to="/lets-talk">Let's talk</Link></li>
+            <li><Link className={a} to="/lets-talk">Contact us</Link></li>
           </ul>
         </div>
         <div>
           <h2 className="mb-2 font-display text-sm font-semibold text-navy">More</h2>
           <ul className="space-y-0.5">
-            <li><Link className={a} to="/reclaimyourtime">See What Manual Work Costs You</Link></li>
+            <li><Link className={a} to="/reclaimyourtime">See what manual work costs you</Link></li>
             <li><a className={a} href="/academy/">Solopreneur AI Academy</a></li>
             <li><a className={a} href={TRUSTPILOT_URL} target="_blank" rel="noopener noreferrer">Reviews on Trustpilot</a></li>
             <li><a className={a} href="https://www.linkedin.com/in/ade-shokoya/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>

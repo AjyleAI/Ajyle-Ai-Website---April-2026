@@ -110,7 +110,7 @@ export default function TrainingPage() {
         <div className={wrap}>
           <Eyebrow>What changes</Eyebrow>
           <H2 id="wins-h">Work your team does every week, done faster.</H2>
-          <div className="mt-9 grid gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-x-10 gap-y-6 md:grid-cols-2 lg:grid-cols-4">
             {wins.map(([h, p]) => (
               <div key={h} className="border-t-2 border-navy pt-5">
                 <h3 className="font-display text-lg font-semibold leading-[1.35]">{h}</h3>
@@ -148,7 +148,7 @@ export default function TrainingPage() {
         <div className={wrap}>
           <Eyebrow>How it works</Eyebrow>
           <H2 id="how-h">Three steps. The first one's free.</H2>
-          <ol className="mt-9 grid gap-8 md:grid-cols-3">
+          <ol className="mt-10 grid gap-8 md:grid-cols-3">
             {steps.map(([h, p], i) => (
               <li key={h} className="border-t border-line pt-5">
                 <span className="font-display text-sm font-semibold text-slate">0{i + 1}</span>
@@ -165,11 +165,11 @@ export default function TrainingPage() {
         <div className={wrap}>
           <Eyebrow>Session formats</Eyebrow>
           <H2 id="fmt-h">Half-day or full-day.</H2>
-          <div className="mt-9 grid gap-6 md:grid-cols-2 md:gap-y-0">
+          <div className="mt-10 grid gap-6 md:grid-cols-2 md:gap-y-0">
             {formats.map((f) => (
               <article key={f.name} className="grid rounded border border-line-strong bg-white px-7 py-4 md:row-span-8 md:grid-rows-subgrid">
                 <div className="flex flex-wrap items-baseline justify-between gap-3 pt-3">
-                  <h3 className="font-display text-[22px] font-semibold">{f.name}</h3>
+                  <h3 className="font-display text-[22px] font-semibold leading-[1.3]">{f.name}</h3>
                   <span className="font-display text-sm font-semibold text-slate">{f.length}</span>
                 </div>
                 <p className="mt-2 pb-3 text-slate">{f.fit}</p>
@@ -198,10 +198,10 @@ export default function TrainingPage() {
           <Eyebrow>Pricing</Eyebrow>
           <H2 id="price-h">What it costs.</H2>
           <Lead>Every hands-on session includes tailoring before the day, delivery, and follow-up measurement.</Lead>
-          <div className="mt-9 grid gap-6 md:grid-cols-3 md:gap-y-0">
+          <div className="mt-10 grid gap-6 md:grid-cols-3 md:gap-y-0">
             {prices.map((p) => (
               <article key={p.name} className="flex flex-col border-t-2 border-navy pt-5 md:row-span-5 md:grid md:grid-rows-subgrid md:gap-0">
-                <h3 className="font-display text-lg font-semibold">{p.name}</h3>
+                <h3 className="font-display text-lg font-semibold leading-[1.35]">{p.name}</h3>
                 <p className="mt-1 font-display text-[28px] font-semibold tracking-[-0.02em]">{p.price}{p.price.startsWith("From") && <span className="text-base font-medium text-slate"> + VAT</span>}</p>
                 {p.who ? <p className="text-[15px] text-slate">{p.who}</p> : <span aria-hidden="true" />}
                 <ul className="mt-4 space-y-2.5">
@@ -230,7 +230,7 @@ export default function TrainingPage() {
         <div className={wrap}>
           <Eyebrow>What clients say</Eyebrow>
           <H2 id="q-h">What they said after.</H2>
-          <div className="mt-9 grid gap-10 md:grid-cols-3">
+          <div className="mt-10 grid gap-10 md:grid-cols-3">
             {quotes.map((q) => (
               <figure key={q.who} className="border-t border-line-strong pt-5">
                 <blockquote className="font-display text-[17px] font-medium leading-[1.55] text-slate">{q.q}</blockquote>
