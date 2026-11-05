@@ -67,7 +67,7 @@ export default function LetsTalkPage() {
                   <span className="pt-0.5 font-display text-sm font-semibold text-slate">0{i + 1}</span>
                   <div>
                     <b className="block font-display text-lg font-semibold">{b}</b>
-                    <span className="text-[15px] text-slate">{s}</span>
+                    <span className="text-[17px] text-slate">{s}</span>
                   </div>
                 </li>
               ))}
@@ -124,7 +124,7 @@ export default function LetsTalkPage() {
                   </p>
                 </div>
                 {status === "error" && (
-                  <p role="alert" className="text-[15px] font-semibold text-[#B3261E]">That didn't send. Please try again, or book a call instead.</p>
+                  <p role="alert" className="text-[17px] font-semibold text-[#B3261E]">That didn't send. Please try again, or book a call instead.</p>
                 )}
               </form>
             )}

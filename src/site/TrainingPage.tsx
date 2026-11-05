@@ -114,7 +114,7 @@ export default function TrainingPage() {
             {wins.map(([h, p]) => (
               <div key={h} className="border-t-2 border-navy pt-5">
                 <h3 className="font-display text-lg font-semibold leading-[1.35]">{h}</h3>
-                <p className="mt-2 text-[15px] text-slate">{p}</p>
+                <p className="mt-2 text-[17px] text-slate">{p}</p>
               </div>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function TrainingPage() {
                 <span className="pt-0.5 font-display text-sm font-semibold text-slate">0{i + 1}</span>
                 <div>
                   <b className="block font-display text-lg font-semibold">{b}</b>
-                  <span className="text-[15px] text-slate">{s}</span>
+                  <span className="text-[17px] text-slate">{s}</span>
                 </div>
               </li>
             ))}
@@ -175,7 +175,7 @@ export default function TrainingPage() {
                 <p className="mt-2 pb-3 text-slate">{f.fit}</p>
                 {f.items.map((it, i) =>
                   it ? (
-                    <p key={it} className="flex gap-3 border-t border-line py-3 text-[15px] leading-[1.6]">
+                    <p key={it} className="flex gap-3 border-t border-line py-3 text-[17px] leading-[1.6]">
                       <span className="mt-0.5"><Tick size="sm" /></span>
                       <span>{it}</span>
                     </p>
@@ -186,7 +186,7 @@ export default function TrainingPage() {
               </article>
             ))}
           </div>
-          <p className="mt-6 max-w-[70ch] text-[15px] text-slate">
+          <p className="mt-6 max-w-[70ch] text-[17px] text-slate">
             Sessions run online or in person, at the same price. Attendees need laptops and access to the tools they use for work. We confirm the content with you before the day.
           </p>
         </div>
@@ -203,10 +203,10 @@ export default function TrainingPage() {
               <article key={p.name} className="flex flex-col border-t-2 border-navy pt-5 md:row-span-5 md:grid md:grid-rows-subgrid md:gap-0">
                 <h3 className="font-display text-lg font-semibold leading-[1.35]">{p.name}</h3>
                 <p className="mt-1 font-display text-[28px] font-semibold tracking-[-0.02em]">{p.price}{p.price.startsWith("From") && <span className="text-base font-medium text-slate"> + VAT</span>}</p>
-                {p.who ? <p className="text-[15px] text-slate">{p.who}</p> : <span aria-hidden="true" />}
+                {p.who ? <p className="text-[17px] text-slate">{p.who}</p> : <span aria-hidden="true" />}
                 <ul className="mt-4 space-y-2.5">
                   {p.items.map((it) => (
-                    <li key={it} className="flex gap-3 text-[15px] leading-[1.6]">
+                    <li key={it} className="flex gap-3 text-[17px] leading-[1.6]">
                       <span className="mt-0.5"><Tick size="sm" /></span>
                       <span>{it}</span>
                     </li>
@@ -218,7 +218,7 @@ export default function TrainingPage() {
               </article>
             ))}
           </div>
-          <p className="mt-8 max-w-[70ch] text-[15px] text-slate">
+          <p className="mt-8 max-w-[70ch] text-[17px] text-slate">
             Online and in person cost the same. For in-person sessions outside London, travel is billed at cost. All prices exclude VAT. Every booking starts with a free call, and you'll get a straight answer on cost before you commit.
           </p>
           <div className="mt-8"><BookButton>Book a free call</BookButton></div>
@@ -243,7 +243,7 @@ export default function TrainingPage() {
                   <figcaption className="mt-auto flex items-center gap-3 border-t border-line pt-4">
                     <span aria-hidden="true" className="grid h-10 w-10 flex-none place-items-center rounded-full bg-navy font-display text-[15px] font-semibold text-white">{initials}</span>
                     <span>
-                      <b className="block font-display text-[15px] font-semibold">{name}</b>
+                      <b className="block font-display text-[17px] font-semibold">{name}</b>
                       {rest.length > 0 && <span className="block text-sm text-slate">{rest.join(", ")}</span>}
                     </span>
                   </figcaption>
@@ -268,11 +268,11 @@ export default function TrainingPage() {
             </div>
             <dl className="mt-8 grid max-w-[520px] grid-cols-2 gap-6 border-t border-line pt-6">
               <div className="flex flex-col">
-                <dt className="text-[15px] text-slate">Years in digital transformation, change management and Agile</dt>
+                <dt className="text-[17px] text-slate">Years in digital transformation, change management and Agile</dt>
                 <dd className="order-first font-display text-[clamp(30px,9vw,40px)] font-semibold leading-none tracking-[-0.03em]">20+</dd>
               </div>
               <div className="flex flex-col">
-                <dt className="text-[15px] text-slate">People trained in AI</dt>
+                <dt className="text-[17px] text-slate">People trained in AI</dt>
                 <dd className="order-first font-display text-[clamp(30px,9vw,40px)] font-semibold leading-none tracking-[-0.03em]">10,000+</dd>
               </div>
             </dl>
@@ -319,7 +319,7 @@ export default function TrainingPage() {
                 <p className="pb-5 text-slate">{a}</p>
               </details>
             ))}
-            <p className="mt-6 text-[15px] text-slate">
+            <p className="mt-6 text-[17px] text-slate">
               Something else? <TextLink to="/lets-talk">Send us a message</TextLink>
             </p>
           </div>

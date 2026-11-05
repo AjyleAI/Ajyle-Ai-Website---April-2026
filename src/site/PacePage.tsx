@@ -155,7 +155,7 @@ export default function PacePage() {
                       <h4 className="font-display text-sm font-semibold text-slate">What you get</h4>
                     </div>
                     {s.happens.map((h, i) => (
-                      <div key={h} className="grid grid-cols-2 gap-8 border-t border-line py-3 text-[15px] leading-[1.6]">
+                      <div key={h} className="grid grid-cols-2 gap-8 border-t border-line py-3 text-[17px] leading-[1.6]">
                         <p>{h}</p>
                         {s.get[i] ? (
                           <p className="flex gap-3"><span className="mt-0.5"><Tick size="sm" /></span><span>{s.get[i]}</span></p>
@@ -169,7 +169,7 @@ export default function PacePage() {
                       <h4 className="font-display text-sm font-semibold text-slate">What happens</h4>
                       <ul className="mt-3 space-y-3">
                         {s.happens.map((h) => (
-                          <li key={h} className="border-t border-line pt-3 text-[15px] leading-[1.6]">{h}</li>
+                          <li key={h} className="border-t border-line pt-3 text-[17px] leading-[1.6]">{h}</li>
                         ))}
                       </ul>
                     </div>
@@ -177,7 +177,7 @@ export default function PacePage() {
                       <h4 className="font-display text-sm font-semibold text-slate">What you get</h4>
                       <ul className="mt-3 space-y-3">
                         {s.get.filter((g): g is string => !!g).map((g) => (
-                          <li key={g} className="flex gap-3 border-t border-line pt-3 text-[15px] leading-[1.6]">
+                          <li key={g} className="flex gap-3 border-t border-line pt-3 text-[17px] leading-[1.6]">
                             <span className="mt-0.5"><Tick size="sm" /></span>
                             <span>{g}</span>
                           </li>
@@ -185,9 +185,9 @@ export default function PacePage() {
                       </ul>
                     </div>
                   </div>
-                  {s.note && <p className="mt-5 border-l-2 border-teal pl-4 text-[15px] font-semibold md:ml-[calc(50%+16px)]">{s.note}</p>}
+                  {s.note && <p className="mt-5 border-l-2 border-teal pl-4 text-[17px] font-semibold md:ml-[calc(50%+16px)]">{s.note}</p>}
                   {s.extra && (
-                    <p className="mt-5 text-[15px] text-slate md:ml-[calc(50%+16px)]">
+                    <p className="mt-5 text-[17px] text-slate md:ml-[calc(50%+16px)]">
                       Training your team is part of Embed. <TextLink to="/training">How we train teams</TextLink>
                     </p>
                   )}
@@ -220,14 +220,14 @@ export default function PacePage() {
                 {ROWS.map(([k, a, b]) => (
                   <tr key={k} className="border-b border-line-strong">
                     <th scope="row" className="py-4 pr-6 font-display text-sm font-semibold text-slate">{k}</th>
-                    <td className="py-4 pr-6 text-[15px]">{a}</td>
-                    <td className="py-4 text-[15px]">{b}</td>
+                    <td className="py-4 pr-6 text-[17px]">{a}</td>
+                    <td className="py-4 text-[17px]">{b}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-6 text-[15px]">
+          <p className="mt-6 text-[17px]">
             <b className="font-display font-semibold">Leading a larger organisation?</b>{" "}
             <TextLink to="/lets-talk">Talk to us about PACE Full</TextLink>
           </p>

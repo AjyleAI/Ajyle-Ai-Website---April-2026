@@ -297,7 +297,7 @@ export default function ReclaimYourTimeBootcamp() {
                   </linearGradient>
                 </defs>
               </svg>
-              <span style={{ fontSize: 10, fontFamily: "'Space Mono', monospace", textTransform: "uppercase", letterSpacing: "0.22em", color: TEAL }}>Ajyle AI</span>
+              <span style={{ fontSize: 11, fontFamily: "'Space Mono', monospace", textTransform: "uppercase", letterSpacing: "0.22em", color: TEAL }}>Ajyle AI</span>
             </div>
 
             <h1 className="ryt-hook-2" style={{ fontSize: "clamp(28px, 7vw, 44px)", fontFamily: "'Manrope', sans-serif", fontWeight: 800, lineHeight: 1.12, letterSpacing: "-0.025em", color: T1, margin: "0 0 20px", textWrap: "balance" as React.CSSProperties["textWrap"] }}>

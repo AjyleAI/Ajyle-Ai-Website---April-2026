@@ -130,7 +130,7 @@ export function PaceStory() {
             <div ref={ringRef} className="hidden aspect-square w-full max-w-[420px] lg:block">
               <PaceRing lit={cur + 1} label={`PACE progress: stage ${cur + 1} of 4, ${NAMES[cur]}`} />
             </div>
-            <p className="flex items-center gap-2.5 text-[15px] text-slate lg:mt-6">
+            <p className="flex items-center gap-2.5 text-[17px] text-slate lg:mt-6">
               <span aria-hidden="true" className="inline-block h-[18px] w-[18px] rounded-full border-[2.5px] border-navy" />
               Review point. Nothing moves on until it's set up properly.
             </p>
@@ -148,7 +148,7 @@ export function PaceStory() {
                 <h3 className="mt-2 mb-3.5 font-display text-[clamp(36px,4.6vw,60px)] font-semibold leading-none tracking-[-0.035em]">{s.name}</h3>
                 <p className="max-w-[32ch] text-xl leading-[1.55]">{s.text}</p>
                 {s.rp && (
-                  <p className="mt-5 flex items-center gap-3 text-[15px] text-slate">
+                  <p className="mt-5 flex items-center gap-3 text-[17px] text-slate">
                     <Tick />
                     <span><b className="font-semibold text-navy">Review point.</b> {s.rp}</span>
                   </p>
@@ -179,7 +179,7 @@ export function Principles() {
         <div>
           <Eyebrow>How we work</Eyebrow>
           <H2 id="rules-h">Five rules we don't bend.</H2>
-          <p className="mt-7 max-w-[24ch] font-display text-2xl font-medium leading-[1.45] tracking-[-0.01em]">
+          <p className="mt-7 max-w-[24ch] font-display text-[22px] font-semibold leading-[1.35] tracking-[-0.01em]">
             We bring the experience. You know your business. We work it out together, inside your constraints.
           </p>
         </div>
@@ -189,7 +189,7 @@ export function Principles() {
               <span className="pt-0.5 font-display text-sm font-semibold text-slate">0{i + 1}</span>
               <div>
                 <b className="block font-display text-lg font-semibold">{b}</b>
-                <span className="text-[15px] text-slate">{s}</span>
+                <span className="text-[17px] text-slate">{s}</span>
               </div>
             </li>
           ))}
@@ -228,19 +228,14 @@ export function NotYet() {
 // Word for word from Trustpilot (or the previous site's approved testimonials). Never edit a reviewer's words.
 export type Review = { text: string; name: string; who?: string };
 
-export const HOME_REVIEWS: Review[] = [
+export const REVIEWS: Review[] = [
   { text: "Ade provided our team with some solid hands-on AI training. He is a very good teacher and has completely transformed how the team works today. We've booked him twice now, and will do so again. Highly recommend.", name: "Petrus Van Staden", who: "CEO, Biscuit Pet Care" },
   { text: "We had an excellent 4-hr AI Build workshop with Ade to quickly bring us up to speed with using AI to save time on daily tasks. With Ade's prepared prompts and Claude skills, Ade helped us train AI with the business context, connecting to email, crm, trello boards, finance apps and more for brilliant results, in the required tone of voice.", name: "Dilawar", who: "Head of IT" },
   { text: "Our work processes are now completely transformed and Ai enabled thanks to Ade\u2019s coaching and we are ready to level up again thanks to his recent phenomenal workshop. Highly recommend him for both training and consulting services.", name: "Dr. Andrea Taylor-Cummings", who: "CEO & Founder, Performance Coach | TEDx Speaker" },
 ];
 
-export const ABOUT_REVIEWS: Review[] = [
-  { text: "I had the privilege of attending a masterclass led by Ade on AI transformation, and it was nothing short of transformative. I walked away with a deep understanding of its capabilities and, more importantly, how to implement it meaningfully in my business.", name: "Pearl U", who: "Founder" },
-  { text: "Ade's training programme was very in depth, but gave time and space for novices to get an understanding of how AI works and the implications of not getting up to speed with this ever changing field. I have learnt so much and been amazed at how much can be done using this technology.", name: "Vi", who: "Start-up Founder, Wellness and Healthcare" },
-  { text: "Very informative it has given me a new tool to use which would help with my everyday workload", name: "Pedro Carmichael" },
-];
 
-export function Reviews({ reviews }: { reviews: Review[] }) {
+export function Reviews({ reviews = REVIEWS }: { reviews?: Review[] }) {
   return (
     <div className="mt-14 border-t border-line pt-10">
       <div className="flex flex-wrap items-end justify-between gap-4">
@@ -261,7 +256,7 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
               <b className="mt-2 block font-display text-[17px] font-semibold">{r.name}</b>
               {r.who && <span className="mt-0.5 block text-sm text-slate">{r.who}</span>}
             </figcaption>
-            <blockquote className="max-w-[48ch] border-l-[3px] border-teal pl-6 font-display text-[clamp(19px,1.8vw,24px)] font-normal italic leading-[1.5] tracking-[-0.01em] md:pl-7">
+            <blockquote className="max-w-[62ch] border-l-[3px] border-teal pl-6 text-[17px] italic leading-[1.65] md:pl-7">
               {r.text}
             </blockquote>
           </figure>
@@ -286,7 +281,7 @@ export function Founder() {
             <TextLink to="/about">More about Ade</TextLink>
           </div>
         </div>
-        <Reviews reviews={HOME_REVIEWS} />
+        <Reviews />
       </div>
     </section>
   );

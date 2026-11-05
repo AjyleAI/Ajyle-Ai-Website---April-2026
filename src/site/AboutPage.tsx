@@ -1,5 +1,5 @@
 import { Eyebrow, H2, Page, TextLink, section, wrap } from "./ui";
-import { ABOUT_REVIEWS, NotYet, Reviews, Start } from "./sections";
+import { NotYet, Reviews, Start } from "./sections";
 
 const promises = [
   ["You see the reasoning.", "No black-box AI. We'll always explain what a tool does, and why."],
@@ -69,13 +69,13 @@ export default function AboutPage() {
             {promises.map(([b, s]) => (
               <li key={b} className="border-t border-line py-4 last:border-b">
                 <b className="block font-display text-lg font-semibold">{b}</b>
-                <span className="text-[15px] text-slate">{s}</span>
+                <span className="text-[17px] text-slate">{s}</span>
               </li>
             ))}
           </ul>
         </div>
         <div className={wrap}>
-          <Reviews reviews={ABOUT_REVIEWS} />
+          <Reviews />
         </div>
       </section>
 
