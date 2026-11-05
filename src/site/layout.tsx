@@ -6,7 +6,7 @@ import { TRUSTPILOT_URL, wrap } from "./ui";
 const LOGO_URL = "/logo.svg";
 
 const links = [
-  { name: "How PACE works", to: "/pace" },
+  { name: "How PACE Works", to: "/pace" },
   { name: "AI Training for Teams", to: "/training" },
   { name: "About", to: "/about" },
   { name: "Contact us", to: "/lets-talk" },
@@ -107,7 +107,7 @@ export function SiteFooter() {
         <div>
           <h2 className="mb-2 font-display text-sm font-semibold text-navy">Explore</h2>
           <ul className="space-y-0.5">
-            <li><Link className={a} to="/pace">How PACE works</Link></li>
+            <li><Link className={a} to="/pace">How PACE Works</Link></li>
             <li><Link className={a} to="/about">About</Link></li>
             <li><Link className={a} to="/training">AI Training for Teams</Link></li>
             <li><Link className={a} to="/lets-talk">Contact us</Link></li>
@@ -116,7 +116,7 @@ export function SiteFooter() {
         <div>
           <h2 className="mb-2 font-display text-sm font-semibold text-navy">More</h2>
           <ul className="space-y-0.5">
-            <li><Link className={a} to="/reclaimyourtime">See what manual work costs you</Link></li>
+            <li><Link className={a} to="/reclaimyourtime">See What Manual Work Costs You</Link></li>
             <li><a className={a} href="/academy/">Solopreneur AI Academy</a></li>
             <li><a className={a} href={TRUSTPILOT_URL} target="_blank" rel="noopener noreferrer">Reviews on Trustpilot</a></li>
             <li><a className={a} href="https://www.linkedin.com/in/ade-shokoya/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>

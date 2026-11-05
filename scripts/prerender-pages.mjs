@@ -25,10 +25,10 @@ const PAGES = [
   },
   {
     route: "pace",
-    title: "How PACE works | Ajyle AI",
+    title: "How PACE Works | Ajyle AI",
     description:
       "PACE brings AI into your business one process at a time: Prepare, Act, Check, Embed. Guardrails first, and numbers to show it worked.",
-    ogTitle: "How PACE works: one process at a time, with the guardrails set first",
+    ogTitle: "How PACE Works: one process at a time, with the guardrails set first",
     image: `${ORIGIN}/og-image.png`,
     imageAlt: "Ajyle AI. AI you can stand behind.",
     noscript: "This page needs JavaScript. Please turn it on, or visit ajyle.ai/lets-talk to get in touch.",

@@ -97,13 +97,13 @@ export default function PacePage() {
 
   return (
     <Page
-      title="How PACE works | Ajyle AI"
+      title="How PACE Works | Ajyle AI"
       description="PACE brings AI into your business one process at a time: Prepare, Act, Check, Embed. Guardrails first, and numbers to show it worked."
     >
       <section className="py-14 lg:py-[72px]" aria-labelledby="h1">
         <div className={`${wrap} grid items-center gap-10 lg:grid-cols-[7fr_5fr] lg:gap-16`}>
           <div>
-            <div className="animate-rise"><Eyebrow>How PACE works</Eyebrow></div>
+            <div className="animate-rise"><Eyebrow>How PACE Works</Eyebrow></div>
             <h1 id="h1" className="mt-5 mb-6 animate-rise font-display text-[clamp(40px,5.6vw,72px)] font-semibold leading-[1.04] tracking-[-0.035em] [animation-delay:.12s]">
               Get time back from AI, without cutting corners.
             </h1>
