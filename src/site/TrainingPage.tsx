@@ -58,9 +58,9 @@ const prices = [
 
 // Existing approved testimonials, kept word for word.
 const quotes = [
-  { q: "I had the privilege of attending a masterclass led by Ade on AI transformation, and it was nothing short of transformative. I walked away with a deep understanding of its capabilities and, more importantly, how to implement it meaningfully in my business.", who: "Pearl U, Founder" },
+  { q: "Ade provided our team with some solid hands-on AI training. He is a very good teacher and has completely transformed how the team works today. We've booked him twice now, and will do so again. Highly recommend.", who: "Petrus Van Staden, CEO, Biscuit Pet Care" },
   { q: "Ade's training programme was very in depth, but gave time and space for novices to get an understanding of how AI works and the implications of not getting up to speed with this ever changing field. I have learnt so much and been amazed at how much can be done using this technology.", who: "Vi, Start-up Founder, Wellness and Healthcare" },
-  { q: "Our work processes are now completely transformed and AI enabled thanks to Ade’s coaching and we are ready to level up again thanks to his recent phenomenal workshop. Highly recommend him for both training and consulting services.", who: "Dr. Andrea Taylor-Cummings, CEO & Founder, Performance Coach | TEDx Speaker" },
+  { q: "Our work processes are now completely transformed and Ai enabled thanks to Ade’s coaching and we are ready to level up again thanks to his recent phenomenal workshop. Highly recommend him for both training and consulting services.", who: "Dr. Andrea Taylor-Cummings, CEO & Founder, Performance Coach | TEDx Speaker" },
 ];
 
 const faqs = [
