@@ -224,37 +224,49 @@ export function NotYet() {
   );
 }
 
-/* ---------- Reviews ---------- */
-// Word for word from Trustpilot. Only add reviews once the exact text is confirmed.
-export type Review = { text: string; name: string; who: string };
-export const REVIEWS: Review[] = [];
+/* ---------- Reviews (editorial pull quotes) ---------- */
+// Word for word from Trustpilot (or the previous site's approved testimonials). Never edit a reviewer's words.
+export type Review = { text: string; name: string; who?: string };
 
-export function Reviews() {
+export const HOME_REVIEWS: Review[] = [
+  { text: "Ade provided our team with some solid hands-on AI training. He is a very good teacher and has completely transformed how the team works today. We've booked him twice now, and will do so again. Highly recommend.", name: "Petrus Van Staden", who: "CEO, Biscuit Pet Care" },
+  { text: "We had an excellent 4-hr AI Build workshop with Ade to quickly bring us up to speed with using AI to save time on daily tasks. With Ade's prepared prompts and Claude skills, Ade helped us train AI with the business context, connecting to email, crm, trello boards, finance apps and more for brilliant results, in the required tone of voice.", name: "Dilawar", who: "Head of IT" },
+  { text: "Our work processes are now completely transformed and Ai enabled thanks to Ade\u2019s coaching and we are ready to level up again thanks to his recent phenomenal workshop. Highly recommend him for both training and consulting services.", name: "Dr. Andrea Taylor-Cummings", who: "CEO & Founder, Performance Coach | TEDx Speaker" },
+];
+
+export const ABOUT_REVIEWS: Review[] = [
+  { text: "I had the privilege of attending a masterclass led by Ade on AI transformation, and it was nothing short of transformative. I walked away with a deep understanding of its capabilities and, more importantly, how to implement it meaningfully in my business.", name: "Pearl U", who: "Founder" },
+  { text: "Ade's training programme was very in depth, but gave time and space for novices to get an understanding of how AI works and the implications of not getting up to speed with this ever changing field. I have learnt so much and been amazed at how much can be done using this technology.", name: "Vi", who: "Start-up Founder, Wellness and Healthcare" },
+  { text: "Very informative it has given me a new tool to use which would help with my everyday workload", name: "Pedro Carmichael" },
+];
+
+export function Reviews({ reviews }: { reviews: Review[] }) {
   return (
     <div className="mt-14 border-t border-line pt-10">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <Eyebrow>Reviews</Eyebrow>
-          <h2 className="mt-3 font-display text-[clamp(26px,2.6vw,32px)] font-semibold leading-[1.2] tracking-[-0.02em]">
-            {REVIEWS.length > 0 ? "What people say after working with us." : "See what people say after working with us."}
-          </h2>
+          <Eyebrow>What clients say</Eyebrow>
+          <h2 className="mt-3 font-display text-[clamp(26px,2.6vw,32px)] font-semibold leading-[1.2] tracking-[-0.02em]">What they said after.</h2>
         </div>
-        <TextLink to={TRUSTPILOT_URL} external>Read every review on Trustpilot</TextLink>
+        <a href={TRUSTPILOT_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center gap-2 text-sm font-semibold text-slate no-underline hover:text-navy">
+          <span aria-hidden="true" className="inline-grid h-4 w-4 place-items-center bg-[#00B67A] text-[11px] text-white">{"\u2605"}</span>
+          Read every review on Trustpilot
+        </a>
       </div>
-      {REVIEWS.length > 0 && (
-        <div className="mt-10 grid gap-10 md:grid-cols-3">
-          {REVIEWS.map((r) => (
-            <figure key={r.name}>
+      <div className="mt-10">
+        {reviews.map((r) => (
+          <figure key={r.name} className="grid gap-4 border-t border-line py-8 last:border-b md:grid-cols-[260px_1fr] md:gap-16">
+            <figcaption>
               <Stars />
-              <blockquote className="mt-3 mb-4 font-display text-[17px] font-medium leading-[1.55] text-slate">{r.text}</blockquote>
-              <figcaption>
-                <b className="block font-display text-[15px] font-semibold">{r.name}</b>
-                <span className="text-sm text-slate">{r.who}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-      )}
+              <b className="mt-2 block font-display text-[17px] font-semibold">{r.name}</b>
+              {r.who && <span className="mt-0.5 block text-sm text-slate">{r.who}</span>}
+            </figcaption>
+            <blockquote className="max-w-[48ch] border-l-[3px] border-teal pl-6 font-display text-[clamp(19px,1.8vw,24px)] font-normal italic leading-[1.5] tracking-[-0.01em] md:pl-7">
+              {r.text}
+            </blockquote>
+          </figure>
+        ))}
+      </div>
     </div>
   );
 }
@@ -274,7 +286,7 @@ export function Founder() {
             <TextLink to="/about">More about Ade</TextLink>
           </div>
         </div>
-        <Reviews />
+        <Reviews reviews={HOME_REVIEWS} />
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import { Eyebrow, H2, Page, TextLink, section, wrap } from "./ui";
-import { NotYet, Reviews, Start } from "./sections";
+import { ABOUT_REVIEWS, NotYet, Reviews, Start } from "./sections";
 
 const promises = [
   ["You see the reasoning.", "No black-box AI. We'll always explain what a tool does, and why."],
@@ -75,7 +75,7 @@ export default function AboutPage() {
           </ul>
         </div>
         <div className={wrap}>
-          <Reviews />
+          <Reviews reviews={ABOUT_REVIEWS} />
         </div>
       </section>
 

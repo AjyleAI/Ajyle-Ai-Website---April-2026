@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { BookButton, Eyebrow, H2, Lead, Page, TextLink, Tick, section, wrap } from "./ui";
+import { BookButton, Stars, Eyebrow, H2, Lead, Page, TextLink, Tick, section, wrap } from "./ui";
 
 const wins = [
   ["Lead generation that doesn't drain your team", "Outreach emails, LinkedIn messages and follow-ups, drafted and personalised faster, with your team checking each one before it goes."],
@@ -230,13 +230,26 @@ export default function TrainingPage() {
         <div className={wrap}>
           <Eyebrow>What clients say</Eyebrow>
           <H2 id="q-h">What they said after.</H2>
-          <div className="mt-10 grid gap-10 md:grid-cols-3">
-            {quotes.map((q) => (
-              <figure key={q.who} className="border-t border-line-strong pt-5">
-                <blockquote className="font-display text-[17px] font-medium leading-[1.55] text-slate">{q.q}</blockquote>
-                <figcaption className="mt-4 font-display text-[15px] font-semibold">{q.who}</figcaption>
-              </figure>
-            ))}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {quotes.map((q) => {
+              const [name, ...rest] = q.who.split(", ");
+              const initials = name.replace(/^Dr\.\s*/, "").split(" ").filter(Boolean).map((w) => w[0]).filter((_, i, a) => i === 0 || i === a.length - 1).join("");
+              return (
+                <figure key={q.who} className="relative flex flex-col overflow-hidden rounded-lg border border-line-strong bg-white px-7 pt-8 pb-7">
+                  <span aria-hidden="true" className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-teal to-green" />
+                  <span aria-hidden="true" className="h-8 bg-gradient-to-r from-teal to-green bg-clip-text font-display text-[64px] font-bold leading-[0.9] text-transparent">{"\u201c"}</span>
+                  <Stars />
+                  <blockquote className="mt-3.5 mb-6 text-[17px] italic leading-[1.65] text-navy">{q.q}</blockquote>
+                  <figcaption className="mt-auto flex items-center gap-3 border-t border-line pt-4">
+                    <span aria-hidden="true" className="grid h-10 w-10 flex-none place-items-center rounded-full bg-navy font-display text-[15px] font-semibold text-white">{initials}</span>
+                    <span>
+                      <b className="block font-display text-[15px] font-semibold">{name}</b>
+                      {rest.length > 0 && <span className="block text-sm text-slate">{rest.join(", ")}</span>}
+                    </span>
+                  </figcaption>
+                </figure>
+              );
+            })}
           </div>
         </div>
       </section>
