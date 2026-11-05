@@ -116,7 +116,7 @@ export function SiteFooter() {
         <div>
           <h2 className="mb-2 font-display text-sm font-semibold text-navy">More</h2>
           <ul className="space-y-0.5">
-            <li><Link className={a} to="/reclaimyourtime">Free 90-second time check</Link></li>
+            <li><Link className={a} to="/reclaimyourtime">See What Manual Work Costs You</Link></li>
             <li><a className={a} href="/academy/">Solopreneur AI Academy</a></li>
             <li><a className={a} href={TRUSTPILOT_URL} target="_blank" rel="noopener noreferrer">Reviews on Trustpilot</a></li>
             <li><a className={a} href="https://www.linkedin.com/in/ade-shokoya/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
