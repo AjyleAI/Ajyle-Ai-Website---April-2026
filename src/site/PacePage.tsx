@@ -105,7 +105,7 @@ export default function PacePage() {
           <div>
             <div className="animate-rise"><Eyebrow>How PACE works</Eyebrow></div>
             <h1 id="h1" className="mt-5 mb-6 animate-rise font-display text-[clamp(40px,5.6vw,72px)] font-semibold leading-[1.04] tracking-[-0.035em] [animation-delay:.12s]">
-              One process at a time, with the guardrails set first.
+              Get time back from AI, without cutting corners.
             </h1>
             <p className="max-w-[40ch] animate-rise text-xl leading-[1.55] text-slate [animation-delay:.24s]">
               PACE is how founder-led businesses bring AI into their work, one process at a time. The guardrails come first, and the numbers show whether it worked.
@@ -120,7 +120,7 @@ export default function PacePage() {
         <div className={`${wrap} grid gap-8 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
           <div>
             <Eyebrow>Who it's for</Eyebrow>
-            <H2 id="for-h">For businesses where getting AI wrong has real consequences.</H2>
+            <H2 id="for-h">For businesses that want time back from AI, and can't afford to get it wrong.</H2>
           </div>
           <div className="self-end text-xl leading-[1.55] text-slate">
             <p>You hold customer records. You make decisions about applicants, clients or staff. And a client or regulator might one day ask to see how some of that work was done.</p>
@@ -235,7 +235,7 @@ export default function PacePage() {
       </section>
 
       <NotYet />
-      <Start />
+      <Start workshopLead="This is where Prepare starts. " />
     </Page>
   );
 }

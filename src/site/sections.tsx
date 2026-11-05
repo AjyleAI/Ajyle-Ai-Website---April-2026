@@ -168,7 +168,7 @@ const rules = [
   ["Guardrails before anything is built.", "What's allowed, who owns it and who decides. Agreed first."],
   ["Start small enough to be wrong.", "If it's wrong, the cost is small and contained."],
   ["The numbers decide.", "We agree up front what good looks like. Then the numbers do the talking."],
-  ["People before tools, sceptics included.", "Change is personal before it's organisational."],
+  ["People before tools, sceptics included.", "The people who doubt it get a say too, so the evidence means something."],
   ["You keep the capability, or it didn't work.", "Your team learns to run the next one themselves."],
 ];
 
@@ -281,7 +281,7 @@ export function Founder() {
 }
 
 /* ---------- How to start ---------- */
-export function Start() {
+export function Start({ workshopLead = "" }: { workshopLead?: string }) {
   return (
     <section className={`bg-cloud ${section}`} id="start" aria-labelledby="s-h">
       <div className={`${wrap} grid items-start gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
@@ -297,7 +297,7 @@ export function Start() {
           <span className="absolute top-3.5 bottom-3.5 left-[11px] w-0.5 bg-gradient-to-b from-teal to-green" aria-hidden="true" />
           {[
             { k: "First", h: "A free 30-minute call", p: "Free", t: "We listen, ask a few questions and give you an honest answer on whether we can help." },
-            { k: "Then, if it fits", h: "A Discovery Workshop", p: WORKSHOP_PRICE, t: "Together we pick the first process and agree what good looks like." },
+            { k: "Then, if it fits", h: "A Discovery Workshop", p: WORKSHOP_PRICE, t: `${workshopLead}Together we pick the first process and agree what good looks like.` },
           ].map((s, i) => (
             <li key={s.h} className={`relative ${i === 0 ? "pb-7" : ""}`}>
               <span className="absolute top-1 -left-11 h-6 w-6 rounded-full border-[2.5px] border-navy bg-white" aria-hidden="true" />
