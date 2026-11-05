@@ -23,7 +23,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!api/|academy|5-ai-problems|hidden-cost|pace|about|lets-talk|training).*)",
+      "source": "/((?!api/|academy|5-ai-problems|hidden-cost|pace|about|lets-talk|training|reclaimyourtime|reclaim-your-time-workshop|privacy-policy).*)",
       "destination": "/index.html"
     }
   ]

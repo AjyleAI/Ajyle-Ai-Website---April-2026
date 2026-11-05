@@ -58,13 +58,47 @@ const PAGES = [
   },
   {
     route: "training",
-    title: "AI training for teams | Ajyle AI",
+    title: "AI Training for Teams | Ajyle AI",
     description:
-      "Half-day or full-day AI workshops shaped around your team's tools, workflows and AI policy, with a check-in 30 days later. From £1,400.",
-    ogTitle: "AI training for teams, shaped around your tools and AI policy",
+      "Half-day or full-day AI workshops shaped around your team's tools, workflows and AI policy, with a check-in 30 days later. From £1,200 + VAT.",
+    ogTitle: "AI Training for Teams, shaped around your tools and AI policy",
     image: `${ORIGIN}/og-image.png`,
     imageAlt: "Ajyle AI. AI you can stand behind.",
     noscript: "This page needs JavaScript. Please turn it on, or visit ajyle.ai/lets-talk to get in touch.",
+    siteFonts: true,
+  },
+  {
+    route: "reclaimyourtime",
+    title: "What Is Manual Work Costing You? | Ajyle AI",
+    description:
+      "Answer six quick questions about your week and see what manual work costs your business each year. Free, and no signup needed to see your number.",
+    ogTitle: "Reclaim Your Time: what is manual work costing your business?",
+    image: `${ORIGIN}/reclaimyourtime/og-image.png`,
+    imageAlt: "Reclaim Your Time from Ajyle AI. Six questions, ninety seconds, one number.",
+    noscript:
+      "This calculator needs JavaScript to work out your number. Please turn it on, or visit ajyle.ai to get in touch.",
+  },
+  {
+    route: "reclaim-your-time-workshop",
+    title: "Reclaim Your Time Workshop | Ajyle AI",
+    description:
+      "Answer six quick questions about your week and see what manual work costs your business each year.",
+    ogTitle: "Reclaim Your Time: what is manual work costing your business?",
+    image: `${ORIGIN}/reclaimyourtime/og-image.png`,
+    imageAlt: "Reclaim Your Time from Ajyle AI. Six questions, ninety seconds, one number.",
+    noscript: "This page needs JavaScript. Please turn it on, or visit ajyle.ai to get in touch.",
+    // Past event page: kept reachable for old links, but out of search results
+    robots: "noindex, follow",
+  },
+  {
+    route: "privacy-policy",
+    title: "Privacy Policy | Ajyle AI",
+    description:
+      "How Ajyle AI collects, uses and protects your personal data, and the rights you have under UK GDPR.",
+    ogTitle: "Privacy Policy | Ajyle AI",
+    image: `${ORIGIN}/og-image.png`,
+    imageAlt: "Ajyle AI. AI you can stand behind.",
+    noscript: "This page needs JavaScript. Please turn it on to read our privacy policy.",
     siteFonts: true,
   },
 ];
@@ -96,7 +130,7 @@ for (const p of PAGES) {
     <title>${esc(p.title)}</title>
     <meta name="title" content="${esc(p.title)}" />
     <meta name="description" content="${esc(p.description)}" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content="${p.robots || "index, follow, max-image-preview:large"}" />
     <link rel="canonical" href="${url}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${url}" />

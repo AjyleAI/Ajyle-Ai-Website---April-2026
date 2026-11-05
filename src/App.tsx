@@ -46,8 +46,8 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         {/* Full-screen campaign pages: no navbar/footer */}
-        <Route path="/reclaimyourtime" element={<ReclaimYourTime />} />
-        <Route path="/reclaim-your-time-workshop" element={<ReclaimYourTimeBootcamp />} />
+        <Route path="/reclaimyourtime" element={<Titled title="What Is Manual Work Costing You? | Ajyle AI"><ReclaimYourTime /></Titled>} />
+        <Route path="/reclaim-your-time-workshop" element={<Titled title="Reclaim Your Time Workshop | Ajyle AI"><ReclaimYourTimeBootcamp /></Titled>} />
         <Route path="/hidden-cost" element={<ReclaimYourTimeWebinar />} />
 
         {/* Main site with navbar and footer */}
@@ -63,7 +63,7 @@ export default function App() {
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/lets-talk" element={<LetsTalkPage />} />
                   <Route path="/training" element={<TrainingPage />} />
-                  <Route path="/privacy-policy" element={<Titled title="Privacy policy | Ajyle AI"><PrivacyPolicy /></Titled>} />
+                  <Route path="/privacy-policy" element={<Titled title="Privacy Policy | Ajyle AI"><PrivacyPolicy /></Titled>} />
                   {/* Old addresses */}
                   <Route path="/home" element={<Navigate to="/" replace />} />
                   <Route path="/solutions" element={<Navigate to="/pace" replace />} />
