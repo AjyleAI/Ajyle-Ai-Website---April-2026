@@ -6,6 +6,7 @@ const promises = [
   ["A person stays in charge.", "AI supports judgement. It never replaces it."],
   ["Measures come first.", "We agree what good looks like before anything is built."],
   ["It fits your business.", "There's no one-size-fits-all. What we put in place fits how you actually work."],
+  ["You're not tied to us.", "Your team learns to run the next one themselves."],
 ];
 
 export default function AboutPage() {
@@ -21,7 +22,7 @@ export default function AboutPage() {
             You know your business. We bring what's worked elsewhere.
           </h1>
           <p className="mt-6 max-w-[44ch] animate-rise text-xl leading-[1.55] text-slate [animation-delay:.24s]">
-            Ajyle AI helps founder-led businesses bring AI into their work safely, one process at a time.
+            Ajyle AI helps founder-led businesses get time back from AI, safely, one process at a time.
           </p>
         </div>
       </section>
@@ -42,7 +43,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={section} aria-labelledby="count-h">
+      <section className={section} aria-labelledby="why-h">
+        <div className={`${wrap} grid gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
+          <div>
+            <Eyebrow>Why PACE exists</Eyebrow>
+            <H2 id="why-h">The mistakes that led to PACE.</H2>
+          </div>
+          <figure>
+            <blockquote className="space-y-4 border-l-2 border-teal pl-6 text-xl leading-[1.55]">
+              <p>I've worked with businesses that spent a lot on AI tools, then found they didn't fit the work, or there was no clear use for them. Getting a return was hard. And the risks were easy to miss: data that hadn't been checked for accuracy, no clear owner, no AI policy or guardrails, and no way of seeing what the AI was doing.</p>
+              <p>I'd seen the same patterns before, in digital and Agile transformation. PACE is built to help you avoid those mistakes before they cost you.</p>
+            </blockquote>
+            <figcaption className="mt-4 pl-6 font-display text-[15px] font-semibold">Ade Shokoya</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className={`border-t border-line ${section}`} aria-labelledby="count-h">
         <div className={`${wrap} grid gap-10 lg:grid-cols-[5fr_7fr] lg:gap-16`}>
           <div>
             <Eyebrow>What you can count on</Eyebrow>
