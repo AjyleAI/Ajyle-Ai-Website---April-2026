@@ -9,7 +9,7 @@ const links = [
   { name: "How PACE Works", to: "/pace" },
   { name: "AI Training for Teams", to: "/training" },
   { name: "About", to: "/about" },
-  { name: "Contact us", to: "/lets-talk" },
+  { name: "Contact Us", to: "/lets-talk" },
 ];
 
 export function SiteNav() {
@@ -110,7 +110,7 @@ export function SiteFooter() {
             <li><Link className={a} to="/pace">How PACE Works</Link></li>
             <li><Link className={a} to="/about">About</Link></li>
             <li><Link className={a} to="/training">AI Training for Teams</Link></li>
-            <li><Link className={a} to="/lets-talk">Contact us</Link></li>
+            <li><Link className={a} to="/lets-talk">Contact Us</Link></li>
           </ul>
         </div>
         <div>

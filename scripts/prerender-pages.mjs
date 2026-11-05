@@ -47,7 +47,7 @@ const PAGES = [
   },
   {
     route: "lets-talk",
-    title: "Contact us | Ajyle AI",
+    title: "Contact Us | Ajyle AI",
     description:
       "Book a free 30-minute call, or send a message. Tell us the problem in your own words and get a straight answer on whether we can help.",
     ogTitle: "Contact Ajyle AI: book a free 30-minute call or send a message",

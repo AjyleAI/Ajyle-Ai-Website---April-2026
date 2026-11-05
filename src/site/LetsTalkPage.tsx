@@ -33,13 +33,13 @@ export default function LetsTalkPage() {
 
   return (
     <Page
-      title="Contact us | Ajyle AI"
+      title="Contact Us | Ajyle AI"
       description="Book a free 30-minute call, or send a message. Tell us the problem in your own words and get a straight answer on whether we can help."
     >
       <section className="py-14 lg:py-[72px]" aria-labelledby="h1">
         <div className={`${wrap} grid items-end gap-10 lg:grid-cols-[7fr_5fr] lg:gap-16`}>
           <div>
-            <div className="animate-rise"><Eyebrow>Contact us</Eyebrow></div>
+            <div className="animate-rise"><Eyebrow>Contact Us</Eyebrow></div>
             <h1 id="h1" className="mt-5 animate-rise font-display text-[clamp(40px,5.6vw,72px)] font-semibold leading-[1.04] tracking-[-0.035em] [animation-delay:.12s]">
               Tell us what's going on.
             </h1>
